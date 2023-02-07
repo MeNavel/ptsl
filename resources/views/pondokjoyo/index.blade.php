@@ -26,20 +26,22 @@
                         <a href="/downloadpondokjoyo" class="btn btn-primary">Download Excel</a>
                         <br><br>
                         <!-- Small tables -->
-                        <table class="table table-bordered data-table">
-                            <thead>
-                                <tr style="vertical-align: middle;">
-                                    <th scope="col">No Nominatif</th>
-                                    <th scope="col">Nama</th>
-                                    <th scope="col">NUB</th>
-                                    <th scope="col">Luas Ukur</th>
-                                    <th scope="col">Luas Permohonan</th>
-                                    <th scope="col">Beda Luas</th>
-                                    <th scope="col">Koordinator</th>
-                                    <th width="col">Action</th>
-                                </tr>
-                            </thead>
-                        </table>
+                        <div class="table-responsive">
+                            <table class="table table-bordered data-table" style="width:100%">
+                                <thead>
+                                    <tr style="vertical-align: middle;">
+                                        <th scope="col">No Nominatif</th>
+                                        <th scope="col">Nama</th>
+                                        <th scope="col">NUB</th>
+                                        <th scope="col">Luas Ukur</th>
+                                        <th scope="col">Luas Permohonan</th>
+                                        <th scope="col">Beda Luas</th>
+                                        <th scope="col">Koordinator</th>
+                                        <th width="col">Action</th>
+                                    </tr>
+                                </thead>
+                            </table>
+                        </div>
                         <!-- End small tables -->
                         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                         <script type="text/javascript">
@@ -98,7 +100,7 @@
                                         {
                                             data: 'action',
                                             name: 'action',
-                                            width: "10%",
+                                            width: "5%",
                                             orderable: false,
                                             searchable: false,
                                             className: "dt-head-center dt-body-center"
