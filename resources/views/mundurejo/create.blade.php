@@ -276,22 +276,20 @@
                                 <label for="Koordinator" class="form-label">Koordinator</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected></option>
-                                    <option value="EDI BEDOR">EDI BEDOR</option>
-                                    <option value="BUDIONO">BUDIONO</option>
-                                    <option value="MUHAMMAD ADI">MUHAMMAD ADI</option>
-                                    <option value="MAYAR">MAYAR</option>
-                                    <option value="SUTRISNO">SUTRISNO</option>
-                                    <option value="SONI S">SONI S</option>
-                                    <option value="MULYONO">MULYONO</option>
-                                    <option value="ABUYANTO">ABUYANTO</option>
-                                    <option value="SIONO">SIONO</option>
-                                    <option value="SUNAR">SUNAR</option>
-                                    <option value="NITO">NITO</option>
-                                    <option value="RUM">RUM</option>
-                                    <option value="MUDHARI">MUDHARI</option>
-                                    <option value="SANAWI">SANAWI</option>
-                                    <option value="WAWAN">WAWAN</option>
-                                    <option value="FAUZAN">FAUZAN</option>
+                                    <option value="SOFYAN HADI">RT 01 - SOFYAN HADI</option>
+                                    <option value="ANDRI CAHYONO">RT 02 - ANDRI CAHYONO</option>
+                                    <option value="MUHADI">RT 03 - MUHADI</option>
+                                    <option value="SUTOPO">RT 04 - SUTOPO</option>
+                                    <option value="EDI MESDIONO">RT 05 - EDI MESDIONO</option>
+                                    <option value="DENDI P">RT 06 - DENDI P</option>
+                                    <option value="ANDRIYONO">RT 07 - ANDRIYONO</option>
+                                    <option value="SURADI">RT 08 - SURADI</option>
+                                    <option value="MUKHOLIL">RT 09 - MUKHOLIL</option>
+                                    <option value="DHEHAN">RT 10 - DHEHAN</option>
+                                    <option value="SANTOSO">RT 11 - SANTOSO</option>
+                                    <option value="H. BUKHORI">RT 12 - H. BUKHORI</option>
+                                    <option value="H. MUHSIN">RT 13 - H. MUHSIN</option>
+                                    <option value="MOH. AMIN">RT 14 - MOH. AMIN</option>
                                 </select>
                             </div>
 
