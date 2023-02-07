@@ -9,7 +9,6 @@ use App\Http\Controllers\PondokjoyoController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/register', [App\Http\Controllers\HomeController::class, 'register'])->name('register');
 Route::controller(PondokjoyoController::class)->group(function () {
     Route::get('/pondokjoyo', 'index')->name('pondokjoyo.index');
     Route::get('/pondokjoyo/create', 'create')->name('create-pondokjoyo');
