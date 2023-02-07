@@ -27,8 +27,10 @@ class MundurejoController extends Controller
             return Datatables::of($data)
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
-                    return $btn = '<a class="btn btn-primary" href="' . route('edit-mundurejo', $row->id) . '" role="button"><i class="bi bi-folder"></i></a>
-                                    <a class="btn btn-danger delete-btn" href="' . route('destroy-mundurejo', $row->id) . '" role="button"><i class="bi-trash3"></i></a>';
+                    return '<div class="btn-group">
+                                <a class="btn btn-primary" href="' . route('edit-mundurejo', $row->id) . '" role="button"><i class="bi bi-folder"></i></a>
+                                <button class="btn btn-danger delete-btn" data-id="' . $row->id . '"><i class="bi-trash3"></i></button>
+                            </div>';;
                 })
                 ->rawColumns(['action'])
                 ->make(true);
@@ -264,7 +266,7 @@ class MundurejoController extends Controller
         $data = Mundurejo::find($No_Nominatif);
         if ($data) {
             $data->delete();
-        }
-        return view('mundurejo.index');
+            return response()->json(['success' => 'Data Deleted Successfully']);
+        };
     }
 }

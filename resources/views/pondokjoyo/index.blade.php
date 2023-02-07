@@ -41,13 +41,16 @@
                             </thead>
                         </table>
                         <!-- End small tables -->
+                        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                         <script type="text/javascript">
                             $(function() {
 
                                 var table = $('.data-table').DataTable({
                                     processing: true,
                                     serverSide: true,
-                                    order: [[0, 'desc']],
+                                    order: [
+                                        [0, 'desc']
+                                    ],
                                     ajax: "{{ route('pondokjoyo.index') }}",
                                     columns: [{
                                             data: 'id',
@@ -102,7 +105,44 @@
                                         },
                                     ],
                                 });
-
+                                $(document).on('click', '.delete-btn', function() {
+                                    Swal.fire({
+                                        title: 'Are you sure?',
+                                        text: "You won't be able to revert this!",
+                                        icon: 'warning',
+                                        showCancelButton: true,
+                                        confirmButtonColor: '#3085d6',
+                                        cancelButtonColor: '#d33',
+                                        confirmButtonText: 'Yes, delete it!'
+                                    }).then((result) => {
+                                        if (result.value) {
+                                            var id = $(this).data('id');
+                                            $.ajax({
+                                                url: "/pondokjoyo/" + id + "/destroy",
+                                                type: 'GET',
+                                                data: {
+                                                    '_token': $('meta[name="csrf-token"]').attr('content'),
+                                                    'id': id
+                                                },
+                                                success: function(data) {
+                                                    table.draw();
+                                                    Swal.fire(
+                                                        'Deleted!',
+                                                        'Your file has been deleted.',
+                                                        'success'
+                                                    );
+                                                },
+                                                error: function() {
+                                                    Swal.fire(
+                                                        'Error!',
+                                                        'Error deleting data',
+                                                        'error'
+                                                    );
+                                                }
+                                            });
+                                        }
+                                    });
+                                });
                             });
                         </script>
                     </div>

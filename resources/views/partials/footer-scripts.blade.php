@@ -31,23 +31,3 @@
             });
     };
 </script> --}}
-
-<script>
-    $(document).ready(function() {
-        $("No_Nominatif").on("keyup", function() {
-            var id = $(this).val();
-
-            // Kirim permintaan AJAX
-            $.ajax({
-                url: "/check-id/" + id,
-                type: "GET",
-                success: function(response) {
-                    // Jika ID sudah ada
-                    if (response.data.status === 'exist') {
-                        alert("ID sudah ada!");
-                    }
-                }
-            });
-        });
-    });
-</script>
