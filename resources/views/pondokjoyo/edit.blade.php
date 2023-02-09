@@ -168,7 +168,7 @@
                                 <select class="form-select" id="Status_Tanah" name="Status_Tanah" aria-label="State">
                                     <option selected>{{$data->Status_Tanah}}</option>
                                     <option value="YASAN">YASAN</option>
-                                    <option value="TANAH NEGARA">TANAH NEGARA</option>
+                                    <option value="NEGARA">NEGARA</option>
                                 </select>
                             </div>
                             <div class="col-2">
