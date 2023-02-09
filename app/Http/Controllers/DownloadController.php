@@ -355,4 +355,186 @@ class DownloadController extends Controller
         // Download file excel
         return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Mundurejo.xlsx'));
     }
+
+    public function exportMundurejo($No_Nominatif)
+    {
+        $data = Mundurejo::find($No_Nominatif);
+        if($data->No_KTP_NIK == $data->An_No_KTP_NIK){
+            $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('mundurejo.docx');
+        } else {
+            $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('mundurejo_dibawah_umur.docx');
+        }
+
+        
+        $phpWord->setValues([
+            'id' => $data->id,
+            'Blok' => $data->Blok,
+            'No_SPPT' => $data->No_SPPT,
+            'Tgl_Pendataan' => $data->Tgl_Pendataan,
+            'PBT' => $data->PBT,
+            'No_Berkas' => $data->No_Berkas,
+            'NUB' => $data->NUB,
+            'NIB' => $data->NIB,
+            'Luas_Ukur' => $data->Luas_Ukur,
+            'Beda_Luas' => $data->Beda_Luas,
+
+            'No_KTP_NIK' => $data->No_KTP_NIK,
+            'Nama' => $data->Nama,
+            'Tempat_Lahir' => $data->Tempat_Lahir,
+            'Tanggal_Lahir' => $data->Tanggal_Lahir,
+            'Usia' => $data->Usia,
+            'Alamat_Pemilik' => $data->Alamat_Pemilik,
+            'Agama' => $data->Agama,
+            'Pekerjaan' => $data->Pekerjaan,
+
+            'An_No_KTP_NIK' => $data->An_No_KTP_NIK,
+            'An_Nama' => $data->An_Nama,
+            'An_Tempat_Lahir' => $data->An_Tempat_Lahir,
+            'An_Tanggal_Lahir' => $data->An_Tanggal_Lahir,
+            'An_Usia' => $data->An_Usia,
+            'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
+
+            'RT_Letak_Tanah' => $data->RT_Letak_Tanah,
+            'RW_Letak_Tanah' => $data->RW_Letak_Tanah,
+            'Dusun_Letak_Tanah' => $data->Dusun_Letak_Tanah,
+            'Desa_Letak_Tanah' => $data->Desa_Letak_Tanah,
+            'Kec_Letak_Tanah' => $data->Kec_Letak_Tanah,
+            'Tahun_C' => $data->Tahun_C,
+            'No_C' => $data->No_C,
+            'No_Persil' => $data->No_Persil,
+            'Kelas' => $data->Kelas,
+            'Status_Tanah' => $data->Status_Tanah,
+            'Status_Penggunaan' => $data->Status_Penggunaan,
+            'Luas_Permohonan' => $data->Luas_Permohonan,
+            'Batas_Utara' => $data->Batas_Utara,
+            'Batas_Timur' => $data->Batas_Timur,
+            'Batas_Selatan' => $data->Batas_Selatan,
+            'Batas_Barat' => $data->Batas_Barat,
+
+            'Tahun_Peralihan_1' => $data->Tahun_Peralihan_1,
+            'Peralihan_1_Kepada' => $data->Peralihan_1_Kepada,
+            'Tahun_Peralihan_2' => $data->Tahun_Peralihan_2,
+            'Peralihan_2_Kepada' => $data->Peralihan_2_Kepada,
+            'Sebab_Peralihan_2' => $data->Sebab_Peralihan_2,
+            'Dasar_Peralihan_2' => $data->Dasar_Peralihan_2,
+            'Pemilik_Sebelumnya' => $data->Pemilik_Sebelumnya,
+            'Tahun_Perolehan_Terakhir' => $data->Tahun_Perolehan_Terakhir,
+            'Sebab_Peralihan_Terakhir' => $data->Sebab_Peralihan_Terakhir,
+            'Nama_Perolehan_Terakhir' => $data->Nama_Perolehan_Terakhir,
+            'Pemberi_Waris' => $data->Pemberi_Waris,
+            'Tahun_Meninggal' => $data->Tahun_Meninggal,
+            'Bukti_Waris' => $data->Bukti_Waris,
+            'Bukti_Jual_Beli' => $data->Bukti_Jual_Beli,
+            'Bukti_Hibah' => $data->Bukti_Hibah,
+            'Alas_Hak_Bukti_Perolehan' => $data->Alas_Hak_Bukti_Perolehan,
+
+            'Nama_Kades' => $data->Nama_Kades,
+            'Nama_Saksi_1' => $data->Nama_Saksi_1,
+            'NIK_Saksi_1' => $data->NIK_Saksi_1,
+            'Agama_Saksi_1' => $data->Agama_Saksi_1,
+            'Usia_Saksi_1' => $data->Usia_Saksi_1,
+            'Pekerjaan_Saksi_1' => $data->Pekerjaan_Saksi_1,
+            'Alamat_Saksi_1' => $data->Alamat_Saksi_1,
+            'Nama_Saksi_2' => $data->Nama_Saksi_2,
+            'NIK_Saksi_2' => $data->NIK_Saksi_2,
+            'Agama_Saksi_2' => $data->Agama_Saksi_2,
+            'Usia_Saksi_2' => $data->Usia_Saksi_2,
+            'Pekerjaan_Saksi_2' => $data->Pekerjaan_Saksi_2,
+            'Alamat_Saksi_2' => $data->Alamat_Saksi_2,        
+        ]);
+
+        $phpWord->saveAs( $data->id. ' - '. $data->Nama. '.docx');
+        return response()->download(public_path( $data->id. ' - '. $data->Nama. '.docx'))->deleteFileAfterSend(true);
+    }
+
+    public function exportPondokjoyo($No_Nominatif)
+    {
+        $data = Pondokjoyo::find($No_Nominatif);
+        if($data->No_KTP_NIK == $data->An_No_KTP_NIK){
+            $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('pondokjoyo.docx');
+        } else {
+            $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('pondokjoyo_dibawah_umur.docx');
+        }
+
+        
+        $phpWord->setValues([
+            'id' => $data->id,
+            'Blok' => $data->Blok,
+            'No_SPPT' => $data->No_SPPT,
+            'Tgl_Pendataan' => $data->Tgl_Pendataan,
+            'PBT' => $data->PBT,
+            'No_Berkas' => $data->No_Berkas,
+            'NUB' => $data->NUB,
+            'NIB' => $data->NIB,
+            'Luas_Ukur' => $data->Luas_Ukur,
+            'Beda_Luas' => $data->Beda_Luas,
+
+            'No_KTP_NIK' => $data->No_KTP_NIK,
+            'Nama' => $data->Nama,
+            'Tempat_Lahir' => $data->Tempat_Lahir,
+            'Tanggal_Lahir' => $data->Tanggal_Lahir,
+            'Usia' => $data->Usia,
+            'Alamat_Pemilik' => $data->Alamat_Pemilik,
+            'Agama' => $data->Agama,
+            'Pekerjaan' => $data->Pekerjaan,
+
+            'An_No_KTP_NIK' => $data->An_No_KTP_NIK,
+            'An_Nama' => $data->An_Nama,
+            'An_Tempat_Lahir' => $data->An_Tempat_Lahir,
+            'An_Tanggal_Lahir' => $data->An_Tanggal_Lahir,
+            'An_Usia' => $data->An_Usia,
+            'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
+
+            'RT_Letak_Tanah' => $data->RT_Letak_Tanah,
+            'RW_Letak_Tanah' => $data->RW_Letak_Tanah,
+            'Dusun_Letak_Tanah' => $data->Dusun_Letak_Tanah,
+            'Desa_Letak_Tanah' => $data->Desa_Letak_Tanah,
+            'Kec_Letak_Tanah' => $data->Kec_Letak_Tanah,
+            'Tahun_C' => $data->Tahun_C,
+            'No_C' => $data->No_C,
+            'No_Persil' => $data->No_Persil,
+            'Kelas' => $data->Kelas,
+            'Status_Tanah' => $data->Status_Tanah,
+            'Status_Penggunaan' => $data->Status_Penggunaan,
+            'Luas_Permohonan' => $data->Luas_Permohonan,
+            'Batas_Utara' => $data->Batas_Utara,
+            'Batas_Timur' => $data->Batas_Timur,
+            'Batas_Selatan' => $data->Batas_Selatan,
+            'Batas_Barat' => $data->Batas_Barat,
+
+            'Tahun_Peralihan_1' => $data->Tahun_Peralihan_1,
+            'Peralihan_1_Kepada' => $data->Peralihan_1_Kepada,
+            'Tahun_Peralihan_2' => $data->Tahun_Peralihan_2,
+            'Peralihan_2_Kepada' => $data->Peralihan_2_Kepada,
+            'Sebab_Peralihan_2' => $data->Sebab_Peralihan_2,
+            'Dasar_Peralihan_2' => $data->Dasar_Peralihan_2,
+            'Pemilik_Sebelumnya' => $data->Pemilik_Sebelumnya,
+            'Tahun_Perolehan_Terakhir' => $data->Tahun_Perolehan_Terakhir,
+            'Sebab_Peralihan_Terakhir' => $data->Sebab_Peralihan_Terakhir,
+            'Nama_Perolehan_Terakhir' => $data->Nama_Perolehan_Terakhir,
+            'Pemberi_Waris' => $data->Pemberi_Waris,
+            'Tahun_Meninggal' => $data->Tahun_Meninggal,
+            'Bukti_Waris' => $data->Bukti_Waris,
+            'Bukti_Jual_Beli' => $data->Bukti_Jual_Beli,
+            'Bukti_Hibah' => $data->Bukti_Hibah,
+            'Alas_Hak_Bukti_Perolehan' => $data->Alas_Hak_Bukti_Perolehan,
+
+            'Nama_Kades' => $data->Nama_Kades,
+            'Nama_Saksi_1' => $data->Nama_Saksi_1,
+            'NIK_Saksi_1' => $data->NIK_Saksi_1,
+            'Agama_Saksi_1' => $data->Agama_Saksi_1,
+            'Usia_Saksi_1' => $data->Usia_Saksi_1,
+            'Pekerjaan_Saksi_1' => $data->Pekerjaan_Saksi_1,
+            'Alamat_Saksi_1' => $data->Alamat_Saksi_1,
+            'Nama_Saksi_2' => $data->Nama_Saksi_2,
+            'NIK_Saksi_2' => $data->NIK_Saksi_2,
+            'Agama_Saksi_2' => $data->Agama_Saksi_2,
+            'Usia_Saksi_2' => $data->Usia_Saksi_2,
+            'Pekerjaan_Saksi_2' => $data->Pekerjaan_Saksi_2,
+            'Alamat_Saksi_2' => $data->Alamat_Saksi_2,        
+        ]);
+
+        $phpWord->saveAs( $data->id. ' - '. $data->Nama. '.docx');
+        return response()->download(public_path( $data->id. ' - '. $data->Nama. '.docx'))->deleteFileAfterSend(true);
+    }
 }

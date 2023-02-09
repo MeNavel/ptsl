@@ -28,4 +28,6 @@ Route::controller(MundurejoController::class)->group(function () {
 Route::controller(DownloadController::class)->group(function () {
     Route::get('/downloadpondokjoyo', 'downloadExcelPondokjoyo')->name('downloadExcelPondokjoyo');
     Route::get('/downloadmundurejo', 'downloadExcelMundurejo')->name('downloadExcelMundurejo');
+    Route::get('/mundurejo/{id}/export', 'exportMundurejo')->name('export-mundurejo');
+    Route::get('/pondokjoyo/{id}/export', 'exportPondokjoyo')->name('export-pondokjoyo');
 });

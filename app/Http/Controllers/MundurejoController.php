@@ -28,7 +28,8 @@ class MundurejoController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     return '<div class="btn-group">
-                                <a class="btn btn-primary" href="' . route('edit-mundurejo', $row->id) . '" role="button"><i class="bi bi-folder"></i></a>
+                                <a class="btn btn-info" href="' . route('edit-mundurejo', $row->id) . '" role="button"><i class="bi bi-info-circle"></i></a>
+                                <a class="btn btn-primary" href="' . route('export-mundurejo', $row->id) . '" role="button"><i class="bi bi-file-earmark-word"></i></a>
                                 <button class="btn btn-danger delete-btn" data-id="' . $row->id . '"><i class="bi-trash3"></i></button>
                             </div>';;
                 })
@@ -182,7 +183,12 @@ class MundurejoController extends Controller
 
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
         if ($request->Nama_Perolehan_Terakhir == "" && $request->Peralihan_2_Kepada != "") {
-            $data->Nama_Perolehan_Terakhir = $request->Nama;
+            if($data->No_KTP_NIK == $data->An_No_KTP_NIK){
+                $data->Nama_Perolehan_Terakhir = $request->Nama;
+            } else{
+                $data->Nama_Perolehan_Terakhir = $request->An_Nama;
+            }
+            
         } else {
             $data->Nama_Perolehan_Terakhir = $request->Nama_Perolehan_Terakhir;
         }
@@ -243,7 +249,7 @@ class MundurejoController extends Controller
         $data = Mundurejo::find($No_Nominatif);
         return view('mundurejo.edit', compact(['data']));
     }
-
+    
     /**
      * Update the specified resource in storage.
      *

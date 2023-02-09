@@ -28,7 +28,8 @@ class PondokjoyoController extends Controller
                 ->addIndexColumn()
                 ->addColumn('action', function ($row) {
                     return '<div class="btn-group">
-                                <a class="btn btn-primary" href="' . route('edit-pondokjoyo', $row->id) . '" role="button"><i class="bi bi-folder"></i></a>
+                                <a class="btn btn-info" href="' . route('edit-pondokjoyo', $row->id) . '" role="button"><i class="bi bi-info-circle"></i></a>
+                                <a class="btn btn-primary" href="' . route('export-pondokjoyo', $row->id) . '" role="button"><i class="bi bi-file-earmark-word"></i></a>
                                 <button class="btn btn-danger delete-btn" data-id="' . $row->id . '"><i class="bi-trash3"></i></button>
                             </div>';;
                 })
