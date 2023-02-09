@@ -108,13 +108,13 @@
                                 });
                                 $(document).on('click', '.delete-btn', function() {
                                     Swal.fire({
-                                        title: 'Are you sure?',
-                                        text: "You won't be able to revert this!",
+                                        title: 'Yakin Ingin Menghapus Data?',
+                                        text: "Data yang dihapus tidak dapat dikembalikan",
                                         icon: 'warning',
                                         showCancelButton: true,
                                         confirmButtonColor: '#3085d6',
                                         cancelButtonColor: '#d33',
-                                        confirmButtonText: 'Yes, delete it!'
+                                        confirmButtonText: 'Ya, Hapus Data!'
                                     }).then((result) => {
                                         if (result.value) {
                                             var id = $(this).data('id');
@@ -127,11 +127,13 @@
                                                 },
                                                 success: function(data) {
                                                     table.draw();
-                                                    Swal.fire(
-                                                        'Deleted!',
-                                                        'Your file has been deleted.',
-                                                        'success'
-                                                    );
+                                                    Swal.fire({
+                                                        position: 'mid',
+                                                        icon: 'success',
+                                                        title: 'Data Berhasil Dihapus',
+                                                        showConfirmButton: false,
+                                                        timer: 1000
+                                                    })
                                                 },
                                                 error: function() {
                                                     Swal.fire(

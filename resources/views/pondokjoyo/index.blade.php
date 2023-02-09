@@ -134,7 +134,7 @@
                                                         icon: 'success',
                                                         title: 'Data Berhasil Dihapus',
                                                         showConfirmButton: false,
-                                                        timer: 1500
+                                                        timer: 1000
                                                     })
                                                 },
                                                 error: function() {
