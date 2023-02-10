@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Mundurejo;
 use App\Models\Pondokjoyo;
 use Illuminate\Http\Request;
@@ -98,7 +99,7 @@ class DownloadController extends Controller
             $sheet->setCellValue('A' . $row, $item->id);
             $sheet->setCellValue('B' . $row, $item->Blok);
             $sheet->setCellValue('C' . $row, $item->No_SPPT);
-            $sheet->setCellValue('D' . $row, $item->Tgl_Pendataan);
+            $sheet->setCellValue('D' . $row, Carbon::createFromFormat('Y-m-d', $item->Tgl_Pendataan)->format('d-m-Y'));
             $sheet->setCellValue('E' . $row, $item->PBT);
             $sheet->setCellValue('F' . $row, $item->No_Berkas);
             $sheet->setCellValue('G' . $row, $item->NUB);
@@ -109,7 +110,7 @@ class DownloadController extends Controller
             $sheet->setCellValueExplicit('L' . $row, $item->No_KTP_NIK, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
             $sheet->setCellValue('M' . $row, $item->Nama);
             $sheet->setCellValue('N' . $row, $item->Tempat_Lahir);
-            $sheet->setCellValue('O' . $row, $item->Tanggal_Lahir);
+            $sheet->setCellValue('O' . $row, Carbon::createFromFormat('Y-m-d', $item->Tanggal_Lahir)->format('d-m-Y'));
             $sheet->setCellValue('P' . $row, $item->Usia);
             $sheet->setCellValue('Q' . $row, $item->Alamat_Pemilik);
             $sheet->setCellValue('R' . $row, $item->Agama);
@@ -117,7 +118,7 @@ class DownloadController extends Controller
             $sheet->setCellValueExplicit('T' . $row, $item->An_No_KTP_NIK, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
             $sheet->setCellValue('U' . $row, $item->An_Nama);
             $sheet->setCellValue('V' . $row, $item->An_Tempat_Lahir);
-            $sheet->setCellValue('W' . $row, $item->An_Tanggal_Lahir);
+            $sheet->setCellValue('W' . $row, Carbon::createFromFormat('Y-m-d', $item->An_Tanggal_Lahir)->format('d-m-Y'));
             $sheet->setCellValue('X' . $row, $item->An_Usia);
             $sheet->setCellValue('Y' . $row, $item->An_Alamat_Pemilik);
             $sheet->setCellValue('Z' . $row, $item->RT_Letak_Tanah);
@@ -277,7 +278,7 @@ class DownloadController extends Controller
             $sheet->setCellValueExplicit('L' . $row, $item->No_KTP_NIK, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
             $sheet->setCellValue('M' . $row, $item->Nama);
             $sheet->setCellValue('N' . $row, $item->Tempat_Lahir);
-            $sheet->setCellValue('O' . $row, $item->Tanggal_Lahir);
+            $sheet->setCellValue('O' . $row, Carbon::createFromFormat('Y-m-d', $item->Tanggal_Lahir)->format('d-m-Y'));
             $sheet->setCellValue('P' . $row, $item->Usia);
             $sheet->setCellValue('Q' . $row, $item->Alamat_Pemilik);
             $sheet->setCellValue('R' . $row, $item->Agama);
@@ -285,7 +286,7 @@ class DownloadController extends Controller
             $sheet->setCellValueExplicit('T' . $row, $item->An_No_KTP_NIK, \PhpOffice\PhpSpreadsheet\Cell\DataType::TYPE_STRING);
             $sheet->setCellValue('U' . $row, $item->An_Nama);
             $sheet->setCellValue('V' . $row, $item->An_Tempat_Lahir);
-            $sheet->setCellValue('W' . $row, $item->An_Tanggal_Lahir);
+            $sheet->setCellValue('W' . $row, Carbon::createFromFormat('Y-m-d', $item->An_Tanggal_Lahir)->format('d-m-Y'));
             $sheet->setCellValue('X' . $row, $item->An_Usia);
             $sheet->setCellValue('Y' . $row, $item->An_Alamat_Pemilik);
             $sheet->setCellValue('Z' . $row, $item->RT_Letak_Tanah);
@@ -361,7 +362,7 @@ class DownloadController extends Controller
             'id' => $data->id,
             'Blok' => $data->Blok,
             'No_SPPT' => $data->No_SPPT,
-            'Tgl_Pendataan' => $data->Tgl_Pendataan,
+            'Tgl_Pendataan' => Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y'),
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
@@ -372,7 +373,7 @@ class DownloadController extends Controller
             'No_KTP_NIK' => $data->No_KTP_NIK,
             'Nama' => $data->Nama,
             'Tempat_Lahir' => $data->Tempat_Lahir,
-            'Tanggal_Lahir' => $data->Tanggal_Lahir,
+            'Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->Tanggal_Lahir)->format('d-m-Y'),
             'Usia' => $data->Usia,
             'Alamat_Pemilik' => $data->Alamat_Pemilik,
             'Agama' => $data->Agama,
@@ -381,7 +382,7 @@ class DownloadController extends Controller
             'An_No_KTP_NIK' => $data->An_No_KTP_NIK,
             'An_Nama' => $data->An_Nama,
             'An_Tempat_Lahir' => $data->An_Tempat_Lahir,
-            'An_Tanggal_Lahir' => $data->An_Tanggal_Lahir,
+            'An_Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->An_Tanggal_Lahir)->format('d-m-Y'),
             'An_Usia' => $data->An_Usia,
             'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
 
@@ -452,7 +453,7 @@ class DownloadController extends Controller
             'id' => $data->id,
             'Blok' => $data->Blok,
             'No_SPPT' => $data->No_SPPT,
-            'Tgl_Pendataan' => $data->Tgl_Pendataan,
+            'Tgl_Pendataan' => Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y'),
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
@@ -463,7 +464,7 @@ class DownloadController extends Controller
             'No_KTP_NIK' => $data->No_KTP_NIK,
             'Nama' => $data->Nama,
             'Tempat_Lahir' => $data->Tempat_Lahir,
-            'Tanggal_Lahir' => $data->Tanggal_Lahir,
+            'Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->Tanggal_Lahir)->format('d-m-Y'),
             'Usia' => $data->Usia,
             'Alamat_Pemilik' => $data->Alamat_Pemilik,
             'Agama' => $data->Agama,
@@ -472,7 +473,7 @@ class DownloadController extends Controller
             'An_No_KTP_NIK' => $data->An_No_KTP_NIK,
             'An_Nama' => $data->An_Nama,
             'An_Tempat_Lahir' => $data->An_Tempat_Lahir,
-            'An_Tanggal_Lahir' => $data->An_Tanggal_Lahir,
+            'An_Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->An_Tanggal_Lahir)->format('d-m-Y'),
             'An_Usia' => $data->An_Usia,
             'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
 
