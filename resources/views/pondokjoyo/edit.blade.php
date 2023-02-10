@@ -148,8 +148,12 @@
                             </div>
                             <div class="col-2">
                                 <label for="Dusun_Letak_Tanah" class="form-label">Dusun</label>
-                                <input type="text" name="Dusun_Letak_Tanah" class="form-control" value="{{$data->Dusun_Letak_Tanah}}"
-                                    id="Dusun_Letak_Tanah">
+                                <select class="form-select" id="Dusun_Letak_Tanah" name="Dusun_Letak_Tanah"
+                                    aria-label="State">
+                                    <option selected>{{ $data->Dusun_Letak_Tanah }}</option>
+                                    <option value="SONGON">SONGON</option>
+                                    <option value="PONDOK RAMPAL">PONDOK RAMPAL</option>
+                                </select>
                             </div>
                             <div class="col-2">
                                 <label for="No_C" class="form-label">Nomor C</label>
