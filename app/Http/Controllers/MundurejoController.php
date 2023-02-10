@@ -36,7 +36,6 @@ class MundurejoController extends Controller
                 ->rawColumns(['action'])
                 ->make(true);
         }
-
         return view('mundurejo.index');
         // $k1 = K1::all();
         // return view('k1.new', compact(['k1']));
