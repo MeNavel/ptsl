@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Mundurejo;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
@@ -77,15 +78,12 @@ class MundurejoController extends Controller
         $luas_2 = $request->Luas_Permohonan;
         if ($request->Luas_Ukur == "") {
             $luas_1 = 0;
-            $hasil = null;
         } else if ($request->Luas_Permohonan == "") {
             $luas_2 = 0;
-            $hasil = null;
-        } else {
-            $hasil = (abs($luas_1 - $luas_2) / $luas_1) * 100;
         }
 
         $data = new Mundurejo;
+
         $data->id = $request->No_Nominatif;
         $data->Blok = $request->Blok;
         $data->No_SPPT = $request->No_SPPT;
@@ -182,12 +180,11 @@ class MundurejoController extends Controller
 
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
         if ($request->Nama_Perolehan_Terakhir == "" && $request->Peralihan_2_Kepada != "") {
-            if($data->No_KTP_NIK == $data->An_No_KTP_NIK){
+            if ($data->No_KTP_NIK == $data->An_No_KTP_NIK) {
                 $data->Nama_Perolehan_Terakhir = $request->Nama;
-            } else{
+            } else {
                 $data->Nama_Perolehan_Terakhir = $request->An_Nama;
             }
-            
         } else {
             $data->Nama_Perolehan_Terakhir = $request->Nama_Perolehan_Terakhir;
         }
@@ -248,7 +245,7 @@ class MundurejoController extends Controller
         $data = Mundurejo::find($No_Nominatif);
         return view('mundurejo.edit', compact(['data']));
     }
-    
+
     /**
      * Update the specified resource in storage.
      *

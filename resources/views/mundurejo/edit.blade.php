@@ -295,7 +295,7 @@
                                 <input type="text" name="Alas_Hak_Bukti_Perolehan" class="form-control"
                                     value="{{ $data->Alas_Hak_Bukti_Perolehan }}" id="Alas_Hak_Bukti_Perolehan">
                             </div>
-                            <div class="col-12">
+                            <div class="col-10">
                                 <label for="Koordinator" class="form-label">Koordinator</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected>{{ $data->Koordinator }}</option>
@@ -314,6 +314,12 @@
                                     <option value="H. MUHSIN">RT 13 - H. MUHSIN</option>
                                     <option value="MOH. AMIN">RT 14 - MOH. AMIN</option>
                                 </select>
+                            </div>
+
+                            <div class="col-2">
+                                <label for="Tgl_Pendataan" class="form-label">Tanggal Pendataan</label>
+                                <input type="date" name="Tgl_Pendataan" class="form-control"
+                                value="{{ $data->Tgl_Pendataan }}" id="Tgl_Pendataan">
                             </div>
 
                             <div class="text-center">
