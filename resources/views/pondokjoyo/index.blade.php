@@ -21,7 +21,7 @@
             <div class="col-lg-12">
                 <div class="container card">
                     <div class="card-body">
-                        <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Pondokjoyo</h5>
+                        <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Pondok Joyo</h5>
                         <a href="/pondokjoyo/create" class="btn btn-primary">Tambah Data</a>
                         <a href="/downloadpondokjoyo" class="btn btn-primary">Download Excel</a>
                         <br><br>

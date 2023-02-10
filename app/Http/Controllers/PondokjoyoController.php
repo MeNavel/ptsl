@@ -65,7 +65,7 @@ class PondokjoyoController extends Controller
         //     'votes' => 0
         // ]);
 
-        $desa = "PONDOKJOYO";
+        $desa = "PONDOK JOYO";
         $kecamatan = "SEMBORO";
         $kades = "DIDIK SAENULLA";
 
@@ -78,12 +78,8 @@ class PondokjoyoController extends Controller
         $luas_2 = $request->Luas_Permohonan;
         if ($request->Luas_Ukur == "") {
             $luas_1 = 0;
-            $hasil = null;
         } else if ($request->Luas_Permohonan == "") {
             $luas_2 = 0;
-            $hasil = null;
-        } else {
-            $hasil = (abs($luas_1 - $luas_2) / $luas_1) * 100;
         }
 
         $data = new Pondokjoyo;
