@@ -268,7 +268,7 @@ class DownloadController extends Controller
             $sheet->setCellValue('A' . $row, $item->id);
             $sheet->setCellValue('B' . $row, $item->Blok);
             $sheet->setCellValue('C' . $row, $item->No_SPPT);
-            $sheet->setCellValue('D' . $row, $item->Tgl_Pendataan);
+            $sheet->setCellValue('D' . $row, Carbon::createFromFormat('Y-m-d', $item->Tgl_Pendataan)->format('d-m-Y'));
             $sheet->setCellValue('E' . $row, $item->PBT);
             $sheet->setCellValue('F' . $row, $item->No_Berkas);
             $sheet->setCellValue('G' . $row, $item->NUB);
@@ -436,7 +436,7 @@ class DownloadController extends Controller
             $sheet->setCellValue('A' . $row, $item->id);
             $sheet->setCellValue('B' . $row, $item->Blok);
             $sheet->setCellValue('C' . $row, $item->No_SPPT);
-            $sheet->setCellValue('D' . $row, $item->Tgl_Pendataan);
+            $sheet->setCellValue('D' . $row, Carbon::createFromFormat('Y-m-d', $item->Tgl_Pendataan)->format('d-m-Y'));
             $sheet->setCellValue('E' . $row, $item->PBT);
             $sheet->setCellValue('F' . $row, $item->No_Berkas);
             $sheet->setCellValue('G' . $row, $item->NUB);
