@@ -316,7 +316,7 @@
                                     var filter = /^[0-9]*$/;
                                     if (!filter.test(No_Nominatif)) {
                                         $('#cek_nominatif').show();
-                                        $('#cek_nominatif').html('<label class="text-danger">No Nominatif Harus Angka</label>');
+                                        $('#cek_nominatif').html('<label class="text-danger">Nomor Nominatif Harus Angka</label>');
                                         $('#submit').attr('disabled', 'true');
                                     } else {
                                         $.ajax({
@@ -330,7 +330,7 @@
                                                 if (result == 'not_unique') {
                                                     $('#cek_nominatif').show();
                                                     $('#cek_nominatif').html(
-                                                        '<label class="text-danger">No Nominatif Sudah Digunakan</label>'
+                                                        '<label class="text-danger">Nomor Nominatif Sudah Digunakan</label>'
                                                     );
                                                     $('#submit').attr('disabled', true);
                                                 } else {
