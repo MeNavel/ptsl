@@ -175,10 +175,10 @@ class DownloadController extends Controller
 
         // Simpan file excel
         $writer = new Xlsx($spreadsheet);
-        $writer->save('Nominatif Pendaftaran PTSL Desa Pondokjoyo.xlsx');
+        $writer->saveAs('Nominatif Pendaftaran PTSL Desa Pondokjoyo.xlsx');
 
         // Download file excel
-        return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Pondokjoyo.xlsx'));
+        return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Pondokjoyo.xlsx'))->deleteFileAfterSend(true);
     }
 
     public function downloadExcelMundurejo()
@@ -343,10 +343,10 @@ class DownloadController extends Controller
 
         // Simpan file excel
         $writer = new Xlsx($spreadsheet);
-        $writer->save('Nominatif Pendaftaran PTSL Desa Mundurejo.xlsx');
+        $writer->saveAs('Nominatif Pendaftaran PTSL Desa Mundurejo.xlsx');
 
         // Download file excel
-        return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Mundurejo.xlsx'));
+        return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Mundurejo.xlsx'))->deleteFileAfterSend(true);
     }
 
     public function downloadExcelSidomekar()
@@ -511,10 +511,10 @@ class DownloadController extends Controller
 
         // Simpan file excel
         $writer = new Xlsx($spreadsheet);
-        $writer->save('Nominatif Pendaftaran PTSL Desa Sidomekar.xlsx');
+        $writer->saveAs('Nominatif Pendaftaran PTSL Desa Sidomekar.xlsx');
 
         // Download file excel
-        return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Sidomekar.xlsx'));
+        return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Sidomekar.xlsx'))->deleteFileAfterSend(true);
     }
 
     public function exportMundurejo($No_Nominatif)
