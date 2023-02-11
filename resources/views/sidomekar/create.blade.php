@@ -161,8 +161,9 @@
                                 <label for="Dusun_Letak_Tanah" class="form-label">Dusun</label>
                                 <select class="form-select" id="Dusun_Letak_Tanah" name="Dusun_Letak_Tanah"
                                     aria-label="State">
-                                    <option selected>SONGON</option>
-                                    <option value="PONDOK RAMPAL">PONDOK RAMPAL</option>
+                                    <option selected>BETENG</option>
+                                    <option value="BABATAN">BABATAN</option>
+                                    <option value="BESUKI">BESUKI</option>
                                 </select>
                             </div>
                             <div class="col-2">
@@ -279,22 +280,9 @@
                                 <label for="Koordinator" class="form-label">Koordinator</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected></option>
-                                    <option value="EDI BEDOR">EDI BEDOR</option>
-                                    <option value="BUDIONO">BUDIONO</option>
-                                    <option value="MUHAMMAD ADI">MUHAMMAD ADI</option>
-                                    <option value="MAYAR">MAYAR</option>
-                                    <option value="SUTRISNO">SUTRISNO</option>
-                                    <option value="SONI S">SONI S</option>
-                                    <option value="MULYONO">MULYONO</option>
-                                    <option value="ABUYANTO">ABUYANTO</option>
-                                    <option value="SIONO">SIONO</option>
-                                    <option value="SUNAR">SUNAR</option>
-                                    <option value="NITO">NITO</option>
-                                    <option value="RUM">RUM</option>
-                                    <option value="MUDHARI">MUDHARI</option>
-                                    <option value="SANAWI">SANAWI</option>
-                                    <option value="WAWAN">WAWAN</option>
-                                    <option value="FAUZAN">FAUZAN</option>
+                                    <option value="SLAMET">BETENG - SLAMET</option>
+                                    <option value="MISDARI">BABATAN - MISDARI</option>
+                                    <option value="SAIFUL BAHRI">BESUKI - SAIFUL BAHRI</option>
                                 </select>
                             </div>
 

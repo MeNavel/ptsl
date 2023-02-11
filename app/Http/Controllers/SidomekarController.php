@@ -68,6 +68,37 @@ class SidomekarController extends Controller
         $kecamatan = "SEMBORO";
         $kades = "EDI SANTOSO";
 
+        $Nama_Saksi_2 = "BUDIONO";
+        $NIK_Saksi_2 = "3509071011790003";
+        $Agama_Saksi_2 = "ISLAM";
+        $Usia_Saksi_2 = "43";
+        $Pekerjaan_Saksi_2 = "WIRASWASTA";
+        $Alamat_Saksi_2 = "DUSUN BETENG RT 002 RW 008 DESA SIDOMEKAR KECAMATAN SEMBORO";
+
+        if ($request->Koordinator == "SLAMET") {
+            $Nama_Saksi_1 = "SLAMET";
+            $NIK_Saksi_1 = "3509070902670003";
+            $Agama_Saksi_1 = "ISLAM";
+            $Usia_Saksi_1 = "55";
+            $Pekerjaan_Saksi_1 = "PERANGKAT DESA";
+            $Alamat_Saksi_1 = "DUSUN BETENG RT 004 RW 004 DESA SIDOMEKAR KECAMATAN SEMBORO";
+        } else if ($request->Koordinator == "MISDARI") {
+            $Nama_Saksi_1 = "MISDARI";
+            $NIK_Saksi_1 = "3509071505630001";
+            $Agama_Saksi_1 = "ISLAM";
+            $Usia_Saksi_1 = "60";
+            $Pekerjaan_Saksi_1 = "PERANGKAT DESA";
+            $Alamat_Saksi_1 = "DUSUN BABATAN RT 002 RW 016 DESA SIDOMEKAR KECAMATAN SEMBORO";
+        } else if ($request->Koordinator == "SAIFUL BAHRI") {
+            $Nama_Saksi_1 = "SAIFUL BAHRI";
+            $NIK_Saksi_1 = "3509072009640001";
+            $Agama_Saksi_1 = "ISLAM";
+            $Usia_Saksi_1 = "58";
+            $Pekerjaan_Saksi_1 = "PERANGKAT DESA";
+            $Alamat_Saksi_1 = "DUSUN BESUKI RT 001 RW 0027 DESA SIDOMEKAR KECAMATAN SEMBORO";
+        }
+
+
         $data = Sidomekar::find($request->No_Nominatif);
         if ($data) {
             $data->delete();
@@ -217,6 +248,21 @@ class SidomekarController extends Controller
 
         $data->Alas_Hak_Bukti_Perolehan = $request->Alas_Hak_Bukti_Perolehan;
         $data->Nama_Kades = $kades;
+
+        $data->Nama_Saksi_1 = $Nama_Saksi_1;
+        $data->NIK_Saksi_1 = $NIK_Saksi_1;
+        $data->Agama_Saksi_1 = $Agama_Saksi_1;
+        $data->Usia_Saksi_1 = $Usia_Saksi_1;
+        $data->Pekerjaan_Saksi_1 =  $Pekerjaan_Saksi_1;
+        $data->Alamat_Saksi_1 = $Alamat_Saksi_1;
+
+        $data->Nama_Saksi_2 = $Nama_Saksi_2;
+        $data->NIK_Saksi_2 = $NIK_Saksi_2;
+        $data->Agama_Saksi_2 = $Agama_Saksi_2;
+        $data->Usia_Saksi_2 = $Usia_Saksi_2;
+        $data->Pekerjaan_Saksi_2 =  $Pekerjaan_Saksi_2;
+        $data->Alamat_Saksi_2 = $Alamat_Saksi_2;
+
         $data->Koordinator = $request->Koordinator;
         $data->save();
         return view('sidomekar.index');
