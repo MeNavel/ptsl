@@ -19,6 +19,7 @@
                     <div class="text-center">
                         <a href="/pondokjoyo" class="btn btn-primary">Pondokjoyo</a>
                         <a href="/mundurejo" class="btn btn-primary">Mundurejo</a>
+                        <a href="/sidomekar" class="btn btn-primary">Sidomekar</a>
                         @if ( Auth::user()->id == "1")
                         <a class="btn btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
                         @endif
