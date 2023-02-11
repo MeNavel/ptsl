@@ -266,4 +266,18 @@ class PondokjoyoController extends Controller
             return response()->json(['success' => 'Data Deleted Successfully']);
         };
     }
+
+    public function cek_nominatif(Request $request)
+    { {
+            if ($request->get('No_Nominatif')) {
+                $No_Nominatif = $request->get('No_Nominatif');
+                $data = Pondokjoyo::find($No_Nominatif);
+                if ($data) {
+                    echo 'not_unique';
+                } else {
+                    echo 'unique';
+                }
+            }
+        }
+    }
 }

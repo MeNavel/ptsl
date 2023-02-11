@@ -271,4 +271,18 @@ class MundurejoController extends Controller
             return response()->json(['success' => 'Data Deleted Successfully']);
         };
     }
+
+    public function cek_nominatif(Request $request)
+    { {
+            if ($request->get('No_Nominatif')) {
+                $No_Nominatif = $request->get('No_Nominatif');
+                $data = Mundurejo::find($No_Nominatif);
+                if ($data) {
+                    echo 'not_unique';
+                } else {
+                    echo 'unique';
+                }
+            }
+        }
+    }
 }

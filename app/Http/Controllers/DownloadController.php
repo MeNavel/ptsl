@@ -351,10 +351,11 @@ class DownloadController extends Controller
     public function exportMundurejo($No_Nominatif)
     {
         $data = Mundurejo::find($No_Nominatif);
+        $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('berkas.docx');
         if($data->No_KTP_NIK == $data->An_No_KTP_NIK){
-            $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('mundurejo.docx');
+            $bertindak = "untuk diri sendiri";
         } else {
-            $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('mundurejo_dibawah_umur.docx');
+            $bertindak = "selaku kuasa";
         }
 
         
@@ -369,6 +370,8 @@ class DownloadController extends Controller
             'NIB' => $data->NIB,
             'Luas_Ukur' => $data->Luas_Ukur,
             'Beda_Luas' => $data->Beda_Luas,
+
+            'Bertindak' => $bertindak,
 
             'No_KTP_NIK' => $data->No_KTP_NIK,
             'Nama' => $data->Nama,
@@ -442,10 +445,11 @@ class DownloadController extends Controller
     public function exportPondokjoyo($No_Nominatif)
     {
         $data = Pondokjoyo::find($No_Nominatif);
+        $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('berkas.docx');
         if($data->No_KTP_NIK == $data->An_No_KTP_NIK){
-            $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('pondokjoyo.docx');
+            $bertindak = "untuk diri sendiri";
         } else {
-            $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('pondokjoyo_dibawah_umur.docx');
+            $bertindak = "selaku kuasa";
         }
 
         
@@ -460,6 +464,8 @@ class DownloadController extends Controller
             'NIB' => $data->NIB,
             'Luas_Ukur' => $data->Luas_Ukur,
             'Beda_Luas' => $data->Beda_Luas,
+
+            'Bertindak' => $bertindak,
 
             'No_KTP_NIK' => $data->No_KTP_NIK,
             'Nama' => $data->Nama,

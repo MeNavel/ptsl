@@ -31,8 +31,8 @@
                             @csrf
                             <div class="col-md-3">
                                 <label for="No_Nominatif" class="form-label">Nomor Nominatif</label>
-                                <input type="text" name="No_Nominatif" class="form-control" id="No_Nominatif"
-                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                <input type="text" name="No_Nominatif" class="form-control" id="No_Nominatif">
+                                <span id="cek_nominatif"></span>
                             </div>
                             <div class="col-md-3">
                                 <label for="Blok" class="form-label">Blok</label>
@@ -309,6 +309,43 @@
                                 <button type="reset" class="btn btn-secondary">Reset</button>
                             </div>
                         </form><!-- End Multi Columns Form -->
+                        <script>
+                            $(document).ready(function() {
+
+                                $('#No_Nominatif').blur(function() {
+                                    var No_Nominatif = $('#No_Nominatif').val();
+                                    var _token = $('input[name="_token"]').val();
+                                    var filter = /^[0-9]*$/;
+                                    if (!filter.test(No_Nominatif)) {
+                                        $('#cek_nominatif').show();
+                                        $('#cek_nominatif').html('<label class="text-danger">No Nominatif Harus Angka</label>');
+                                        $('#submit').attr('disabled', 'true');
+                                    } else {
+                                        $.ajax({
+                                            url: "{{ route('cek-pondokjoyo') }}",
+                                            method: "POST",
+                                            data: {
+                                                No_Nominatif: No_Nominatif,
+                                                _token: _token
+                                            },
+                                            success: function(result) {
+                                                if (result == 'not_unique') {
+                                                    $('#cek_nominatif').show();
+                                                    $('#cek_nominatif').html(
+                                                        '<label class="text-danger">No Nominatif Sudah Digunakan</label>'
+                                                    );
+                                                    $('#submit').attr('disabled', true);
+                                                } else {
+                                                    $('#cek_nominatif').hide();
+                                                    $('#submit').attr('disabled', false);
+                                                }
+                                            }
+                                        })
+                                    }
+                                });
+
+                            });
+                        </script>
                     </div>
                 </div>
             </div>

@@ -10,6 +10,7 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::controller(PondokjoyoController::class)->group(function () {
+    Route::post('/pondokjoyo/cek', 'cek_nominatif')->name('cek-pondokjoyo');
     Route::get('/pondokjoyo', 'index')->name('pondokjoyo.index');
     Route::get('/pondokjoyo/create', 'create')->name('create-pondokjoyo');
     Route::post('/pondokjoyo/store', 'store');
@@ -18,6 +19,7 @@ Route::controller(PondokjoyoController::class)->group(function () {
 });
 
 Route::controller(MundurejoController::class)->group(function () {
+    Route::post('/mundurejo/cek', 'cek_nominatif')->name('cek-mundurejo');
     Route::get('/mundurejo', 'index')->name('mundurejo.index');
     Route::get('/mundurejo/create', 'create')->name('create-mundurejo');
     Route::post('/mundurejo/store', 'store');
