@@ -300,8 +300,7 @@
 
                             <div class="col-2">
                                 <label for="Tgl_Pendataan" class="form-label">Tanggal Pendataan</label>
-                                <input type="date" name="Tgl_Pendataan" class="form-control"
-                                    id="Tgl_Pendataan">
+                                <input type="date" name="Tgl_Pendataan" class="form-control" id="Tgl_Pendataan">
                             </div>
 
                             <div class="text-center">
@@ -318,7 +317,8 @@
                                     var filter = /^[0-9]*$/;
                                     if (!filter.test(No_Nominatif)) {
                                         $('#cek_nominatif').show();
-                                        $('#cek_nominatif').html('<label class="text-danger">Nomor Nominatif Harus Angka</label>');
+                                        $('#cek_nominatif').html(
+                                            '<label class="text-danger">Nomor Nominatif Harus Angka</label>');
                                         $('#submit').attr('disabled', 'true');
                                     } else {
                                         $.ajax({
@@ -349,6 +349,6 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
     </section>
 @endsection
