@@ -175,7 +175,7 @@ class DownloadController extends Controller
 
         // Simpan file excel
         $writer = new Xlsx($spreadsheet);
-        $writer->saveAs('Nominatif Pendaftaran PTSL Desa Pondokjoyo.xlsx');
+        $writer->save('Nominatif Pendaftaran PTSL Desa Pondokjoyo.xlsx');
 
         // Download file excel
         return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Pondokjoyo.xlsx'))->deleteFileAfterSend(true);
@@ -343,7 +343,7 @@ class DownloadController extends Controller
 
         // Simpan file excel
         $writer = new Xlsx($spreadsheet);
-        $writer->saveAs('Nominatif Pendaftaran PTSL Desa Mundurejo.xlsx');
+        $writer->save('Nominatif Pendaftaran PTSL Desa Mundurejo.xlsx');
 
         // Download file excel
         return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Mundurejo.xlsx'))->deleteFileAfterSend(true);
@@ -511,7 +511,7 @@ class DownloadController extends Controller
 
         // Simpan file excel
         $writer = new Xlsx($spreadsheet);
-        $writer->saveAs('Nominatif Pendaftaran PTSL Desa Sidomekar.xlsx');
+        $writer->save('Nominatif Pendaftaran PTSL Desa Sidomekar.xlsx');
 
         // Download file excel
         return response()->download(public_path('Nominatif Pendaftaran PTSL Desa Sidomekar.xlsx'))->deleteFileAfterSend(true);
