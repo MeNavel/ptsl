@@ -19,7 +19,7 @@
                             @csrf
                             <div class="col-md-3">
                                 <label for="No_Nominatif" class="form-label">Nomor Nominatif</label>
-                                <input type="text" name="No_Nominatif" class="form-control" id="No_Nominatif" value="{{$data->id}}"
+                                <input type="text" name="No_Nominatif" class="form-control" id="No_Nominatif" value="{{$data->id}}" readonly
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                             </div>
                             <div class="col-md-3">
