@@ -221,15 +221,16 @@ class MundurejoController extends Controller
 
         $data->Alas_Hak_Bukti_Perolehan = $request->Alas_Hak_Bukti_Perolehan;
         $data->Nama_Kades = $kades;
-        $data->Koordinator = $request->Koordinator;
+        
 
         $data_saksi_1 = Koordinator::where([
-            ['nama', '=', $request->Koordinator],
+            ['jabatan', '=', $request->Koordinator],
             ['dusun', '=', $request->Dusun_Letak_Tanah],
             ['desa', '=', $desa],
-            ['desa', '=', 'SAKSI 1'],
+            ['status', '=', 'SAKSI 1'],
         ])->first();
         if ($data_saksi_1 != null) {
+            $data->Koordinator = $data_saksi_1->nama;
             $data->Nama_Saksi_1 = $data_saksi_1->nama;
             $data->NIK_Saksi_1 = $data_saksi_1->nik;
             $data->Agama_Saksi_1 = $data_saksi_1->agama;
@@ -239,7 +240,7 @@ class MundurejoController extends Controller
             $data_saksi_2 = Koordinator::where([
                 ['dusun', '=', $request->Dusun_Letak_Tanah],
                 ['desa', '=', $desa],
-                ['desa', '=', 'SAKSI 2'],
+                ['status', '=', 'SAKSI 2'],
             ])->first();
             if ($data_saksi_2 != null) {
                 $data->Nama_Saksi_2 = $data_saksi_2->nama;
@@ -250,9 +251,6 @@ class MundurejoController extends Controller
                 $data->Alamat_Saksi_2 = $data_saksi_2->alamat;
             }
         }
-
-
-
         $data->save();
         return view('mundurejo.index');
     }

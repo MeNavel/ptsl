@@ -299,20 +299,20 @@
                                 <label for="Koordinator" class="form-label">Koordinator</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected>{{ $data->Koordinator }}</option>
-                                    <option value="SOFYAN HADI">RT 01 - SOFYAN HADI</option>
-                                    <option value="ANDRI CAHYONO">RT 02 - ANDRI CAHYONO</option>
-                                    <option value="MUHADI">RT 03 - MUHADI</option>
-                                    <option value="SUTOPO">RT 04 - SUTOPO</option>
-                                    <option value="EDI MESDIONO">RT 05 - EDI MESDIONO</option>
-                                    <option value="DENDI P">RT 06 - DENDI P</option>
-                                    <option value="ANDRIYONO">RT 07 - ANDRIYONO</option>
-                                    <option value="SURADI">RT 08 - SURADI</option>
-                                    <option value="MUKHOLIL">RT 09 - MUKHOLIL</option>
-                                    <option value="DHEHAN">RT 10 - DHEHAN</option>
-                                    <option value="SANTOSO">RT 11 - SANTOSO</option>
-                                    <option value="H. BUKHORI">RT 12 - H. BUKHORI</option>
-                                    <option value="H. MUHSIN">RT 13 - H. MUHSIN</option>
-                                    <option value="MOH. AMIN">RT 14 - MOH. AMIN</option>
+                                    <option value="001">01 - SOFYAN HADI</option>
+                                    <option value="002">02 - ANDRI CAHYONO</option>
+                                    <option value="003">03 - MUHADI</option>
+                                    <option value="004">04 - SUTOPO</option>
+                                    <option value="005">05 - EDI MESDIONO</option>
+                                    <option value="006">06 - DENDI P</option>
+                                    <option value="007">07 - ANDRIYONO</option>
+                                    <option value="008">08 - SURADI</option>
+                                    <option value="009">09 - MUKHOLIL</option>
+                                    <option value="010">10 - DHEHAN</option>
+                                    <option value="011">11 - SANTOSO</option>
+                                    <option value="012">12 - H. BUKHORI</option>
+                                    <option value="013">13 - H. MUHSIN</option>
+                                    <option value="014">14 - MOH. AMIN</option>
                                 </select>
                             </div>
 

@@ -34,6 +34,7 @@
                                         <th scope="col">Dusun</th>
                                         <th scope="col">Desa</th>
                                         <th scope="col">Jabatan</th>
+                                        <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -48,7 +49,7 @@
                                     processing: true,
                                     serverSide: true,
                                     order: [
-                                        [0, 'desc']
+                                        [4, 'asc']
                                     ],
                                     ajax: "{{ route('koordinator.index') }}",
                                     columns: [{
@@ -62,21 +63,23 @@
                                             className: "dt-head-center"
                                         },
                                         {
-                                            orderable: false,
                                             data: 'dusun',
                                             name: 'dusun',
                                             className: "dt-head-center dt-body-center"
                                         },
                                         {
-                                            orderable: false,
                                             data: 'desa',
                                             name: 'desa',
                                             className: "dt-head-center dt-body-center"
                                         },
                                         {
-                                            orderable: false,
                                             data: 'jabatan',
                                             name: 'jabatan',
+                                            className: "dt-head-center dt-body-center"
+                                        },
+                                        {
+                                            data: 'status',
+                                            name: 'status',
                                             className: "dt-head-center dt-body-center"
                                         },
                                         {

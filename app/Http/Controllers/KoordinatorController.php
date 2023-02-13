@@ -69,6 +69,7 @@ class KoordinatorController extends Controller
         $data->alamat = $request->Alamat;
         $data->dusun = $request->Dusun;
         $data->desa = $request->Desa;
+        $data->status = $request->Status;
         $data->jabatan = $request->Jabatan;
         $data->save();
         return view('koordinator.index');
@@ -104,6 +105,7 @@ class KoordinatorController extends Controller
         $data->alamat = $request->get('Alamat');
         $data->dusun = $request->get('Dusun');
         $data->desa = $request->get('Desa');
+        $data->status = $request->get('Status');
         $data->jabatan = $request->get('Jabatan');
         $data->save();
         return view('koordinator.index');

@@ -48,7 +48,7 @@
                                 <label for="Pekerjaan" class="form-label">Pekerjaan</label>
                                 <input type="text" name="Pekerjaan" class="form-control" id="Pekerjaan">
                             </div>
-                            <div class="col-6">
+                            <div class="col-5">
                                 <label for="Alamat" class="form-label">Alamat</label>
                                 <input type="text" name="Alamat" class="form-control"
                                     id="Alamat">
@@ -76,9 +76,32 @@
                                     <option value="MUNDUREJO">MUNDUREJO</option>
                                 </select>
                             </div>
-                            <div class="col-2">
+                            <div class="col-1">
                                 <label for="Jabatan" class="form-label">Jabatan</label>
                                 <select class="form-select" id="Jabatan" name="Jabatan"
+                                    aria-label="State">
+                                    <option selected>001</option>
+                                    <option value="002">002</option>
+                                    <option value="003">003</option>
+                                    <option value="004">004</option>
+                                    <option value="005">005</option>
+                                    <option value="006">006</option>
+                                    <option value="007">007</option>
+                                    <option value="008">008</option>
+                                    <option value="009">009</option>
+                                    <option value="010">010</option>
+                                    <option value="011">011</option>
+                                    <option value="012">012</option>
+                                    <option value="013">013</option>
+                                    <option value="014">014</option>
+                                    <option value="REGASEN">REGASEN</option>
+                                    <option value="HIPA">HIPA</option>
+                                    <option value="KASUN">KASUN</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <label for="Status" class="form-label">Status</label>
+                                <select class="form-select" id="Status" name="Status"
                                     aria-label="State">
                                     <option selected>SAKSI 1</option>
                                     <option value="SAKSI 2">SAKSI 2</option>
