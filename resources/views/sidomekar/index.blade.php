@@ -32,6 +32,7 @@
                                     <tr style="vertical-align: middle;">
                                         <th scope="col">No Nominatif</th>
                                         <th scope="col">Nama</th>
+                                        <th scope="col">NIB</th>
                                         <th scope="col">Luas Ukur</th>
                                         <th scope="col">Luas Permohonan</th>
                                         <th scope="col">Beda Luas</th>
@@ -63,6 +64,13 @@
                                             data: 'Nama',
                                             name: 'Nama',
                                             className: "dt-head-center"
+                                        },
+                                        {
+                                            orderable: false,
+                                            width: "5%",
+                                            data: 'NIB',
+                                            name: 'NIB',
+                                            className: "dt-head-center dt-body-center"
                                         },
                                         {
                                             orderable: false,
