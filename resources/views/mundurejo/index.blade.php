@@ -36,7 +36,7 @@
                                         <th scope="col">Luas Ukur</th>
                                         <th scope="col">Luas Permohonan</th>
                                         <th scope="col">Beda Luas</th>
-                                        <th scope="col">Wilayah</th>
+                                        <th scope="col">Koordinator</th>
                                         <th width="col">Action</th>
                                     </tr>
                                 </thead>
@@ -92,8 +92,8 @@
                                             className: "dt-head-center dt-body-center"
                                         },
                                         {
-                                            data: 'Koordinator',
-                                            name: 'Koordinator',
+                                            data: 'Nama_Saksi_1',
+                                            name: 'Nama_Saksi_1',
                                             className: "dt-head-center dt-body-center",
                                             width: "5%"
                                         },
