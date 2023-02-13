@@ -274,9 +274,9 @@
                                 <label for="Koordinator" class="form-label">Koordinator</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected>{{$data->Koordinator}}</option>
-                                    <option value="SLAMET">BETENG - SLAMET</option>
-                                    <option value="MISDARI">BABATAN - MISDARI</option>
-                                    <option value="SAIFUL BAHRI">BESUKI - SAIFUL BAHRI</option>
+                                    <option value="001">BETENG - SLAMET</option>
+                                    <option value="002">BABATAN - MISDARI</option>
+                                    <option value="003">BESUKI - SAIFUL BAHRI</option>
                                 </select>
                             </div>
 
