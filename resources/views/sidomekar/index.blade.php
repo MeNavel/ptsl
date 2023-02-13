@@ -95,6 +95,7 @@
                                         {
                                             data: 'Koordinator',
                                             name: 'Koordinator',
+                                            className: "dt-head-center dt-body-center",
                                             width: "5%"
                                         },
                                         {
