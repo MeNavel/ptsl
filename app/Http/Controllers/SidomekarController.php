@@ -96,6 +96,13 @@ class SidomekarController extends Controller
             $Usia_Saksi_1 = "58";
             $Pekerjaan_Saksi_1 = "PERANGKAT DESA";
             $Alamat_Saksi_1 = "DUSUN BESUKI RT 001 RW 0027 DESA SIDOMEKAR KECAMATAN SEMBORO";
+        } else {
+            $Nama_Saksi_1 = null;
+            $NIK_Saksi_1 = null;
+            $Agama_Saksi_1 = null;
+            $Usia_Saksi_1 = null;
+            $Pekerjaan_Saksi_1 = null;
+            $Alamat_Saksi_1 = null;
         }
 
 

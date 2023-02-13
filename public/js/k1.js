@@ -4,7 +4,7 @@ function calculate () {
   const luas_ukur = document.getElementById('Luas_Ukur').value
   const luas_permohonan = document.getElementById('Luas_Permohonan').value
   const result = Math.abs(parseInt(luas_ukur) - parseInt(luas_permohonan)) / parseInt(luas_ukur)
-  const view = (result * 100) + '%'
+  const view = (result * 100).toFixed(2) + '%'
   document.getElementById('Beda_Luas').value = view
 }
 function age () {
