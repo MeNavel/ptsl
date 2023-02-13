@@ -33,6 +33,7 @@
                                         <th scope="col">Nama</th>
                                         <th scope="col">Dusun</th>
                                         <th scope="col">Desa</th>
+                                        <th scope="col">Jabatan</th>
                                         <th scope="col">Action</th>
                                     </tr>
                                 </thead>
@@ -70,6 +71,12 @@
                                             orderable: false,
                                             data: 'desa',
                                             name: 'desa',
+                                            className: "dt-head-center dt-body-center"
+                                        },
+                                        {
+                                            orderable: false,
+                                            data: 'jabatan',
+                                            name: 'jabatan',
                                             className: "dt-head-center dt-body-center"
                                         },
                                         {

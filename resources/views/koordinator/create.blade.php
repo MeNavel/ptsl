@@ -48,7 +48,7 @@
                                 <label for="Pekerjaan" class="form-label">Pekerjaan</label>
                                 <input type="text" name="Pekerjaan" class="form-control" id="Pekerjaan">
                             </div>
-                            <div class="col-8">
+                            <div class="col-6">
                                 <label for="Alamat" class="form-label">Alamat</label>
                                 <input type="text" name="Alamat" class="form-control"
                                     id="Alamat">
@@ -74,6 +74,14 @@
                                     <option selected>SIDOMEKAR</option>
                                     <option value="PONDOK JOYO">PONDOK JOYO</option>
                                     <option value="MUNDUREJO">MUNDUREJO</option>
+                                </select>
+                            </div>
+                            <div class="col-2">
+                                <label for="Jabatan" class="form-label">Jabatan</label>
+                                <select class="form-select" id="Jabatan" name="Jabatan"
+                                    aria-label="State">
+                                    <option selected>SAKSI 1</option>
+                                    <option value="SAKSI 2">SAKSI 2</option>
                                 </select>
                             </div>
                             
