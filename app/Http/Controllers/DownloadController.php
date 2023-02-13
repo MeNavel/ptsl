@@ -536,12 +536,29 @@ class DownloadController extends Controller
             $Tahun_Menjual = "....";
             $Nama_Penjual = null;
         }
+
+        //handle tanggal
+        if($data->Tgl_Pendataan != ""){
+            $Tgl_Pendataan = Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y');
+        } else{
+            $Tgl_Pendataan = null;
+        }
+        if($data->Tanggal_Lahir != ""){
+            $Tanggal_Lahir = Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y');
+        } else{
+            $Tanggal_Lahir = null;
+        }
+        if($data->An_Tanggal_Lahir != ""){
+            $An_Tanggal_Lahir = Carbon::createFromFormat('Y-m-d', $data->An_Tanggal_Lahir)->format('d-m-Y');
+        } else{
+            $An_Tanggal_Lahir = null;
+        }
         
         $phpWord->setValues([
             'id' => $data->id,
             'Blok' => $data->Blok,
             'No_SPPT' => $data->No_SPPT,
-            'Tgl_Pendataan' => Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y'),
+            'Tgl_Pendataan' => $Tgl_Pendataan,
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
@@ -554,7 +571,7 @@ class DownloadController extends Controller
             'No_KTP_NIK' => $data->No_KTP_NIK,
             'Nama' => $data->Nama,
             'Tempat_Lahir' => $data->Tempat_Lahir,
-            'Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->Tanggal_Lahir)->format('d-m-Y'),
+            'Tanggal_Lahir' => $Tanggal_Lahir,
             'Usia' => $data->Usia,
             'Alamat_Pemilik' => $data->Alamat_Pemilik,
             'Agama' => $data->Agama,
@@ -563,7 +580,7 @@ class DownloadController extends Controller
             'An_No_KTP_NIK' => $data->An_No_KTP_NIK,
             'An_Nama' => $data->An_Nama,
             'An_Tempat_Lahir' => $data->An_Tempat_Lahir,
-            'An_Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->An_Tanggal_Lahir)->format('d-m-Y'),
+            'An_Tanggal_Lahir' => $An_Tanggal_Lahir ,
             'An_Usia' => $data->An_Usia,
             'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
 
@@ -642,12 +659,27 @@ class DownloadController extends Controller
             $Nama_Penjual = null;
         }
 
+        if($data->Tgl_Pendataan != ""){
+            $Tgl_Pendataan = Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y');
+        } else{
+            $Tgl_Pendataan = null;
+        }
+        if($data->Tanggal_Lahir != ""){
+            $Tanggal_Lahir = Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y');
+        } else{
+            $Tanggal_Lahir = null;
+        }
+        if($data->An_Tanggal_Lahir != ""){
+            $An_Tanggal_Lahir = Carbon::createFromFormat('Y-m-d', $data->An_Tanggal_Lahir)->format('d-m-Y');
+        } else{
+            $An_Tanggal_Lahir = null;
+        }
         
         $phpWord->setValues([
             'id' => $data->id,
             'Blok' => $data->Blok,
             'No_SPPT' => $data->No_SPPT,
-            'Tgl_Pendataan' => Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y'),
+            'Tgl_Pendataan' => $Tgl_Pendataan,
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
@@ -660,7 +692,7 @@ class DownloadController extends Controller
             'No_KTP_NIK' => $data->No_KTP_NIK,
             'Nama' => $data->Nama,
             'Tempat_Lahir' => $data->Tempat_Lahir,
-            'Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->Tanggal_Lahir)->format('d-m-Y'),
+            'Tanggal_Lahir' => $Tanggal_Lahir,
             'Usia' => $data->Usia,
             'Alamat_Pemilik' => $data->Alamat_Pemilik,
             'Agama' => $data->Agama,
@@ -669,7 +701,7 @@ class DownloadController extends Controller
             'An_No_KTP_NIK' => $data->An_No_KTP_NIK,
             'An_Nama' => $data->An_Nama,
             'An_Tempat_Lahir' => $data->An_Tempat_Lahir,
-            'An_Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->An_Tanggal_Lahir)->format('d-m-Y'),
+            'An_Tanggal_Lahir' => $An_Tanggal_Lahir ,
             'An_Usia' => $data->An_Usia,
             'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
 
@@ -721,7 +753,7 @@ class DownloadController extends Controller
             'Pekerjaan_Saksi_2' => $data->Pekerjaan_Saksi_2,
             'Alamat_Saksi_2' => $data->Alamat_Saksi_2,
             'Nama_Penjual' => $Nama_Penjual,
-            'Tahun_Menjual' => $Tahun_Menjual      
+            'Tahun_Menjual' => $Tahun_Menjual        
         ]);
 
         $phpWord->saveAs( $data->id. ' - '. $data->Nama. '.docx');
@@ -748,12 +780,27 @@ class DownloadController extends Controller
             $Nama_Penjual = null;
         }
 
+        if($data->Tgl_Pendataan != ""){
+            $Tgl_Pendataan = Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y');
+        } else{
+            $Tgl_Pendataan = null;
+        }
+        if($data->Tanggal_Lahir != ""){
+            $Tanggal_Lahir = Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y');
+        } else{
+            $Tanggal_Lahir = null;
+        }
+        if($data->An_Tanggal_Lahir != ""){
+            $An_Tanggal_Lahir = Carbon::createFromFormat('Y-m-d', $data->An_Tanggal_Lahir)->format('d-m-Y');
+        } else{
+            $An_Tanggal_Lahir = null;
+        }
         
         $phpWord->setValues([
             'id' => $data->id,
             'Blok' => $data->Blok,
             'No_SPPT' => $data->No_SPPT,
-            'Tgl_Pendataan' => Carbon::createFromFormat('Y-m-d', $data->Tgl_Pendataan)->format('d-m-Y'),
+            'Tgl_Pendataan' => $Tgl_Pendataan,
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
@@ -766,7 +813,7 @@ class DownloadController extends Controller
             'No_KTP_NIK' => $data->No_KTP_NIK,
             'Nama' => $data->Nama,
             'Tempat_Lahir' => $data->Tempat_Lahir,
-            'Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->Tanggal_Lahir)->format('d-m-Y'),
+            'Tanggal_Lahir' => $Tanggal_Lahir,
             'Usia' => $data->Usia,
             'Alamat_Pemilik' => $data->Alamat_Pemilik,
             'Agama' => $data->Agama,
@@ -775,7 +822,7 @@ class DownloadController extends Controller
             'An_No_KTP_NIK' => $data->An_No_KTP_NIK,
             'An_Nama' => $data->An_Nama,
             'An_Tempat_Lahir' => $data->An_Tempat_Lahir,
-            'An_Tanggal_Lahir' => Carbon::createFromFormat('Y-m-d', $data->An_Tanggal_Lahir)->format('d-m-Y'),
+            'An_Tanggal_Lahir' => $An_Tanggal_Lahir ,
             'An_Usia' => $data->An_Usia,
             'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
 
@@ -825,9 +872,9 @@ class DownloadController extends Controller
             'Agama_Saksi_2' => $data->Agama_Saksi_2,
             'Usia_Saksi_2' => $data->Usia_Saksi_2,
             'Pekerjaan_Saksi_2' => $data->Pekerjaan_Saksi_2,
-            'Alamat_Saksi_2' => $data->Alamat_Saksi_2,  
+            'Alamat_Saksi_2' => $data->Alamat_Saksi_2,
             'Nama_Penjual' => $Nama_Penjual,
-            'Tahun_Menjual' => $Tahun_Menjual
+            'Tahun_Menjual' => $Tahun_Menjual     
         ]);
 
         $phpWord->saveAs( $data->id. ' - '. $data->Nama. '.docx');
