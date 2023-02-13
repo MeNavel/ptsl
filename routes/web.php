@@ -6,6 +6,7 @@ use App\Http\Controllers\DownloadController;
 use App\Http\Controllers\MundurejoController;
 use App\Http\Controllers\SidomekarController;
 use App\Http\Controllers\PondokjoyoController;
+use App\Http\Controllers\KoordinatorController;
 
 Auth::routes();
 
@@ -35,6 +36,16 @@ Route::controller(SidomekarController::class)->group(function () {
     Route::post('/sidomekar/store', 'store');
     Route::get('/sidomekar/{id}/destroy', 'destroy')->name('destroy-sidomekar');
     Route::get('/sidomekar/{id}/edit', 'edit')->name('edit-sidomekar');
+});
+
+Route::controller(KoordinatorController::class)->group(function () {
+    Route::post('/koordinator/cek', 'cek_koordinator')->name('cek-koordinator');
+    Route::get('/koordinator', 'index')->name('koordinator.index');
+    Route::get('/koordinator/create', 'create')->name('create-koordinator');
+    Route::post('/koordinator/store', 'store');
+    Route::get('/koordinator/{id}/destroy', 'destroy')->name('destroy-koordinator');
+    Route::get('/koordinator/{id}/edit', 'edit')->name('edit-koordinator');
+    Route::post('/koordinator/{id}/update', 'update')->name('update-koordinator');
 });
 
 Route::controller(DownloadController::class)->group(function () {

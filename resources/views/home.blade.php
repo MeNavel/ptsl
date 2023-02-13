@@ -22,6 +22,7 @@
                         <a href="/sidomekar" class="btn btn-primary">Sidomekar</a>
                         @if ( Auth::user()->id == "1")
                         <a class="btn btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        <a href="/koordinator" class="btn btn-primary">Koordinator</a>
                         @endif
                     </div>
                 </div>
