@@ -178,7 +178,7 @@ class PondokjoyoController extends Controller
         }
 
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
-        if ($request->Nama_Perolehan_Terakhir == "" && $request->Peralihan_2_Kepada != "") {
+        if ($request->Nama_Perolehan_Terakhir == "" && $request->Alas_Hak_Bukti_Perolehan != "") {
             $data->Nama_Perolehan_Terakhir = $request->Nama;
         } else {
             $data->Nama_Perolehan_Terakhir = $request->Nama_Perolehan_Terakhir;

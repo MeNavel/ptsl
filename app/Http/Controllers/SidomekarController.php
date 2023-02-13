@@ -216,7 +216,7 @@ class SidomekarController extends Controller
         }
 
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
-        if ($request->Nama_Perolehan_Terakhir == "" && $request->Peralihan_2_Kepada != "") {
+        if ($request->Nama_Perolehan_Terakhir == "" && $request->Alas_Hak_Bukti_Perolehan != "") {
             if ($data->No_KTP_NIK == $data->An_No_KTP_NIK) {
                 $data->Nama_Perolehan_Terakhir = $request->Nama;
             } else {
