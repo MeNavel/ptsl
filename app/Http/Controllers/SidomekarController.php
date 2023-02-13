@@ -67,45 +67,7 @@ class SidomekarController extends Controller
 
         $desa = "SIDOMEKAR";
         $kecamatan = "SEMBORO";
-        $kades = "EDI SANTOSO";
-
-        $Nama_Saksi_2 = "BUDIONO";
-        $NIK_Saksi_2 = "3509071011790003";
-        $Agama_Saksi_2 = "ISLAM";
-        $Usia_Saksi_2 = "43";
-        $Pekerjaan_Saksi_2 = "WIRASWASTA";
-        $Alamat_Saksi_2 = "DUSUN BETENG RT 002 RW 008 DESA SIDOMEKAR KECAMATAN SEMBORO";
-
-        if ($request->Koordinator == "SLAMET") {
-            $Nama_Saksi_1 = "SLAMET";
-            $NIK_Saksi_1 = "3509070902670003";
-            $Agama_Saksi_1 = "ISLAM";
-            $Usia_Saksi_1 = "55";
-            $Pekerjaan_Saksi_1 = "PERANGKAT DESA";
-            $Alamat_Saksi_1 = "DUSUN BETENG RT 004 RW 004 DESA SIDOMEKAR KECAMATAN SEMBORO";
-        } else if ($request->Koordinator == "MISDARI") {
-            $Nama_Saksi_1 = "MISDARI";
-            $NIK_Saksi_1 = "3509071505630001";
-            $Agama_Saksi_1 = "ISLAM";
-            $Usia_Saksi_1 = "60";
-            $Pekerjaan_Saksi_1 = "PERANGKAT DESA";
-            $Alamat_Saksi_1 = "DUSUN BABATAN RT 002 RW 016 DESA SIDOMEKAR KECAMATAN SEMBORO";
-        } else if ($request->Koordinator == "SAIFUL BAHRI") {
-            $Nama_Saksi_1 = "SAIFUL BAHRI";
-            $NIK_Saksi_1 = "3509072009640001";
-            $Agama_Saksi_1 = "ISLAM";
-            $Usia_Saksi_1 = "58";
-            $Pekerjaan_Saksi_1 = "PERANGKAT DESA";
-            $Alamat_Saksi_1 = "DUSUN BESUKI RT 001 RW 0027 DESA SIDOMEKAR KECAMATAN SEMBORO";
-        } else {
-            $Nama_Saksi_1 = null;
-            $NIK_Saksi_1 = null;
-            $Agama_Saksi_1 = null;
-            $Usia_Saksi_1 = null;
-            $Pekerjaan_Saksi_1 = null;
-            $Alamat_Saksi_1 = null;
-        }
-
+        $kades = "UDI PRIHWIYANTO";
 
         $data = Sidomekar::find($request->No_Nominatif);
         if ($data) {
@@ -264,7 +226,7 @@ class SidomekarController extends Controller
             ['status', '=', 'SAKSI 1'],
         ])->first();
         if ($data_saksi_1 != null) {
-            $data->Koordinator = $data_saksi_1->nama;
+            $data->Koordinator = $data_saksi_1->jabatan;
             $data->Nama_Saksi_1 = $data_saksi_1->nama;
             $data->NIK_Saksi_1 = $data_saksi_1->nik;
             $data->Agama_Saksi_1 = $data_saksi_1->agama;

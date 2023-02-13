@@ -230,7 +230,7 @@ class MundurejoController extends Controller
             ['status', '=', 'SAKSI 1'],
         ])->first();
         if ($data_saksi_1 != null) {
-            $data->Koordinator = $data_saksi_1->nama;
+            $data->Koordinator = $data_saksi_1->jabatan;
             $data->Nama_Saksi_1 = $data_saksi_1->nama;
             $data->NIK_Saksi_1 = $data_saksi_1->nik;
             $data->Agama_Saksi_1 = $data_saksi_1->agama;
