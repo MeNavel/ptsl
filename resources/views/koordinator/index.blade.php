@@ -33,7 +33,7 @@
                                         <th scope="col">Nama</th>
                                         <th scope="col">Dusun</th>
                                         <th scope="col">Desa</th>
-                                        <th scope="col">Jabatan</th>
+                                        <th scope="col">Wilayah</th>
                                         <th scope="col">Status</th>
                                         <th scope="col">Action</th>
                                     </tr>

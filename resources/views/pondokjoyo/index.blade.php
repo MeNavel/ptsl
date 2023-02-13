@@ -36,7 +36,7 @@
                                         <th scope="col">Luas Ukur</th>
                                         <th scope="col">Luas Permohonan</th>
                                         <th scope="col">Beda Luas</th>
-                                        <th scope="col">Koordinator</th>
+                                        <th scope="col">Wilayah</th>
                                         <th width="col">Action</th>
                                     </tr>
                                 </thead>

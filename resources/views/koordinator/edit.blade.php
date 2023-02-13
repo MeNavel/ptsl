@@ -79,7 +79,7 @@
                                 </select>
                             </div>
                             <div class="col-1">
-                                <label for="Jabatan" class="form-label">Jabatan</label>
+                                <label for="Jabatan" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Jabatan" name="Jabatan"
                                     aria-label="State">
                                     <option selected>{{ $data->jabatan }}</option>

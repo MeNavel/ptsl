@@ -276,7 +276,7 @@
                                     id="Alas_Hak_Bukti_Perolehan">
                             </div>
                             <div class="col-10">
-                                <label for="Koordinator" class="form-label">Koordinator</label>
+                                <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected></option>
                                     <option value="EDI BEDOR">EDI BEDOR</option>
