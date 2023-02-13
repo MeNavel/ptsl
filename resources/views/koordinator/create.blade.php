@@ -97,6 +97,7 @@
                                     <option value="REGASEN">REGASEN</option>
                                     <option value="HIPA">HIPA</option>
                                     <option value="KASUN">KASUN</option>
+                                    <option value="SEKERTARIS DESA">SEKERTARIS DESA</option>
                                 </select>
                             </div>
                             <div class="col-2">
