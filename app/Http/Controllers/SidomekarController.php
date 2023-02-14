@@ -179,14 +179,10 @@ class SidomekarController extends Controller
         }
 
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
-        if ($request->Nama_Perolehan_Terakhir == "" && $request->Alas_Hak_Bukti_Perolehan != "") {
-            if ($data->No_KTP_NIK == $data->An_No_KTP_NIK) {
-                $data->Nama_Perolehan_Terakhir = $request->Nama;
-            } else {
-                $data->Nama_Perolehan_Terakhir = $request->An_Nama;
-            }
-        } else {
-            $data->Nama_Perolehan_Terakhir = $request->Nama_Perolehan_Terakhir;
+        if ($request->Dasar_Peralihan_2 != "" && $request->Alas_Hak_Bukti_Perolehan != "") {
+            $data->Nama_Perolehan_Terakhir = $request->An_Nama;
+        } else if ($request->Alas_Hak_Bukti_Perolehan == "" && $request->Dasar_Peralihan_2 != "") {
+            $data->Nama_Perolehan_Terakhir = $request->An_Nama;
         }
 
         // Pemberi Waris
