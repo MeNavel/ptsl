@@ -174,11 +174,7 @@ class SidomekarController extends Controller
         //Peralihan 3
         $data->Tahun_Perolehan_Terakhir = $request->Tahun_Perolehan_Terakhir;
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
-        if ($request->Dasar_Peralihan_2 != "" && $request->Alas_Hak_Bukti_Perolehan != "") {
-            $data->Nama_Perolehan_Terakhir = $request->An_Nama;
-        } else if ($request->Alas_Hak_Bukti_Perolehan == "" && $request->Dasar_Peralihan_2 != "") {
-            $data->Nama_Perolehan_Terakhir = $request->An_Nama;
-        }
+        $data->Nama_Perolehan_Terakhir = $request->An_Nama;
 
         // Pemberi Waris
         if ($request->Sebab_Peralihan_Terakhir == "WARIS") {
