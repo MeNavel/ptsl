@@ -33,6 +33,7 @@
                                         <th scope="col">No Nominatif</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">NUB</th>
+                                        <th scope="col">NIB</th>
                                         <th scope="col">Luas Ukur</th>
                                         <th scope="col">Luas Permohonan</th>
                                         <th scope="col">Beda Luas</th>
@@ -70,6 +71,13 @@
                                             width: "5%",
                                             data: 'NUB',
                                             name: 'NUB',
+                                            className: "dt-head-center dt-body-center"
+                                        },
+                                        {
+                                            orderable: false,
+                                            width: "5%",
+                                            data: 'NIB',
+                                            name: 'NIB',
                                             className: "dt-head-center dt-body-center"
                                         },
                                         {
