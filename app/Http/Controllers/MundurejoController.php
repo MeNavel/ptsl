@@ -96,7 +96,7 @@ class MundurejoController extends Controller
         $data->NUB = $request->NUB;
         $data->NIB = $request->NIB;
         $data->Luas_Ukur = $request->Luas_Ukur;
-        $data->Beda_Luas = $luas_1 - $luas_2;
+        $data->Beda_Luas = abs($luas_1 - $luas_2);
         $data->Selisih_Luas = $request->Beda_Luas;
 
         // Data Pemohon Sertifikat
