@@ -553,6 +553,20 @@ class DownloadController extends Controller
         } else{
             $An_Tanggal_Lahir = null;
         }
+
+        if($data->Tahun_Perolehan_Terakhir == null){
+            if ($data->Tahun_Peralihan_2 == null){
+                if ($data->Tahun_Peralihan_1 == null){
+                    $Tahun_Terakhir = null;
+                } else {
+                    $Tahun_Terakhir = $data->Tahun_Peralihan_1;
+                }
+            } else {
+                $Tahun_Terakhir = $data->Tahun_Peralihan_2;
+            }
+        } else {
+            $Tahun_Terakhir = $data->Tahun_Perolehan_Terakhir;
+        }
         
         $phpWord->setValues([
             'id' => $data->id,
@@ -583,6 +597,8 @@ class DownloadController extends Controller
             'An_Tanggal_Lahir' => $An_Tanggal_Lahir ,
             'An_Usia' => $data->An_Usia,
             'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
+
+            'Tahun_Terakhir' => $Tahun_Terakhir,
 
             'RT_Letak_Tanah' => $data->RT_Letak_Tanah,
             'RW_Letak_Tanah' => $data->RW_Letak_Tanah,
@@ -674,6 +690,20 @@ class DownloadController extends Controller
         } else{
             $An_Tanggal_Lahir = null;
         }
+
+        if($data->Tahun_Perolehan_Terakhir == null){
+            if ($data->Tahun_Peralihan_2 == null){
+                if ($data->Tahun_Peralihan_1 == null){
+                    $Tahun_Terakhir = null;
+                } else {
+                    $Tahun_Terakhir = $data->Tahun_Peralihan_1;
+                }
+            } else {
+                $Tahun_Terakhir = $data->Tahun_Peralihan_2;
+            }
+        } else {
+            $Tahun_Terakhir = $data->Tahun_Perolehan_Terakhir;
+        }
         
         $phpWord->setValues([
             'id' => $data->id,
@@ -704,6 +734,8 @@ class DownloadController extends Controller
             'An_Tanggal_Lahir' => $An_Tanggal_Lahir ,
             'An_Usia' => $data->An_Usia,
             'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
+
+            'Tahun_Terakhir' => $Tahun_Terakhir,
 
             'RT_Letak_Tanah' => $data->RT_Letak_Tanah,
             'RW_Letak_Tanah' => $data->RW_Letak_Tanah,
@@ -795,6 +827,20 @@ class DownloadController extends Controller
         } else{
             $An_Tanggal_Lahir = null;
         }
+
+        if($data->Tahun_Perolehan_Terakhir == null){
+            if ($data->Tahun_Peralihan_2 == null){
+                if ($data->Tahun_Peralihan_1 == null){
+                    $Tahun_Terakhir = null;
+                } else {
+                    $Tahun_Terakhir = $data->Tahun_Peralihan_1;
+                }
+            } else {
+                $Tahun_Terakhir = $data->Tahun_Peralihan_2;
+            }
+        } else {
+            $Tahun_Terakhir = $data->Tahun_Perolehan_Terakhir;
+        }
         
         $phpWord->setValues([
             'id' => $data->id,
@@ -825,6 +871,8 @@ class DownloadController extends Controller
             'An_Tanggal_Lahir' => $An_Tanggal_Lahir ,
             'An_Usia' => $data->An_Usia,
             'An_Alamat_Pemilik' => $data->An_Alamat_Pemilik,
+
+            'Tahun_Terakhir' => $Tahun_Terakhir,
 
             'RT_Letak_Tanah' => $data->RT_Letak_Tanah,
             'RW_Letak_Tanah' => $data->RW_Letak_Tanah,

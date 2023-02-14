@@ -171,12 +171,7 @@ class PondokjoyoController extends Controller
         }
 
         //Peralihan 3
-        if ($request->Tahun_Perolehan_Terakhir != "") {
-            $data->Tahun_Perolehan_Terakhir = $request->Tahun_Perolehan_Terakhir;
-        } else if ($request->Tahun_Perolehan_Terakhir == "" && $request->Tahun_Peralihan_2 != "") {
-            $data->Tahun_Perolehan_Terakhir = $request->Tahun_Peralihan_2;
-        }
-
+        $data->Tahun_Perolehan_Terakhir = $request->Tahun_Perolehan_Terakhir;
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
         if ($request->Dasar_Peralihan_2 != "" && $request->Alas_Hak_Bukti_Perolehan != "") {
             $data->Nama_Perolehan_Terakhir = $request->An_Nama;
