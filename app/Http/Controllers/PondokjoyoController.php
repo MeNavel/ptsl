@@ -173,7 +173,9 @@ class PondokjoyoController extends Controller
         //Peralihan 3
         $data->Tahun_Perolehan_Terakhir = $request->Tahun_Perolehan_Terakhir;
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
-        $data->Nama_Perolehan_Terakhir = $request->An_Nama;
+        if ($request->Dasar_Peralihan_2 != null && $request->Alas_Hak_Bukti_Perolehan != null){
+            $data->Nama_Perolehan_Terakhir = $request->An_Nama;
+        }
 
         // Pemberi Waris
         if ($request->Sebab_Peralihan_Terakhir == "WARIS") {
