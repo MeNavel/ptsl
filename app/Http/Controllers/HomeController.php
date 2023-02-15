@@ -50,6 +50,6 @@ class HomeController extends Controller
             $data_dusun_sidomekar[$iter] = Sidomekar::select('*')->where('Dusun_Letak_Tanah', '=', $dusun_sidomekar[$iter])->count();
             $iter++;
         }
-        return view('home', compact('dusun_pondokjoyo','data_dusun_pondokjoyo','dusun_mundurejo','data_dusun_mundurejo','dusun_sidomekar','data_dusun_sidomekar'));
+        return view('home', compact(['dusun_pondokjoyo','data_dusun_pondokjoyo','dusun_mundurejo','data_dusun_mundurejo','dusun_sidomekar','data_dusun_sidomekar']));
     }
 }
