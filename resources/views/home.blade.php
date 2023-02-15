@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-                    
+
 
                     <div class="card-body">
                         <h5 class="card-title text-center">Navigation</h5>
@@ -40,137 +40,143 @@
                                 <h5 class="card-title">Pondok Joyo</h5>
                                 <div id="chart_pondokjoyo"></div>
                             </div>
-                            
-                            
-                          </div>
+
+
+                        </div>
                     </div>
                 </div>
             </div>
-        {{-- script pondokjoyo --}}
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                new ApexCharts(document.querySelector("#chart_pondokjoyo"), {
-                    series: [
-                        @foreach ($data_dusun_pondokjoyo as $item)
-                            {{ $item }},
-                        @endforeach
-                    ],
-                    chart: {
-                        height: 350,
-                        type: 'donut',
-                        toolbar: {
-                            show: true
-                        }
-                    },
-                    labels: [
-                        @foreach ($dusun_pondokjoyo as $item)
-                            '{{ $item }}',
-                        @endforeach
-                    ],
-                    plotOptions: {
-                        pie: {
-                            donut: {
-                                labels: {
-                                    show: true,
-                                    total: {
-                                        showAlways: true,
-                                        show: true
+            {{-- script pondokjoyo --}}
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#chart_pondokjoyo"), {
+                        series: [
+                            @foreach ($data_dusun_pondokjoyo as $item)
+                                {{ $item }},
+                            @endforeach
+                        ],
+                        
+                        chart: {
+                            height: 350,
+
+                            type: 'donut',
+                            toolbar: {
+                                show: true
+                            }
+                        },
+                        labels: [
+                            @foreach ($dusun_pondokjoyo as $item)
+                                '{{ $item }}',
+                            @endforeach
+                        ],
+                        plotOptions: {
+                            pie: {
+                                donut: {
+                                    labels: {
+                                        show: true,
+                                        total: {
+                                            showAlways: true,
+                                            show: true
+                                        }
                                     }
                                 }
                             }
-                        }
-                    },
-                    dataLabels: {
-                        formatter: function(val, opts) {
-                            return opts.w.config.series[opts.seriesIndex]
                         },
-                    },
-                }).render();
-            });
-        </script>
-        {{-- script mundurejo --}}
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                new ApexCharts(document.querySelector("#chart_mundurejo"), {
-                    series: [
-                        @foreach ($data_dusun_mundurejo as $item)
-                            {{ $item }},
-                        @endforeach
-                    ],
-                    chart: {
-                        height: 350,
-                        type: 'donut',
-                        toolbar: {
-                            show: true
-                        }
-                    },
-                    labels: [
-                        @foreach ($dusun_mundurejo as $item)
-                            '{{ $item }}',
-                        @endforeach
-                    ],
-                    plotOptions: {
-                        pie: {
-                            donut: {
-                                labels: {
-                                    show: true,
-                                    total: {
-                                        showAlways: true,
-                                        show: true
+                        dataLabels: {
+                            formatter: function(val, opts) {
+                                return opts.w.config.series[opts.seriesIndex]
+                            }
+                        },
+                    }).render();
+                });
+            </script>
+            {{-- script mundurejo --}}
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#chart_mundurejo"), {
+                        series: [
+                            @foreach ($data_dusun_mundurejo as $item)
+                                {{ $item }},
+                            @endforeach
+                        ],
+                        chart: {
+                            height: 350,
+                            type: 'donut',
+                            toolbar: {
+                                show: true
+                            }
+                        },
+                        labels: [
+                            @foreach ($dusun_mundurejo as $item)
+                                '{{ $item }}',
+                            @endforeach
+                        ],
+                        plotOptions: {
+                            pie: {
+                                donut: {
+                                    labels: {
+                                        show: true,
+                                        total: {
+                                            showAlways: true,
+                                            show: true
+                                        }
                                     }
                                 }
                             }
-                        }
-                    },
-                    dataLabels: {
-                        formatter: function(val, opts) {
-                            return opts.w.config.series[opts.seriesIndex]
                         },
-                    },
-                }).render();
-            });
-        </script>
-        {{-- script sidomekar --}}
-        <script>
-            document.addEventListener("DOMContentLoaded", () => {
-                new ApexCharts(document.querySelector("#chart_sidomekar"), {
-                    series: [
-                        @foreach ($data_dusun_sidomekar as $item)
-                            {{ $item }},
-                        @endforeach
-                    ],
-                    chart: {
-                        height: 350,
-                        type: 'donut',
-                        toolbar: {
-                            show: true
-                        }
-                    },
-                    labels: [
-                        @foreach ($dusun_sidomekar as $item)
-                            '{{ $item }}',
-                        @endforeach
-                    ],
-                    plotOptions: {
-                        pie: {
-                            donut: {
-                                labels: {
-                                    show: true,
-                                    total: {
-                                        showAlways: true,
-                                        show: true
+                        dataLabels: {
+                            formatter: function(val, opts) {
+                                return opts.w.config.series[opts.seriesIndex]
+                            },
+                        },
+                    }).render();
+                });
+            </script>
+            {{-- script sidomekar --}}
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#chart_sidomekar"), {
+                        series: [
+                            @foreach ($data_dusun_sidomekar as $item)
+                                {{ $item }},
+                            @endforeach
+                        ],
+                        colors: ["#EFB700", "#7BB662", "#E03C32"],
+                        fill: {
+                            colors: ["#EFB700", "#7BB662", "#E03C32"]
+                        },
+                        chart: {
+                            height: 350,
+                            type: 'donut',
+                            toolbar: {
+                                show: true
+                            }
+                        },
+                        labels: [
+                            @foreach ($dusun_sidomekar as $item)
+                                '{{ $item }}',
+                            @endforeach
+                        ],
+                        plotOptions: {
+                            pie: {
+                                donut: {
+                                    labels: {
+                                        show: true,
+                                        total: {
+                                            showAlways: true,
+                                            show: true
+                                        }
                                     }
                                 }
                             }
-                        }
-                    },
-                    dataLabels: {
-                        formatter: function(val, opts) {
-                            return opts.w.config.series[opts.seriesIndex]
                         },
-                    },
-                }).render();
-            });
-        </script>
-    </div>
-@endsection
+                        dataLabels: {
+                            formatter: function(val, opts) {
+                                return opts.w.config.series[opts.seriesIndex]
+                            },
+                        },
+                    }).render();
+                });
+            </script>
+        </div>
+    @endsection
