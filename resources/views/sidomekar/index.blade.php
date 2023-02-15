@@ -26,6 +26,7 @@
                         <a href="/downloadsidomekar" class="btn btn-primary">Download Excel</a>
                         <br><br>
                         <!-- Small tables -->
+
                         <div class="table-responsive">
                             <table class="table table-bordered data-table" style="width:100%">
                                 <thead>
@@ -108,7 +109,7 @@
                                         },
                                     ],
                                 });
-                                
+
                                 $(document).on('click', '.delete-btn', function() {
                                     Swal.fire({
                                         title: 'Yakin Ingin Menghapus Data?',

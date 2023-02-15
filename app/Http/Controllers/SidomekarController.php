@@ -6,7 +6,6 @@ use App\Models\Sidomekar;
 use App\Models\Koordinator;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
-
 class SidomekarController extends Controller
 {
     /**
@@ -22,7 +21,6 @@ class SidomekarController extends Controller
 
     public function index(Request $request)
     {
-
         if ($request->ajax()) {
             $data = Sidomekar::select('*');
             return Datatables::of($data)
@@ -38,6 +36,7 @@ class SidomekarController extends Controller
                 ->make(true);
         }
         return view('sidomekar.index');
+        // dd($dusun);
         // $k1 = K1::all();
         // return view('k1.new', compact(['k1']));
     }
@@ -237,7 +236,7 @@ class SidomekarController extends Controller
             }
         }
         $data->save();
-        return view('sidomekar.index');
+        return redirect()->route('sidomekar.index');
     }
 
     /**
