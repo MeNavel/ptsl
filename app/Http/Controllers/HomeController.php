@@ -27,6 +27,9 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $data_dusun_pondokjoyo[] = null;
+        $data_dusun_mundurejo[] = null;
+        $data_dusun_sidomekar[] = null;
         //Desa Pondok Joyo
         $dusun_pondokjoyo = Pondokjoyo::select('Dusun_Letak_Tanah')->groupBy('Dusun_Letak_Tanah')->get()->pluck('Dusun_Letak_Tanah')->all();
         $iter = 0;
