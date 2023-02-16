@@ -55,7 +55,10 @@
                                 {{ $item }},
                             @endforeach
                         ],
-                        
+                        colors: ["#EC6B56", "#47B39C"],
+                        fill: {
+                            colors: ["#EC6B56", "#47B39C"]
+                        },
                         chart: {
                             height: 350,
 
@@ -99,6 +102,10 @@
                                 {{ $item }},
                             @endforeach
                         ],
+                        colors: ["#EC6B56", "#FFC154", "#47B39C"],
+                        fill: {
+                            colors: ["#EC6B56", "#FFC154", "#47B39C"]
+                        },
                         chart: {
                             height: 350,
                             type: 'donut',
@@ -141,9 +148,9 @@
                                 {{ $item }},
                             @endforeach
                         ],
-                        colors: ["#EFB700", "#7BB662", "#E03C32"],
+                        colors: ["#FFC154", "#47B39C", "#EC6B56"],
                         fill: {
-                            colors: ["#EFB700", "#7BB662", "#E03C32"]
+                            colors: ["#FFC154", "#47B39C", "#EC6B56"]
                         },
                         chart: {
                             height: 350,
