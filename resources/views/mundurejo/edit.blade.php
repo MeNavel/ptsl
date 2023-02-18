@@ -310,7 +310,7 @@
                                     <option value="010">DHEHAN - 10</option>
                                     <option value="011">SANTOSO - 11</option>
                                     <option value="012">H. BUKHORI - 12</option>
-                                    <option value="013">H. MUHSIN - 13</option>
+                                    <option value="013">MUKSIN - 13</option>
                                     <option value="014">MOH. AMIN - 14</option>
                                 </select>
                             </div>
