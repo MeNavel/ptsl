@@ -9,13 +9,13 @@
             <div class="col-lg-12">
                 <div class="container card">
                     <div class="card-body">
-                        <h5 class="card-title">Edit Pendaftaran K1 Desa Mundurejo</h5>
-                        <form action="/mundurejo">
+                        <h5 class="card-title">Edit Pendaftaran K1 Desa Sumberagung</h5>
+                        <form action="/sumberagung">
                             <button type="submit" class="btn btn-primary">Home</button>
                         </form>
                         <br>
                         <!-- Data teknis tanah -->
-                        <form action="/mundurejo/store" method="POST" class="row g-3">
+                        <form action="/sumberagung/store" method="POST" class="row g-3">
                             @csrf
                             <div class="col-md-3">
                                 <label for="No_Nominatif" class="form-label">Nomor Nominatif</label>
@@ -169,9 +169,10 @@
                                 <select class="form-select" id="Dusun_Letak_Tanah" name="Dusun_Letak_Tanah"
                                     aria-label="State">
                                     <option selected>{{ $data->Dusun_Letak_Tanah }}</option>
-                                    <option value="TEMUREJO">TEMUREJO</option>
-                                    <option value="SUKOMAKMUR">SUKOMAKMUR</option>
-                                    <option value="BLOGMUNDU">BLOGMUNDU</option>
+                                    <option value="BANJAREJO BARAT">BANJAREJO BARAT</option>
+                                    <option value="BANJAREJO TENGAH">BANJAREJO TENGAH</option>
+                                    <option value="BANJAREJO TIMUR">BANJAREJO TIMUR</option>
+                                    <option value="TAMBAKREJO">TAMBAKREJO</option>
                                 </select>
                             </div>
                             <div class="col-2">
@@ -299,20 +300,25 @@
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected>{{ $data->Koordinator }}</option>
-                                    <option value="001">01 - SOFYAN HADI</option>
-                                    <option value="002">02 - ANDRI CAHYONO</option>
-                                    <option value="003">03 - MUHADI</option>
-                                    <option value="004">04 - SUTOPO</option>
-                                    <option value="005">05 - EDI MESDIONO</option>
-                                    <option value="006">06 - DENDI P</option>
-                                    <option value="007">07 - ANDRIYONO</option>
-                                    <option value="008">08 - SURADI</option>
-                                    <option value="009">09 - MUKHOLIL</option>
-                                    <option value="010">10 - DHEHAN</option>
-                                    <option value="011">11 - SANTOSO</option>
-                                    <option value="012">12 - H. BUKHORI</option>
-                                    <option value="013">13 - H. MUHSIN</option>
-                                    <option value="014">14 - MOH. AMIN</option>
+                                    <option value="001">01 - ABAS SAIUL ULUM</option>
+                                    <option value="002">02 - AHMADHAN ZUMANY</option>
+                                    <option value="003">03 - ALI MASKUR</option>
+                                    <option value="004">04 - EDI SUSILO</option>
+                                    <option value="005">05 - HARIYONO</option>
+                                    <option value="006">06 - HERI WIDODO</option>
+                                    <option value="007">07 - MANSUR</option>
+                                    <option value="008">08 - MASHUDI</option>
+                                    <option value="009">09 - MUH. ROWI</option>
+                                    <option value="010">10 - MUHAMMAD SYAFI'I</option>
+                                    <option value="011">11 - MUNIR</option>
+                                    <option value="012">12 - NURUL HIDAYAT</option>
+                                    <option value="013">13 - SENO</option>
+                                    <option value="014">14 - SOFYAN IRWANTO</option>
+                                    <option value="015">15 - SUGIYONO</option>
+                                    <option value="016">16 - SUTIKNO</option>
+                                    <option value="017">17 - WAHONO</option>
+                                    <option value="018">18 - WARSI</option>
+                                    <option value="019">19 - ZAKARIA ANSORI</option>
                                 </select>
                             </div>
 

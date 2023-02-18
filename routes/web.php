@@ -7,6 +7,7 @@ use App\Http\Controllers\MundurejoController;
 use App\Http\Controllers\SidomekarController;
 use App\Http\Controllers\PondokjoyoController;
 use App\Http\Controllers\KoordinatorController;
+use App\Http\Controllers\SumberagungController;
 
 Auth::routes();
 
@@ -38,6 +39,15 @@ Route::controller(SidomekarController::class)->group(function () {
     Route::get('/sidomekar/{id}/edit', 'edit')->name('edit-sidomekar');
 });
 
+Route::controller(SumberagungController::class)->group(function () {
+    Route::post('/sumberagung/cek', 'cek_nominatif')->name('cek-sumberagung');
+    Route::get('/sumberagung', 'index')->name('sumberagung.index');
+    Route::get('/sumberagung/create', 'create')->name('create-sumberagung');
+    Route::post('/sumberagung/store', 'store');
+    Route::get('/sumberagung/{id}/destroy', 'destroy')->name('destroy-sumberagung');
+    Route::get('/sumberagung/{id}/edit', 'edit')->name('edit-sumberagung');
+});
+
 Route::controller(KoordinatorController::class)->group(function () {
     Route::post('/koordinator/cek', 'cek_koordinator')->name('cek-koordinator');
     Route::get('/koordinator', 'index')->name('koordinator.index');
@@ -51,8 +61,10 @@ Route::controller(KoordinatorController::class)->group(function () {
 Route::controller(DownloadController::class)->group(function () {
     Route::get('/downloadpondokjoyo', 'downloadExcelPondokjoyo')->name('downloadExcelPondokjoyo');
     Route::get('/downloadmundurejo', 'downloadExcelMundurejo')->name('downloadExcelMundurejo');
+    Route::get('/downloadsumberagung', 'downloadExcelSumberagung')->name('downloadExcelSumberagung');
     Route::get('/downloadsidomekar', 'downloadExcelSidomekar')->name('downloadExcelSidomekar');
     Route::get('/mundurejo/{id}/export', 'exportMundurejo')->name('export-mundurejo');
     Route::get('/pondokjoyo/{id}/export', 'exportPondokjoyo')->name('export-pondokjoyo');
     Route::get('/sidomekar/{id}/export', 'exportSidomekar')->name('export-sidomekar');
+    Route::get('/sumberagung/{id}/export', 'exportSumberagung')->name('export-sumberagung');
 });

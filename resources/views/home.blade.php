@@ -15,6 +15,7 @@
                         <div class="text-center">
                             <a href="/pondokjoyo" class="btn btn-primary">Pondokjoyo</a>
                             <a href="/mundurejo" class="btn btn-primary">Mundurejo</a>
+                            <a href="/sumberagung" class="btn btn-primary">Sumberagung</a>
                             <a href="/sidomekar" class="btn btn-primary">Sidomekar</a>
                             @if (Auth::user()->id == '1')
                                 <a href="/koordinator" class="btn btn-primary">Koordinator</a>

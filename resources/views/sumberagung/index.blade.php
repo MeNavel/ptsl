@@ -21,9 +21,9 @@
             <div class="col-lg-12">
                 <div class="container card">
                     <div class="card-body">
-                        <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Mundurejo</h5>
-                        <a href="/mundurejo/create" class="btn btn-primary">Tambah Data</a>
-                        <a href="/downloadmundurejo" class="btn btn-primary">Download Excel</a>
+                        <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Sumberagung</h5>
+                        <a href="/sumberagung/create" class="btn btn-primary">Tambah Data</a>
+                        <a href="/downloadsumberagung" class="btn btn-primary">Download Excel</a>
                         <br><br>
                         <!-- Small tables -->
                         <div class="table-responsive">
@@ -53,7 +53,7 @@
                                     order: [
                                         [0, 'desc']
                                     ],
-                                    ajax: "{{ route('mundurejo.index') }}",
+                                    ajax: "{{ route('sumberagung.index') }}",
                                     columns: [{
                                             data: 'id',
                                             name: 'id',
@@ -128,7 +128,7 @@
                                         if (result.value) {
                                             var id = $(this).data('id');
                                             $.ajax({
-                                                url: "/mundurejo/" + id + "/destroy",
+                                                url: "/sumberagung/" + id + "/destroy",
                                                 type: 'GET',
                                                 data: {
                                                     '_token': $('meta[name="csrf-token"]').attr('content'),
