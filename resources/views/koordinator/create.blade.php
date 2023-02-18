@@ -60,6 +60,10 @@
                                     <option selected>BETENG</option>
                                     <option value="BABATAN">BABATAN</option>
                                     <option value="BESUKI">BESUKI</option>
+                                    <option value="BANJAREJO BARAT">BANJAREJO BARAT</option>
+                                    <option value="BANJAREJO TENGAH">BANJAREJO TENGAH</option>
+                                    <option value="BANJAREJO TIMUR">BANJAREJO TIMUR</option>
+                                    <option value="TAMBAKREJO">TAMBAKREJO</option>
                                     <option value="SONGON">SONGON</option>
                                     <option value="PONDOK RAMPAL">PONDOK RAMPAL</option>
                                     <option value="BLOGMUNDU">BLOGMUNDU</option>
