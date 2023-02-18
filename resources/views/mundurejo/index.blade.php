@@ -50,9 +50,7 @@
                                 var table = $('.data-table').DataTable({
                                     processing: true,
                                     serverSide: true,
-                                    order: [
-                                        [0, 'desc']
-                                    ],
+                                    
                                     ajax: "{{ route('mundurejo.index') }}",
                                     columns: [{
                                             data: 'id',
