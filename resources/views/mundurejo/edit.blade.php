@@ -312,6 +312,7 @@
                                     <option value="012">H. BUKHORI - 12</option>
                                     <option value="013">MUKSIN - 13</option>
                                     <option value="014">MOH. AMIN - 14</option>
+                                    <option value="REGASEN">ARIEF SABARIMAN - REGASEN</option>
                                 </select>
                             </div>
 
