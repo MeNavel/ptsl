@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\Mundurejo;
-use App\Models\Pondokjoyo;
 use App\Models\Sidomekar;
+use App\Models\Pondokjoyo;
+use App\Models\Sumberagung;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -29,6 +30,7 @@ class HomeController extends Controller
     {
         $data_dusun_pondokjoyo[] = null;
         $data_dusun_mundurejo[] = null;
+        $data_dusun_sumberagung[] = null;
         $data_dusun_sidomekar[] = null;
         //Desa Pondok Joyo
         $dusun_pondokjoyo = Pondokjoyo::select('Dusun_Letak_Tanah')->groupBy('Dusun_Letak_Tanah')->get()->pluck('Dusun_Letak_Tanah')->all();
@@ -46,6 +48,14 @@ class HomeController extends Controller
             $iter++;
         }
 
+        //Desa Sumberagung
+        $dusun_sumberagung = Sumberagung::select('Dusun_Letak_Tanah')->groupBy('Dusun_Letak_Tanah')->get()->pluck('Dusun_Letak_Tanah')->all();
+        $iter = 0;
+        while ($iter < DB::table('sumberagung')->select('Dusun_Letak_Tanah')->distinct()->count('Dusun_Letak_Tanah')) {
+            $data_dusun_sumberagung[$iter] = Sumberagung::select('*')->where('Dusun_Letak_Tanah', '=', $dusun_sumberagung[$iter])->count();
+            $iter++;
+        }
+
         //Desa Sidomekar
         $dusun_sidomekar = Sidomekar::select('Dusun_Letak_Tanah')->groupBy('Dusun_Letak_Tanah')->get()->pluck('Dusun_Letak_Tanah')->all();
         $iter = 0;
@@ -53,6 +63,15 @@ class HomeController extends Controller
             $data_dusun_sidomekar[$iter] = Sidomekar::select('*')->where('Dusun_Letak_Tanah', '=', $dusun_sidomekar[$iter])->count();
             $iter++;
         }
-        return view('home', compact(['dusun_pondokjoyo','data_dusun_pondokjoyo','dusun_mundurejo','data_dusun_mundurejo','dusun_sidomekar','data_dusun_sidomekar']));
+        return view('home', compact([
+            'dusun_pondokjoyo',
+            'data_dusun_pondokjoyo',
+            'dusun_mundurejo',
+            'data_dusun_mundurejo',
+            'dusun_sumberagung',
+            'data_dusun_sumberagung',
+            'dusun_sidomekar',
+            'data_dusun_sidomekar',
+        ]));
     }
 }
