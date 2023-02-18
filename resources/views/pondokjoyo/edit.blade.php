@@ -24,8 +24,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label for="Blok" class="form-label">Blok</label>
-                                <input type="text" name="Blok" class="form-control" id="Blok" value="{{$data->Blok}}"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                <input type="text" name="Blok" class="form-control" id="Blok" value="{{$data->Blok}}">
                             </div>
                             <div class="col-md-3">
                                 <label for="No_SPPT" class="form-label">No SPPT</label>
