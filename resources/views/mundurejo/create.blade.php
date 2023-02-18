@@ -280,20 +280,20 @@
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected></option>
-                                    <option value="001">01 - SOFYAN HADI</option>
-                                    <option value="002">02 - ANDRI CAHYONO</option>
-                                    <option value="003">03 - MUHADI</option>
-                                    <option value="004">04 - SUTOPO</option>
-                                    <option value="005">05 - EDI MESDIONO</option>
-                                    <option value="006">06 - DENDI P</option>
-                                    <option value="007">07 - ANDRIYONO</option>
-                                    <option value="008">08 - SURADI</option>
-                                    <option value="009">09 - MUKHOLIL</option>
-                                    <option value="010">10 - DHEHAN</option>
-                                    <option value="011">11 - SANTOSO</option>
-                                    <option value="012">12 - H. BUKHORI</option>
-                                    <option value="013">13 - H. MUHSIN</option>
-                                    <option value="014">14 - MOH. AMIN</option>
+                                    <option value="001">SOFYAN HADI - 01</option>
+                                    <option value="002">ANDRI CAHYONO - 02</option>
+                                    <option value="003">MUHADI - 03</option>
+                                    <option value="004">SUTOPO - 04</option>
+                                    <option value="005">EDI MESDIONO - 05</option>
+                                    <option value="006">DENDI P - 06</option>
+                                    <option value="007">ANDRIYONO - 07</option>
+                                    <option value="008">SURADI - 08</option>
+                                    <option value="009">MUKHOLIL - 09</option>
+                                    <option value="010">DHEHAN - 10</option>
+                                    <option value="011">SANTOSO - 11</option>
+                                    <option value="012">H. BUKHORI - 12</option>
+                                    <option value="013">H. MUHSIN - 13</option>
+                                    <option value="014">MOH. AMIN - 14</option>
                                 </select>
                             </div>
 
