@@ -272,22 +272,22 @@
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected>{{$data->Koordinator}}</option>
-                                    <option value="EDI BEDOR">EDI BEDOR</option>
-                                    <option value="BUDIONO">BUDIONO</option>
-                                    <option value="MUHAMMAD ADI">MUHAMMAD ADI</option>
-                                    <option value="MAYAR">MAYAR</option>
-                                    <option value="SUTRISNO">SUTRISNO</option>
-                                    <option value="SONI S">SONI S</option>
-                                    <option value="MULYONO">MULYONO</option>
-                                    <option value="ABUYANTO">ABUYANTO</option>
-                                    <option value="SIONO">SIONO</option>
-                                    <option value="SUNAR">SUNAR</option>
-                                    <option value="NITO">NITO</option>
-                                    <option value="RUM">RUM</option>
-                                    <option value="MUDHARI">MUDHARI</option>
-                                    <option value="SANAWI">SANAWI</option>
-                                    <option value="WAWAN">WAWAN</option>
-                                    <option value="FAUZAN">FAUZAN</option>
+                                    <option value="001">BEBUN EFENDI - 001</option>
+                                    <option value="002">BUDIONO - 002</option>
+                                    <option value="003">ADI - 003</option>
+                                    <option value="004">MAYAR - 004</option>
+                                    <option value="005">SUTRISNO - 005</option>
+                                    <option value="006">SONI SETIAWAN - 006</option>
+                                    <option value="007">MULYONO - 007</option>
+                                    <option value="008">ABUYANTO - 008</option>
+                                    <option value="009">SIONO - 009</option>
+                                    <option value="010">SUNAR - 010</option>
+                                    <option value="011">NITO PRAMONO - 011</option>
+                                    <option value="012">RINA RUMIANA - 012</option>
+                                    <option value="013">MUTHARI ROFI - 013</option>
+                                    <option value="014">SANAWI - 014</option>
+                                    <option value="015">RIBUT HERMAWAN - 015</option>
+                                    <option value="016">MUHAMMAD FAUZAN - 016</option>
                                 </select>
                             </div>
 
