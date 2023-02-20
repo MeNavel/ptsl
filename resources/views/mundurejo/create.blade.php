@@ -38,10 +38,12 @@
                                 <label for="Blok" class="form-label">Blok</label>
                                 <input type="text" name="Blok" class="form-control" id="Blok"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                <span id="cek_Blok"></span>
                             </div>
                             <div class="col-md-3">
                                 <label for="No_SPPT" class="form-label">No SPPT</label>
                                 <input type="text" name="No_SPPT" class="form-control" id="No_SPPT">
+                                <span id="cek_No_SPPT"></span>
                             </div>
                             <div class="col-3">
                                 <label for="PBT" class="form-label">PBT</label>
@@ -312,14 +314,14 @@
                         </form><!-- End Multi Columns Form -->
                         <script>
                             $(document).ready(function() {
-
                                 $('#No_Nominatif').blur(function() {
                                     var No_Nominatif = $('#No_Nominatif').val();
                                     var _token = $('input[name="_token"]').val();
                                     var filter = /^[0-9]*$/;
                                     if (!filter.test(No_Nominatif)) {
                                         $('#cek_nominatif').show();
-                                        $('#cek_nominatif').html('<label class="text-danger">Nomor Nominatif Harus Angka</label>');
+                                        $('#cek_nominatif').html(
+                                            '<label class="text-danger">Nomor Nominatif Harus Angka</label>');
                                         $('#submit').attr('disabled', 'true');
                                     } else {
                                         $.ajax({
@@ -343,11 +345,25 @@
                                             }
                                         })
                                     }
+                                }); 
+                                $('#No_SPPT').blur(function() {
+                                    var No_SPPT = $('#No_SPPT').val();
+                                    var filter = /^(\s*|[A-Z0-9]{1,5})$/;
+                                    if (!filter.test(No_SPPT)) {
+                                        $('#cek_No_SPPT').show();
+                                        $('#cek_No_SPPT').html(
+                                            '<label class="text-danger">Nomor Maksimal 5 Digit (Huruf Kapital dan Angka)</label>');
+                                        $('#submit').attr('disabled', true);
+                                    } else {
+                                        $('#cek_No_SPPT').show();
+                                        $('#cek_No_SPPT').html(
+                                            '<label class="text-danger">masuk sini</label>');
+                                        $('#submit').attr('disabled', false);
+                                    }
                                 });
-
                             });
                         </script>
-                        
+
                     </div>
                 </div>
             </div>
