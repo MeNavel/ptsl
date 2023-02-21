@@ -107,7 +107,7 @@ class PondokjoyoController extends Controller
         $data->Pekerjaan = $request->Pekerjaan;
 
         // Data Atas Nama Sertifikat
-        if ($request->An_No_KTP_NIK == "") {
+        if ($request->An_No_KTP_NIK == null) {
             $data->An_No_KTP_NIK = $request->No_KTP_NIK;
             $data->An_Nama = $request->Nama;
             $data->An_Tempat_Lahir = $request->Tempat_Lahir;
