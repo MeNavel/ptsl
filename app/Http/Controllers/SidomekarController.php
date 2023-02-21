@@ -152,7 +152,7 @@ class SidomekarController extends Controller
         // Peralihan 2
         $data->Tahun_Peralihan_2 = $request->Tahun_Peralihan_2;
         if ($request->Alas_Hak_Bukti_Perolehan == "" && $request->Dasar_Peralihan_2 != "") {
-            $data->Peralihan_2_Kepada = $request->An_Nama;
+            $data->Peralihan_2_Kepada = $data->An_Nama;
         } else {
             $data->Peralihan_2_Kepada = $request->Peralihan_2_Kepada;
         }
@@ -174,7 +174,7 @@ class SidomekarController extends Controller
         $data->Tahun_Perolehan_Terakhir = $request->Tahun_Perolehan_Terakhir;
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
         if ($request->Dasar_Peralihan_2 != null && $request->Alas_Hak_Bukti_Perolehan != null){
-            $data->Nama_Perolehan_Terakhir = $request->An_Nama;
+            $data->Nama_Perolehan_Terakhir = $data->An_Nama;
         }
         
 
