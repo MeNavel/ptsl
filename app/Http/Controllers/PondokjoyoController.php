@@ -152,7 +152,7 @@ class PondokjoyoController extends Controller
 
         // Peralihan 2
         $data->Tahun_Peralihan_2 = $request->Tahun_Peralihan_2;
-        if ($request->Alas_Hak_Bukti_Perolehan == "" && $request->Dasar_Peralihan_2 != "") {
+        if ($request->Sebab_Peralihan_Terakhir == "" && $request->Dasar_Peralihan_2 != "") {
             $data->Peralihan_2_Kepada = $request->An_Nama;
         } else {
             $data->Peralihan_2_Kepada = $request->Peralihan_2_Kepada;
