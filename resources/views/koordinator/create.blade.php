@@ -138,27 +138,6 @@
                                         $('#cek_koordinator').html(
                                             '<label class="text-danger">NIK Salah</label>');
                                         $('#submit').attr('disabled', 'true');
-                                    } else {
-                                        $.ajax({
-                                            url: "{{ route('cek-koordinator') }}",
-                                            method: "POST",
-                                            data: {
-                                                nik: NIK,
-                                                _token: _token
-                                            },
-                                            success: function(result) {
-                                                if (result == 'not_unique') {
-                                                    $('#cek_koordinator').show();
-                                                    $('#cek_koordinator').html(
-                                                        '<label class="text-danger">NIK Sudah Digunakan</label>'
-                                                    );
-                                                    $('#submit').attr('disabled', true);
-                                                } else {
-                                                    $('#cek_koordinator').hide();
-                                                    $('#submit').attr('disabled', false);
-                                                }
-                                            }
-                                        })
                                     }
                                 });
 

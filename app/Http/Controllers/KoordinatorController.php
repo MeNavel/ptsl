@@ -55,10 +55,6 @@ class KoordinatorController extends Controller
      */
     public function store(Request $request)
     {
-        $data = Koordinator::find($request->NIK);
-        if ($data) {
-            $data->delete();
-        }
         $data = new Koordinator;
 
         $data->nik = $request->NIK;
@@ -124,19 +120,5 @@ class KoordinatorController extends Controller
             $data->delete();
             return response()->json(['success' => 'Data Deleted Successfully']);
         };
-    }
-
-    public function cek_koordinator(Request $request)
-    { {
-            if ($request->get('nik')) {
-                $nik = $request->get('nik');
-                $data = Koordinator::where('nik', '=', $nik)->first();
-                if ($data) {
-                    echo 'not_unique';
-                } else {
-                    echo 'unique';
-                }
-            }
-        }
     }
 }
