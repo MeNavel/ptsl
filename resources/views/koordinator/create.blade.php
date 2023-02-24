@@ -1,7 +1,5 @@
 @extends('mainlayout')
 
-@extends('layouts.navbar')
-
 @section('content')
 
     <br>

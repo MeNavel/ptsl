@@ -1,7 +1,5 @@
 @extends('mainlayout')
 
-@extends('layouts.navbar')
-
 @section('content')
     {{-- <h1>create</h1>
 

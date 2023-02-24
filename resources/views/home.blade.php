@@ -1,6 +1,6 @@
 @extends('mainlayout')
 
-@extends('layouts.navbar')
+{{-- @extends('layouts.navbar') --}}
 
 @section('content')
     <br>

@@ -1,20 +1,6 @@
 @extends('mainlayout')
 
-@extends('layouts.navbar')
-
 @section('content')
-    {{-- <h1>create</h1>
-
-<form action="/k1/store" method="POST">
-    @csrf
-    <input type="text" name="No_Nominatif">
-    <input type="text" name="Blok">
-    <input type="text" name="No_SPPT">
-    <input type="text" name="Nama">
-    <input type="text" name="NUB">
-    <input type="date" placeholder="tanggal" name="Luas_Ukur">
-    <input type="submit" name="Submit" value="Save">
-</form> --}}
     <br>
     <section class="section">
         <div class="row">

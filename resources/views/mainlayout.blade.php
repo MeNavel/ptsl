@@ -9,7 +9,7 @@
  </head>
 
  <body>
-    {{-- @include('partials.nav') --}}
+    @include('partials.nav')
 
     {{-- @include('partials.header') --}}
 
