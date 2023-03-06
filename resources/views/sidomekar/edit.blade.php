@@ -28,6 +28,7 @@
                             <div class="col-md-3">
                                 <label for="No_SPPT" class="form-label">No SPPT</label>
                                 <input type="text" name="No_SPPT" class="form-control" id="No_SPPT" value="{{$data->No_SPPT}}">
+                                <span id="cek_No_SPPT"></span>
                             </div>
                             <div class="col-3">
                                 <label for="PBT" class="form-label">PBT</label>
@@ -284,7 +285,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
                             </div>
                             <script>
                                 $(document).ready(function() {
