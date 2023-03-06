@@ -784,6 +784,9 @@ class DownloadController extends Controller
             $An_Tanggal_Lahir = null;
         }
 
+        //handle awal nib
+        $Awal_Nib = "12.34.02.10.";
+
         if ($data->Tahun_Perolehan_Terakhir == null) {
             if ($data->Tahun_Peralihan_2 == null) {
                 if ($data->Tahun_Peralihan_1 == null) {
@@ -806,6 +809,7 @@ class DownloadController extends Controller
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
+            'Awal_Nib' => $Awal_Nib,
             'NIB' => $data->NIB,
             'Luas_Ukur' => $data->Luas_Ukur,
             'Beda_Luas' => $data->Beda_Luas,
@@ -921,6 +925,8 @@ class DownloadController extends Controller
             $An_Tanggal_Lahir = null;
         }
 
+        $Awal_Nib = "12.34.27.06.";
+
         if ($data->Tahun_Perolehan_Terakhir == null) {
             if ($data->Tahun_Peralihan_2 == null) {
                 if ($data->Tahun_Peralihan_1 == null) {
@@ -943,6 +949,7 @@ class DownloadController extends Controller
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
+            'Awal_Nib' => $Awal_Nib,
             'NIB' => $data->NIB,
             'Luas_Ukur' => $data->Luas_Ukur,
             'Beda_Luas' => $data->Beda_Luas,
@@ -1059,6 +1066,8 @@ class DownloadController extends Controller
             $An_Tanggal_Lahir = null;
         }
 
+        $Awal_Nib = "12.34.13.10.";
+
         if ($data->Tahun_Perolehan_Terakhir == null) {
             if ($data->Tahun_Peralihan_2 == null) {
                 if ($data->Tahun_Peralihan_1 == null) {
@@ -1081,6 +1090,7 @@ class DownloadController extends Controller
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
+            'Awal_Nib' => $Awal_Nib,
             'NIB' => $data->NIB,
             'Luas_Ukur' => $data->Luas_Ukur,
             'Beda_Luas' => $data->Beda_Luas,
@@ -1196,6 +1206,8 @@ class DownloadController extends Controller
             $An_Tanggal_Lahir = null;
         }
 
+        $Awal_Nib = "12.34.27.04.";
+
         if ($data->Tahun_Perolehan_Terakhir == null) {
             if ($data->Tahun_Peralihan_2 == null) {
                 if ($data->Tahun_Peralihan_1 == null) {
@@ -1218,6 +1230,7 @@ class DownloadController extends Controller
             'PBT' => $data->PBT,
             'No_Berkas' => $data->No_Berkas,
             'NUB' => $data->NUB,
+            'Awal_Nib' => $Awal_Nib,
             'NIB' => $data->NIB,
             'Luas_Ukur' => $data->Luas_Ukur,
             'Beda_Luas' => $data->Beda_Luas,
