@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <div class="container card">
                     <div class="card-body">
-                        <h5 class="card-title">Formulir Pendaftaran K1 Desa Pondokjoyo</h5>
+                        <h5 class="card-title">Formulir Pendaftaran K1 Desa PONDOK JOYO</h5>
                         <form action="/pondokjoyo">
                             <button type="submit" class="btn btn-primary">Home</button>
                         </form>
@@ -24,10 +24,12 @@
                                 <label for="Blok" class="form-label">Blok</label>
                                 <input type="text" name="Blok" class="form-control" id="Blok"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                <span id="cek_Blok"></span>
                             </div>
                             <div class="col-md-3">
                                 <label for="No_SPPT" class="form-label">No SPPT</label>
                                 <input type="text" name="No_SPPT" class="form-control" id="No_SPPT">
+                                <span id="cek_No_SPPT"></span>
                             </div>
                             <div class="col-3">
                                 <label for="PBT" class="form-label">PBT</label>
@@ -146,8 +148,9 @@
                                 <label for="Dusun_Letak_Tanah" class="form-label">Dusun</label>
                                 <select class="form-select" id="Dusun_Letak_Tanah" name="Dusun_Letak_Tanah"
                                     aria-label="State">
-                                    <option selected>SONGON</option>
-                                    <option value="PONDOK RAMPAL">PONDOK RAMPAL</option>
+                                    <option selected>TEMUREJO</option>
+                                    <option value="SUKOMAKMUR">SUKOMAKMUR</option>
+                                    <option value="BLOGMUNDU">BLOGMUNDU</option>
                                 </select>
                             </div>
                             <div class="col-2">
@@ -289,13 +292,13 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-primary">Submit</button>
-                                <button type="reset" class="btn btn-secondary">Reset</button>
+                                <button id="submit" type="submit" class="btn btn-primary">Submit</button>
+                                <button id="reset" type="reset" class="btn btn-secondary">Reset</button>
                             </div>
                         </form><!-- End Multi Columns Form -->
                         <script>
                             $(document).ready(function() {
-
+                                $('#submit').attr('disabled', true);
                                 $('#No_Nominatif').blur(function() {
                                     var No_Nominatif = $('#No_Nominatif').val();
                                     var _token = $('input[name="_token"]').val();
@@ -350,9 +353,13 @@
                                 });
                             });
                         </script>
+
                     </div>
                 </div>
             </div>
         </div>
     </section>
 @endsection
+
+
+
