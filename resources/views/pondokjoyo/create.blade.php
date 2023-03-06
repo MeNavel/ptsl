@@ -7,7 +7,7 @@
             <div class="col-lg-12">
                 <div class="container card">
                     <div class="card-body">
-                        <h5 class="card-title">Formulir Pendaftaran K1 Desa PONDOK JOYO</h5>
+                        <h5 class="card-title">Formulir Pendaftaran K1 Desa Pondok Joyo</h5>
                         <form action="/pondokjoyo">
                             <button type="submit" class="btn btn-primary">Home</button>
                         </form>

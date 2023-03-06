@@ -22,12 +22,12 @@
                             </div>
                             <div class="col-md-3">
                                 <label for="Blok" class="form-label">Blok</label>
-                                <input type="text" name="Blok" class="form-control" id="Blok" value="{{$data->Blok}}">
+                                <input type="text" name="Blok" class="form-control" id="Blok" value="{{$data->Blok}}"
+                                oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                             </div>
                             <div class="col-md-3">
                                 <label for="No_SPPT" class="form-label">No SPPT</label>
-                                <input type="text" name="No_SPPT" class="form-control" id="No_SPPT" value="{{$data->No_SPPT}}"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                <input type="text" name="No_SPPT" class="form-control" id="No_SPPT" value="{{$data->No_SPPT}}">
                             </div>
                             <div class="col-3">
                                 <label for="PBT" class="form-label">PBT</label>
@@ -298,6 +298,24 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
+                            <script>
+                                $(document).ready(function() {
+                                    $('#No_SPPT').blur(function() {
+                                        var No_SPPT = $('#No_SPPT').val();
+                                        var filter = /^(\s*|[A-Z0-9]{1,5})$/;
+                                        if (!filter.test(No_SPPT)) {
+                                            $('#cek_No_SPPT').show();
+                                            $('#cek_No_SPPT').html(
+                                                '<label class="text-danger">Nomor Maksimal 5 Digit (Huruf Kapital dan Angka)</label>'
+                                            );
+                                            $('#submit').attr('disabled', true);
+                                        } else {
+                                            $('#cek_No_SPPT').hide();
+                                            $('#submit').attr('disabled', false);
+                                        }
+                                    });
+                                });
+                            </script>
                         </form><!-- End Multi Columns Form -->
                     </div>
                 </div>

@@ -327,6 +327,24 @@
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </div>
+                            <script>
+                                $(document).ready(function() {
+                                    $('#No_SPPT').blur(function() {
+                                        var No_SPPT = $('#No_SPPT').val();
+                                        var filter = /^(\s*|[A-Z0-9]{1,5})$/;
+                                        if (!filter.test(No_SPPT)) {
+                                            $('#cek_No_SPPT').show();
+                                            $('#cek_No_SPPT').html(
+                                                '<label class="text-danger">Nomor Maksimal 5 Digit (Huruf Kapital dan Angka)</label>'
+                                            );
+                                            $('#submit').attr('disabled', true);
+                                        } else {
+                                            $('#cek_No_SPPT').hide();
+                                            $('#submit').attr('disabled', false);
+                                        }
+                                    });
+                                });
+                            </script>
                         </form><!-- End Multi Columns Form -->
                     </div>
                 </div>
