@@ -149,7 +149,7 @@
                                 <select class="form-select" id="Dusun_Letak_Tanah" name="Dusun_Letak_Tanah"
                                     aria-label="State">
                                     <option selected>SONGON</option>
-                                    <option value="SUKOMAKMUR">PONDOK RAMPAL</option>
+                                    <option value="PONDOK RAMPAL">PONDOK RAMPAL</option>
                                 </select>
                             </div>
                             <div class="col-2">
