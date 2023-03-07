@@ -148,9 +148,8 @@
                                 <label for="Dusun_Letak_Tanah" class="form-label">Dusun</label>
                                 <select class="form-select" id="Dusun_Letak_Tanah" name="Dusun_Letak_Tanah"
                                     aria-label="State">
-                                    <option selected>TEMUREJO</option>
-                                    <option value="SUKOMAKMUR">SUKOMAKMUR</option>
-                                    <option value="BLOGMUNDU">BLOGMUNDU</option>
+                                    <option selected>SONGON</option>
+                                    <option value="SUKOMAKMUR">PONDOK RAMPAL</option>
                                 </select>
                             </div>
                             <div class="col-2">
