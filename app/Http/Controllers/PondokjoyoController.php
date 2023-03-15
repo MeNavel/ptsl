@@ -236,7 +236,7 @@ class PondokjoyoController extends Controller
             }
         }
         $data->save();
-        return view('pondokjoyo.index');
+        return view('pondokjoyo.create');
     }
 
     /**
