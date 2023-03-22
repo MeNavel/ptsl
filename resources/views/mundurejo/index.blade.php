@@ -57,7 +57,7 @@
                                             className: "dt-head-center dt-body-center"
                                         },
                                         {
-                                            data: 'Nama',
+                                            data: 'An_Nama',
                                             name: 'Nama',
                                             className: "dt-head-center"
                                         },
