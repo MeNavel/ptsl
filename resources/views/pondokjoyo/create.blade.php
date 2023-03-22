@@ -17,7 +17,7 @@
                             @csrf
                             <div class="col-md-3">
                                 <label for="No_Nominatif" class="form-label">Nomor Nominatif</label>
-                                <input type="text" name="No_Nominatif" class="form-control" id="No_Nominatif">
+                                <input type="text" name="No_Nominatif" class="form-control" id="No_Nominatif" autofocus>
                                 <span id="cek_nominatif"></span>
                             </div>
                             <div class="col-md-3">
