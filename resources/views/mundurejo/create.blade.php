@@ -22,7 +22,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label for="Blok" class="form-label">Blok</label>
-                                <input type="text" name="Blok" class="form-control" id="Blok"
+                                <input type="text" name="Blok" class="form-control" id="Blok" value="000"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                 <span id="cek_Blok"></span>
                             </div>
