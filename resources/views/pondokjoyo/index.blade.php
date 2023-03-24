@@ -16,7 +16,6 @@
                             <table class="table table-bordered data-table" style="width:100%">
                                 <thead>
                                     <tr style="vertical-align: middle;">
-                                        
                                         <th scope="col">No Nominatif</th>
                                         <th scope="col">Nama</th>
                                         <th scope="col">NUB</th>
