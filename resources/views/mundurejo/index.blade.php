@@ -35,6 +35,13 @@
                                         <th scope="col">Luas Ukur</th>
                                         <th scope="col">Luas Permohonan</th>
                                         <th scope="col">Beda Luas</th>
+                                        <th scope="col">Tahun 1</th>
+                                        <th scope="col">Nama 1</th>
+                                        <th scope="col">Tahun 2</th>
+                                        <th scope="col">Nama 2</th>
+                                        <th scope="col">Peralihan 2</th>
+                                        <th scope="col">Tahun 3</th>
+                                        <th scope="col">Peralihan 3</th>
                                         <th scope="col">Koordinator</th>
                                         <th width="col">Action</th>
                                     </tr>
@@ -48,9 +55,13 @@
                                 var table = $('.data-table').DataTable({
                                     processing: true,
                                     serverSide: true,
-                                    
+                                    scrollX: true,
+                                    order: [
+                                        [0, 'desc']
+                                    ],
                                     ajax: "{{ route('mundurejo.index') }}",
-                                    columns: [{
+                                    columns: [
+                                        {
                                             data: 'id',
                                             name: 'id',
                                             width: "5%",
@@ -94,6 +105,44 @@
                                             width: "5%",
                                             name: 'Selisih_Luas',
                                             className: "dt-head-center dt-body-center"
+                                        },
+                                        {
+                                            data: 'Tahun_Peralihan_1',
+                                            name: 'Tahun_Peralihan_1',
+                                            className: "dt-head-center dt-body-center",
+                                            width: "5%"
+                                        },
+                                        {
+                                            data: 'Peralihan_1_Kepada',
+                                            name: 'Peralihan_1_Kepada',
+                                            className: "dt-head-center dt-body-center",
+                                        },
+                                        {
+                                            data: 'Tahun_Peralihan_2',
+                                            name: 'Tahun_Peralihan_2',
+                                            className: "dt-head-center dt-body-center",
+                                            width: "5%"
+                                        },
+                                        {
+                                            data: 'Peralihan_2_Kepada',
+                                            name: 'Peralihan_2_Kepada',
+                                            className: "dt-head-center dt-body-center",
+                                        },
+                                        {
+                                            data: 'Dasar_Peralihan_2',
+                                            name: 'Dasar_Peralihan_2',
+                                            className: "dt-head-center dt-body-center",
+                                        },
+                                        {
+                                            data: 'Tahun_Perolehan_Terakhir',
+                                            name: 'Tahun_Perolehan_Terakhir',
+                                            className: "dt-head-center dt-body-center",
+                                            width: "5%"
+                                        },
+                                        {
+                                            data: 'Alas_Hak_Bukti_Perolehan',
+                                            name: 'Alas_Hak_Bukti_Perolehan',
+                                            className: "dt-head-center dt-body-center",
                                         },
                                         {
                                             data: 'Nama_Saksi_1',
