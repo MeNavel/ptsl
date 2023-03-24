@@ -4,12 +4,10 @@
 
 @section('content')
     <br>
-    <div class="container">
+    <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-lg-12">
                 <div class="card">
-
-
                     <div class="card-body">
                         <h5 class="card-title text-center">Navigation</h5>
                         <div class="text-center">
@@ -37,7 +35,7 @@
                                 <h5 class="card-title">Mundurejo</h5>
                                 <div id="chart_mundurejo"></div>
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
@@ -53,6 +51,22 @@
                             <div class="col-lg-6">
                                 <h5 class="card-title">Pondok Joyo</h5>
                                 <div id="chart_pondokjoyo"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <h5 class="card-title">Koordinator Pondok Joyo</h5>
+                                <div id="chart_koordinator_pondokjoyo"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <h5 class="card-title">Koordinator Mundurejo</h5>
+                                <div id="chart_koordinator_mundurejo"></div>
                             </div>
                         </div>
                     </div>
@@ -200,7 +214,7 @@
                     new ApexCharts(document.querySelector("#chart_sidomekar"), {
                         series: [
                             @foreach ($data_dusun_sidomekar as $item)
-                                 {{ $item }},
+                                {{ $item }},
                             @endforeach
                         ],
                         colors: ["#FFC154", "#47B39C", "#EC6B56"],
@@ -236,6 +250,86 @@
                             formatter: function(val, opts) {
                                 return opts.w.config.series[opts.seriesIndex]
                             },
+                        },
+                    }).render();
+                });
+            </script>
+            {{-- script koordinator pondokjoyo --}}
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#chart_koordinator_pondokjoyo"), {
+                        series: [{
+                            name: "Jumlah Pendaftar ",
+                            data: [
+                                @foreach ($data_koordinator_pondokjoyo as $item)
+                                    {{ $item }},
+                                @endforeach
+                            ]
+                        }],
+                        chart: {
+                            type: 'bar',
+                            height: 800
+                        },
+                        plotOptions: {
+                            bar: {
+                                borderRadius: 4,
+                                horizontal: true,
+                            }
+                        },
+                        dataLabels: {
+                            enabled: true,
+                            offsetX: -6,
+                            style: {
+                                fontSize: '12px',
+                                colors: ['#fff']
+                            }
+                        },
+                        xaxis: {
+                            categories: [
+                                @foreach ($koordinator_pondokjoyo as $item)
+                                    '{{ $item }}',
+                                @endforeach
+                            ],
+                        },
+                    }).render();
+                });
+            </script>
+            {{-- script koordinator mundurejo --}}
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    new ApexCharts(document.querySelector("#chart_koordinator_mundurejo"), {
+                        series: [{
+                            name: "Jumlah Pendaftar ",
+                            data: [
+                                @foreach ($data_koordinator_mundurejo as $item)
+                                    {{ $item }},
+                                @endforeach
+                            ]
+                        }],
+                        chart: {
+                            type: 'bar',
+                            height: 800
+                        },
+                        plotOptions: {
+                            bar: {
+                                borderRadius: 4,
+                                horizontal: true,
+                            }
+                        },
+                        dataLabels: {
+                            enabled: true,
+                            offsetX: -6,
+                            style: {
+                                fontSize: '12px',
+                                colors: ['#fff']
+                            }
+                        },
+                        xaxis: {
+                            categories: [
+                                @foreach ($koordinator_mundurejo as $item)
+                                    '{{ $item }}',
+                                @endforeach
+                            ],
                         },
                     }).render();
                 });

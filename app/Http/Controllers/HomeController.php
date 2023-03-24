@@ -32,6 +32,8 @@ class HomeController extends Controller
         $data_dusun_mundurejo[] = null;
         $data_dusun_sumberagung[] = null;
         $data_dusun_sidomekar[] = null;
+        $data_koordinator_pondokjoyo[] = null;
+        $data_koordinator_mundurejo[] = null;
         //Desa Pondok Joyo
         $dusun_pondokjoyo = Pondokjoyo::select('Dusun_Letak_Tanah')->groupBy('Dusun_Letak_Tanah')->get()->pluck('Dusun_Letak_Tanah')->all();
         $iter = 0;
@@ -63,6 +65,23 @@ class HomeController extends Controller
             $data_dusun_sidomekar[$iter] = Sidomekar::select('*')->where('Dusun_Letak_Tanah', '=', $dusun_sidomekar[$iter])->count();
             $iter++;
         }
+
+        //Koordinator Pondok Joyo
+        $koordinator_pondokjoyo = Pondokjoyo::select('Nama_Saksi_1')->groupBy('Nama_Saksi_1')->get()->pluck('Nama_Saksi_1')->all();
+        $iter = 0;
+        while ($iter < DB::table('pondokjoyo')->select('Nama_Saksi_1')->distinct()->count('Nama_Saksi_1')) {
+            $data_koordinator_pondokjoyo[$iter] = Pondokjoyo::select('*')->where('Nama_Saksi_1', '=', $koordinator_pondokjoyo[$iter])->count();
+            $iter++;
+        }
+
+        //Koordinator Mundurejo
+        $koordinator_mundurejo = Mundurejo::select('Nama_Saksi_1')->groupBy('Nama_Saksi_1')->get()->pluck('Nama_Saksi_1')->all();
+        $iter = 0;
+        while ($iter < DB::table('mundurejo')->select('Nama_Saksi_1')->distinct()->count('Nama_Saksi_1')) {
+            $data_koordinator_mundurejo[$iter] = Mundurejo::select('*')->where('Nama_Saksi_1', '=', $koordinator_mundurejo[$iter])->count();
+            $iter++;
+        }
+
         return view('home', compact([
             'dusun_pondokjoyo',
             'data_dusun_pondokjoyo',
@@ -72,6 +91,10 @@ class HomeController extends Controller
             'data_dusun_sumberagung',
             'dusun_sidomekar',
             'data_dusun_sidomekar',
+            'koordinator_pondokjoyo',
+            'data_koordinator_pondokjoyo',
+            'koordinator_mundurejo',
+            'data_koordinator_mundurejo',
         ]));
     }
 }

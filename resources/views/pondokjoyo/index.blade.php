@@ -5,11 +5,6 @@
     <section class="section">
         <div class="row">
             <div class="col-lx-12">
-                <style>
-                    .container-fluid {
-                        width: 95%
-                    }
-                </style>
                 <div class="container-fluid card">
                     <div class="card-body">
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Pondok Joyo</h5>

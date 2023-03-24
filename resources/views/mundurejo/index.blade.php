@@ -17,7 +17,7 @@
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
-                <div class="container card">
+                <div class="container-fluid card">
                     <div class="card-body">
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Mundurejo</h5>
                         <a href="/mundurejo/create" class="btn btn-primary">Tambah Data</a>

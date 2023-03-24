@@ -5,7 +5,7 @@
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
-                <div class="container card">
+                <div class="container-fluid card">
                     <div class="card-body">
                         <h5 class="card-title">Data Koordinator 3 Desa</h5>
                         <a href="/koordinator/create" class="btn btn-primary">Tambah Data</a>
