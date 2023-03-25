@@ -24,7 +24,6 @@
                                 <label for="Blok" class="form-label">Blok</label>
                                 <input type="text" name="Blok" class="form-control" id="Blok"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                                <span id="cek_Blok"></span>
                             </div>
                             <div class="col-md-3">
                                 <label for="No_SPPT" class="form-label">No SPPT</label>
