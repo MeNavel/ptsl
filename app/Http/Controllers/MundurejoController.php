@@ -241,7 +241,7 @@ class MundurejoController extends Controller
             }
         }
         $data->save();
-        return view('mundurejo.index');
+        return view('mundurejo.create');
     }
 
     /**
