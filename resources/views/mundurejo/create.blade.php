@@ -22,7 +22,8 @@
                             </div>
                             <div class="col-md-3">
                                 <label for="Blok" class="form-label">Blok</label>
-                                <input type="text" name="Blok" class="form-control" id="Blok" value="000" readonly>
+                                <input type="text" name="Blok" class="form-control" id="Blok" value="000"
+                                    readonly>
                             </div>
                             <div class="col-md-3">
                                 <label for="No_SPPT" class="form-label">No SPPT</label>
@@ -351,6 +352,23 @@
                                         $('#cek_No_SPPT').hide();
                                         $('#submit').attr('disabled', false);
                                     }
+                                });
+
+                                // $(function() {
+                                //     $('#Tanggal_Lahir').datetimepicker({
+                                //         format: "YYYY-MM-DD"
+                                //     });
+                                //     $('#An_Tanggal_Lahir').datetimepicker({
+                                //         format: "DD-MM-YYYY"
+                                //     });
+                                //     $('#Tgl_Pendataan').datetimepicker({
+                                //         format: "DD-MM-YYYY",
+
+                                //     });
+
+                                // });
+                                $(".Tanggal_Lahir").datepicker({
+                                    dateFormat: 'yyyy/mm/dd'
                                 });
                             });
                         </script>
