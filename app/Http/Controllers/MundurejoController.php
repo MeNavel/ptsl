@@ -214,7 +214,6 @@ class MundurejoController extends Controller
 
         $data_saksi_1 = Koordinator::where([
             ['jabatan', '=', $request->Koordinator],
-            ['dusun', '=', $request->Dusun_Letak_Tanah],
             ['desa', '=', $desa],
             ['status', '=', 'SAKSI 1'],
         ])->first();
