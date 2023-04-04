@@ -31,7 +31,7 @@ class MundurejoController extends Controller
                 
                 ->addColumn('action', function ($row) {
                     return '<div class="btn-group">
-                                <a class="btn btn-info" href="' . route('edit-mundurejo', $row->id) . '" role="button"><i class="bi bi-info-circle"></i></a>
+                                <a class="btn btn-info" target="_blank" href="' . route('edit-mundurejo', $row->id) . '" role="button"><i class="bi bi-info-circle"></i></a>
                                 <a class="btn btn-primary" href="' . route('export-mundurejo', $row->id) . '" role="button"><i class="bi bi-file-earmark-word"></i></a>
                                 <button class="btn btn-danger delete-btn" data-id="' . $row->id . '"><i class="bi-trash3"></i></button>
                             </div>';
@@ -264,7 +264,8 @@ class MundurejoController extends Controller
     public function edit($No_Nominatif)
     {
         $data = Mundurejo::find($No_Nominatif);
-        return redirect('mundurejo.edit', compact(['data']));
+        return view('mundurejo.edit', compact(['data']));
+        // return redirect()->route('edit-mundurejo', ['id' => $No_Nominatif]);
     }
 
     /**
