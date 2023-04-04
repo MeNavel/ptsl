@@ -264,7 +264,7 @@ class MundurejoController extends Controller
     public function edit($No_Nominatif)
     {
         $data = Mundurejo::find($No_Nominatif);
-        return view('mundurejo.edit', compact(['data']));
+        return redirect('mundurejo.edit', compact(['data']));
     }
 
     /**
