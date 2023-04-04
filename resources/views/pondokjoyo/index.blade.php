@@ -38,9 +38,11 @@
                         </div>
                         <!-- End small tables -->
                         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+                        
+
                         <script type="text/javascript">
                             $(function() {
-
                                 var table = $('.data-table').DataTable({
                                     processing: true,
                                     serverSide: true,

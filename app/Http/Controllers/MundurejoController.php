@@ -28,6 +28,7 @@ class MundurejoController extends Controller
             $data = Mundurejo::select('*');
             return Datatables::of($data)
                 ->addIndexColumn()
+                
                 ->addColumn('action', function ($row) {
                     return '<div class="btn-group">
                                 <a class="btn btn-info" href="' . route('edit-mundurejo', $row->id) . '" role="button"><i class="bi bi-info-circle"></i></a>
