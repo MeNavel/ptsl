@@ -66,8 +66,8 @@
                                         {
                                             orderable: false,
                                             width: "5%",
-                                            data: 'NUB',
-                                            name: 'NUB',
+                                            data: 'No_Berkas',
+                                            name: 'No_Berkas',
                                             className: "dt-head-center dt-body-center"
                                         },
                                         {
