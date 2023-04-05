@@ -18,7 +18,7 @@
                                     <tr style="vertical-align: middle;">
                                         <th scope="col">No Nominatif</th>
                                         <th scope="col">Nama</th>
-                                        <th scope="col">NUB</th>
+                                        <th scope="col">No Berkas</th>
                                         <th scope="col">NIB</th>
                                         <th scope="col">Luas Ukur</th>
                                         <th scope="col">Luas Permohonan</th>
