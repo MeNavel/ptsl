@@ -102,13 +102,12 @@
                             <div class="col-2">
                                 <label for="Agama" class="form-label">Agama</label>
                                 <select class="form-select" id="Agama" name="Agama" aria-label="State">
-                                    <option selected>{{ $data->Agama }}</option>
-                                    <option value="ISLAM">ISLAM</option>
-                                    <option value="KRISTEN">KRISTEN</option>
-                                    <option value="KATOLIK">KATOLIK</option>
-                                    <option value="HINDU">HINDU</option>
-                                    <option value="BUDHA">BUDHA</option>
-                                    <option value="KONGHUCU">KONGHUCU</option>
+                                    <option value="ISLAM" @selected($data->Agama == 'ISLAM')>ISLAM</option>
+                                    <option value="KRISTEN" @selected($data->Agama == "KRISTEN")>KRISTEN</option>
+                                    <option value="KATOLIK" @selected($data->Agama == "KATOLIK")>KATOLIK</option>
+                                    <option value="HINDU" @selected($data->Agama == "HINDU")>HINDU</option>
+                                    <option value="BUDHA" @selected($data->Agama == "BUDHA")>BUDHA</option>
+                                    <option value="KONGHUCU" @selected($data->Agama == "KONGHUCU")>KONGHUCU</option>
                                 </select>
                             </div>
                             <div class="col-2">
