@@ -297,25 +297,25 @@
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     <option selected>{{ $data->Koordinator }}</option>
-                                    <option value="001">01 - ABAS SAIUL ULUM</option>
-                                    <option value="002">02 - AHMADHAN ZUMANY</option>
-                                    <option value="003">03 - ALI MASKUR</option>
-                                    <option value="004">04 - EDI SUSILO</option>
-                                    <option value="005">05 - HARIYONO</option>
-                                    <option value="006">06 - HERI WIDODO</option>
-                                    <option value="007">07 - MANSUR</option>
-                                    <option value="008">08 - MASHUDI</option>
-                                    <option value="009">09 - MUH. ROWI</option>
-                                    <option value="010">10 - MUHAMMAD SYAFI'I</option>
-                                    <option value="011">11 - MUNIR</option>
-                                    <option value="012">12 - NURUL HIDAYAT</option>
-                                    <option value="013">13 - SENO</option>
-                                    <option value="014">14 - SOFYAN IRWANTO</option>
-                                    <option value="015">15 - SUGIYONO</option>
-                                    <option value="016">16 - SUTIKNO</option>
-                                    <option value="017">17 - WAHONO</option>
-                                    <option value="018">18 - WARSI</option>
-                                    <option value="019">19 - ZAKARIA ANSORI</option>
+                                    <option value="001" @selected($data->Koordinator == "001")>ABAS SAIUL ULUM</option>
+                                    <option value="002" @selected($data->Koordinator == "002")>AHMADHAN ZUMANY</option>
+                                    <option value="003" @selected($data->Koordinator == "003")>ALI MASKUR</option>
+                                    <option value="004" @selected($data->Koordinator == "004")>EDI SUSILO</option>
+                                    <option value="005" @selected($data->Koordinator == "005")>HARIYONO</option>
+                                    <option value="006" @selected($data->Koordinator == "006")>HERI WIDODO</option>
+                                    <option value="007" @selected($data->Koordinator == "007")>MANSUR</option>
+                                    <option value="008" @selected($data->Koordinator == "008")>MASHUDI</option>
+                                    <option value="009" @selected($data->Koordinator == "009")>MUH. ROWI</option>
+                                    <option value="010" @selected($data->Koordinator == "010")>MUHAMMAD SYAFI'I</option>
+                                    <option value="011" @selected($data->Koordinator == "011")>MUNIR</option>
+                                    <option value="012" @selected($data->Koordinator == "012")>NURUL HIDAYAT</option>
+                                    <option value="013" @selected($data->Koordinator == "013")>SENO</option>
+                                    <option value="014" @selected($data->Koordinator == "014")>SOFYAN IRWANTO</option>
+                                    <option value="015" @selected($data->Koordinator == "015")>SUGIYONO</option>
+                                    <option value="016" @selected($data->Koordinator == "016")>SUTIKNO</option>
+                                    <option value="017" @selected($data->Koordinator == "017")>WAHONO</option>
+                                    <option value="018" @selected($data->Koordinator == "018")>WARSI</option>
+                                    <option value="019" @selected($data->Koordinator == "019")>ZAKARIA ANSORI</option>
                                 </select>
                             </div>
 

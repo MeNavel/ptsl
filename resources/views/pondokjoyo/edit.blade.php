@@ -269,23 +269,22 @@
                             <div class="col-10">
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
-                                    <option selected>{{$data->Koordinator}}</option>
-                                    <option value="001">BEBUN EFENDI - 001</option>
-                                    <option value="002">BUDIONO - 002</option>
-                                    <option value="003">ADI - 003</option>
-                                    <option value="004">MAYAR - 004</option>
-                                    <option value="005">SUTRISNO - 005</option>
-                                    <option value="006">SONI SETIAWAN - 006</option>
-                                    <option value="007">MULYONO - 007</option>
-                                    <option value="008">ABUYANTO - 008</option>
-                                    <option value="009">SIONO - 009</option>
-                                    <option value="010">SUNAR - 010</option>
-                                    <option value="011">NITO PRAMONO - 011</option>
-                                    <option value="012">RINA RUMIANA - 012</option>
-                                    <option value="013">MUTHARI ROFI - 013</option>
-                                    <option value="014">SANAWI - 014</option>
-                                    <option value="015">RIBUT HERMAWAN - 015</option>
-                                    <option value="016">MUHAMMAD FAUZAN - 016</option>
+                                    <option value="001" @selected($data->Koordinator == "001")>BEBUN EFENDI</option>
+                                    <option value="002" @selected($data->Koordinator == "002")>BUDIONO</option>
+                                    <option value="003" @selected($data->Koordinator == "003")>ADI</option>
+                                    <option value="004" @selected($data->Koordinator == "004")>MAYAR</option>
+                                    <option value="005" @selected($data->Koordinator == "005")>SUTRISNO</option>
+                                    <option value="006" @selected($data->Koordinator == "006")>SONI SETIAWAN</option>
+                                    <option value="007" @selected($data->Koordinator == "007")>MULYONO</option>
+                                    <option value="008" @selected($data->Koordinator == "008")>ABUYANTO</option>
+                                    <option value="009" @selected($data->Koordinator == "009")>SIONO</option>
+                                    <option value="010" @selected($data->Koordinator == "010")>SUNAR</option>
+                                    <option value="011" @selected($data->Koordinator == "011")>NITO PRAMONO</option>
+                                    <option value="012" @selected($data->Koordinator == "012")>RINA RUMIANA</option>
+                                    <option value="013" @selected($data->Koordinator == "013")>MUTHARI ROFI</option>
+                                    <option value="014" @selected($data->Koordinator == "014")>SANAWI</option>
+                                    <option value="015" @selected($data->Koordinator == "015")>RIBUT HERMAWAN</option>
+                                    <option value="016" @selected($data->Koordinator == "016")>MUHAMMAD FAUZAN</option>
                                 </select>
                             </div>
 
