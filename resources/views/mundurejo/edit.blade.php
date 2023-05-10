@@ -255,6 +255,7 @@
                                 <label for="Sebab_Peralihan_2" class="form-label">Sebab Peralihan 2</label>
                                 <select class="form-select" id="Sebab_Peralihan_2" name="Sebab_Peralihan_2"
                                     aria-label="State">
+                                    <option value="" @selected($data->Sebab_Peralihan_2 == "")></option>
                                     <option value="WARIS" @selected($data->Sebab_Peralihan_2 == "WARIS")>WARIS</option>
                                     <option value="HIBAH" @selected($data->Sebab_Peralihan_2 == "HIBAH")>HIBAH</option>
                                     <option value="JUAL BELI" @selected($data->Sebab_Peralihan_2 == "JUAL BELI")>JUAL BELI</option>
@@ -275,6 +276,7 @@
                                 <label for="Sebab_Peralihan_Terakhir" class="form-label">Sebab Peralihan 3</label>
                                 <select class="form-select" id="Sebab_Peralihan_Terakhir" name="Sebab_Peralihan_Terakhir"
                                     aria-label="State">
+                                    <option value="" @selected($data->Sebab_Peralihan_Terakhir == "")></option>
                                     <option value="WARIS" @selected($data->Sebab_Peralihan_Terakhir == "WARIS")>WARIS</option>
                                     <option value="HIBAH" @selected($data->Sebab_Peralihan_Terakhir == "HIBAH")>HIBAH</option>
                                     <option value="JUAL BELI" @selected($data->Sebab_Peralihan_Terakhir == "JUAL BELI")>JUAL BELI</option>
