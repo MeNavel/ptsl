@@ -282,7 +282,7 @@
                                     <option value="014">MOH. AMIN - 14</option>
                                     <option value="015">SUDARIYO - HIPA</option>
                                     <option value="HIPA">PANTOSO - HIPA</option>
-                                    <option value="HIPA">SUROSO - HIPA</option>
+                                    <option value="016">SUROSO - HIPA</option>
                                     <option value="REGASEN">ARIEF SABARIMAN - REGASEN</option>
                                 </select>
                             </div>

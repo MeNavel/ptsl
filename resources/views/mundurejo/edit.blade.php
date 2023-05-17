@@ -306,7 +306,7 @@
                                     <option value="014" @selected($data->Koordinator == "014")>AMIN</option>
                                     <option value="015" @selected($data->Koordinator == "015")>SUDARIYO</option>
                                     <option value="HIPA" @selected($data->Koordinator == "HIPA")>PANTOSO</option>
-                                    <option value="HIPA" @selected($data->Koordinator == "HIPA")>SUROSO</option>
+                                    <option value="016" @selected($data->Koordinator == "016")>SUROSO</option>
                                     <option value="REGASEN" @selected($data->Koordinator == "REGASEN")>SABAR</option>
                                 </select>
                             </div>
