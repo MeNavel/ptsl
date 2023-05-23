@@ -22,6 +22,7 @@
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Mundurejo</h5>
                         <a href="/mundurejo/create" class="btn btn-primary">Tambah Data</a>
                         <a href="/downloadmundurejo" class="btn btn-primary">Download Excel</a>
+                        <a href="/downloadmundurejokoordinator" class="btn btn-primary">Data Setiap Koordinator</a>
                         <br><br>
                         <!-- Small tables -->
                         <div class="table-responsive">

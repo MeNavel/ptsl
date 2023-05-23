@@ -184,8 +184,6 @@ class DownloadController extends Controller
             $sheet->setCellValue('BQ' . $row, $item->Pekerjaan_Saksi_2);
             $sheet->setCellValue('BR' . $row, $item->Alamat_Saksi_2);
             $sheet->setCellValue('BS' . $row, $item->Koordinator);
-
-
             $row++;
         }
 

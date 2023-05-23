@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DataKoordinatorController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DownloadController;
@@ -67,4 +68,9 @@ Route::controller(DownloadController::class)->group(function () {
     Route::get('/pondokjoyo/{id}/export', 'exportPondokjoyo')->name('export-pondokjoyo');
     Route::get('/sidomekar/{id}/export', 'exportSidomekar')->name('export-sidomekar');
     Route::get('/sumberagung/{id}/export', 'exportSumberagung')->name('export-sumberagung');
+});
+
+Route::controller(DataKoordinatorController::class)->group(function () {
+    Route::get('/downloadmundurejokoordinator', 'dataKoordinatorMundurejo')->name('downloadDataKoordinatorMundurejo');
+    Route::get('/downloadpondokjoyokoordinator', 'dataKoordinatorPondokjoyo')->name('downloadDataKoordinatorPondokjoyo');
 });

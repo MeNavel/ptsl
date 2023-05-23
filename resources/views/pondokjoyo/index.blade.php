@@ -10,6 +10,7 @@
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Pondok Joyo</h5>
                         <a href="/pondokjoyo/create" class="btn btn-primary">Tambah Data</a>
                         <a href="/downloadpondokjoyo" class="btn btn-primary">Download Excel</a>
+                        <a href="/downloadpondokjoyokoordinator" class="btn btn-primary">Data Setiap Koordinator</a>
                         <br><br>
                         <!-- Small tables -->
                         <div class="table-responsive">
