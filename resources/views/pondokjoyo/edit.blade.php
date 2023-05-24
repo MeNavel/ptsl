@@ -148,7 +148,7 @@
                                 <select class="form-select" id="Dusun_Letak_Tanah" name="Dusun_Letak_Tanah"
                                     aria-label="State">
                                     <option value="SONGON" @selected($data->Dusun_Letak_Tanah == "SONGON")>SONGON</option>
-                                    <option value="PONDOK RAMPAL" @selected($data->Dusun_Letak_Tanah == "PONDOK RAMPAL")>TEMUREJO</option>
+                                    <option value="PONDOK RAMPAL" @selected($data->Dusun_Letak_Tanah == "PONDOK RAMPAL")>PONDOK RAMPAL</option>
                                 </select>
                             </div>
                             <div class="col-2">
