@@ -40,7 +40,7 @@
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                             </div>
                             <div class="col-3">
-                                <label for="NUB" class="form-label">NUB</label>
+                                <label for="NUB" class="form-label">Nomor Pengumuman</label>
                                 <input type="text" name="NUB" class="form-control" id="NUB"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                             </div>

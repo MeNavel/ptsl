@@ -29,7 +29,7 @@ class DownloadController extends Controller
         $sheet->setCellValue('D1', 'Tanggal Pendataan');
         $sheet->setCellValue('E1', 'PBT');
         $sheet->setCellValue('F1', 'No Berkas');
-        $sheet->setCellValue('G1', 'NUB');
+        $sheet->setCellValue('G1', 'Nomor Pengumuman');
         $sheet->setCellValue('H1', 'NIB');
         $sheet->setCellValue('I1', 'Luas Ukur');
         $sheet->setCellValue('J1', 'Beda Luas');
@@ -186,7 +186,6 @@ class DownloadController extends Controller
             $sheet->setCellValue('BS' . $row, $item->Koordinator);
             $row++;
         }
-
         // Simpan file excel
         $writer = new Xlsx($spreadsheet);
         $writer->save('Nominatif Pendaftaran PTSL Desa Pondokjoyo.xlsx');
@@ -210,7 +209,7 @@ class DownloadController extends Controller
         $sheet->setCellValue('D1', 'Tanggal Pendataan');
         $sheet->setCellValue('E1', 'PBT');
         $sheet->setCellValue('F1', 'No Berkas');
-        $sheet->setCellValue('G1', 'NUB');
+        $sheet->setCellValue('G1', 'Nomor Pengumuman');
         $sheet->setCellValue('H1', 'NIB');
         $sheet->setCellValue('I1', 'Luas Ukur');
         $sheet->setCellValue('J1', 'Beda Luas');
@@ -393,7 +392,7 @@ class DownloadController extends Controller
         $sheet->setCellValue('D1', 'Tanggal Pendataan');
         $sheet->setCellValue('E1', 'PBT');
         $sheet->setCellValue('F1', 'No Berkas');
-        $sheet->setCellValue('G1', 'NUB');
+        $sheet->setCellValue('G1', 'Nomor Pengumuman');
         $sheet->setCellValue('H1', 'NIB');
         $sheet->setCellValue('I1', 'Luas Ukur');
         $sheet->setCellValue('J1', 'Beda Luas');
@@ -576,7 +575,7 @@ class DownloadController extends Controller
         $sheet->setCellValue('D1', 'Tanggal Pendataan');
         $sheet->setCellValue('E1', 'PBT');
         $sheet->setCellValue('F1', 'No Berkas');
-        $sheet->setCellValue('G1', 'NUB');
+        $sheet->setCellValue('G1', 'Nomor Pengumuman');
         $sheet->setCellValue('H1', 'NIB');
         $sheet->setCellValue('I1', 'Luas Ukur');
         $sheet->setCellValue('J1', 'Beda Luas');
@@ -732,11 +731,10 @@ class DownloadController extends Controller
             $sheet->setCellValue('BQ' . $row, $item->Pekerjaan_Saksi_2);
             $sheet->setCellValue('BR' . $row, $item->Alamat_Saksi_2);
             $sheet->setCellValue('BS' . $row, $item->Koordinator);
-
-
             $row++;
         }
 
+        
         // Simpan file excel
         $writer = new Xlsx($spreadsheet);
         $writer->save('Nominatif Pendaftaran PTSL Desa Sumberagung.xlsx');
