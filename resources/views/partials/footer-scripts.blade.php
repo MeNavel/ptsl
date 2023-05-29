@@ -15,19 +15,27 @@
 <script src="/js/main.js"></script>
 <script src="/js/k1.js"></script>
 
-{{-- <script>
-    // Mendeteksi event onkeyup pada textbox id
-    document.getElementById('No_Nominatif').onkeyup = function() {
-        // Ambil nilai dari textbox id
-        let id = this.value;
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
-        // Kirim request GET ke route /check-id/{id} untuk melakukan validasi
-        axios.get('/check-id/' + id)
-            .then(function(response) {
-                // Jika data sudah ada, tampilkan alert
-                if (response.data.status === 'exist') {
-                    alert('ID sudah ada');
-                }
-            });
-    };
-</script> --}}
+@if (Session::has('message'))
+    <script>
+        toastr.options = {
+            "closeButton": false,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-right",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "100",
+            "hideDuration": "500",
+            "timeOut": "3000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+        toastr.success("{{ session('message') }}");
+    </script>
+@endif

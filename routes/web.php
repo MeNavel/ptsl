@@ -20,6 +20,8 @@ Route::controller(PondokjoyoController::class)->group(function () {
     Route::post('/pondokjoyo/store', 'store');
     Route::get('/pondokjoyo/{id}/destroy', 'destroy')->name('destroy-pondokjoyo');
     Route::get('/pondokjoyo/{id}/edit', 'edit')->name('edit-pondokjoyo');
+    Route::get('/pondokjoyo/showupdatebpn', 'showupdatebpn')->name('showupdatebpn_pondokjoyo');
+    Route::post('/pondokjoyo/updatebpn', 'updatebpn')->name('updatebpn_pondokjoyo');
 });
 
 Route::controller(MundurejoController::class)->group(function () {
@@ -29,6 +31,8 @@ Route::controller(MundurejoController::class)->group(function () {
     Route::post('/mundurejo/store', 'store');
     Route::get('/mundurejo/{id}/destroy', 'destroy')->name('destroy-mundurejo');
     Route::get('/mundurejo/{id}/edit', 'edit')->name('edit-mundurejo');
+    Route::get('/mundurejo/showupdatebpn', 'showupdatebpn')->name('showupdatebpn_mundurejo');
+    Route::post('/mundurejo/updatebpn', 'updatebpn')->name('updatebpn_mundurejo');
 });
 
 Route::controller(SidomekarController::class)->group(function () {

@@ -295,16 +295,42 @@ class MundurejoController extends Controller
     }
 
     public function cek_nominatif(Request $request)
-    { {
-            if ($request->get('No_Nominatif')) {
-                $No_Nominatif = $request->get('No_Nominatif');
-                $data = Mundurejo::find($No_Nominatif);
-                if ($data) {
-                    echo 'not_unique';
-                } else {
-                    echo 'unique';
-                }
+    {
+        if ($request->get('No_Nominatif')) {
+            $No_Nominatif = $request->get('No_Nominatif');
+            $data = Mundurejo::find($No_Nominatif);
+            if ($data) {
+                return response()->json(array('success' => true, 'data' => $data));
+            } else {
+                return response()->json(array('success' => false));
             }
         }
+    }
+
+    public function showupdatebpn(Request $request){
+        return view('mundurejo.updatebpn');
+    }
+
+    public function updatebpn(Request $request)
+    {
+        $luas_1 = $request->Luas_Ukur;
+        $luas_2 = $request->Luas_Permohonan;
+
+        $No_Nominatif = $request->get('No_Nominatif');
+        $data = Mundurejo::find($No_Nominatif);
+        $data->NIB = $request->NIB;
+        $data->Luas_Ukur = $request->Luas_Ukur;
+        $data->PBT = $request->PBT;
+        $data->Luas_Permohonan = $request->Luas_Permohonan;
+        $data->NUB = $request->NUB;
+        $data->Batas_Utara = $request->Batas_Utara;
+        $data->Batas_Timur = $request->Batas_Timur;
+        $data->Batas_Selatan = $request->Batas_Selatan;
+        $data->Batas_Barat = $request->Batas_Barat;
+        $data->No_Berkas = $request->No_Berkas;
+        $data->Beda_Luas = abs($luas_1 - $luas_2);
+        $data->Selisih_Luas = $request->Beda_Luas;
+        $data->save();
+        return back()->with('message', "Nominatif " . $No_Nominatif . " Berhasil di update");
     }
 }

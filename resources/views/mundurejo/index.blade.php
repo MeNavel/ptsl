@@ -21,6 +21,7 @@
                     <div class="card-body">
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Mundurejo</h5>
                         <a href="/mundurejo/create" class="btn btn-primary">Tambah Data</a>
+                        <a href="{{ route('showupdatebpn_mundurejo') }}" class="btn btn-primary">Update Data BPN</a>
                         <a href="/downloadmundurejo" class="btn btn-primary">Download Excel</a>
                         <a href="/downloadmundurejokoordinator" class="btn btn-primary">Data Setiap Koordinator</a>
                         <br><br>
