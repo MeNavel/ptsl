@@ -315,7 +315,7 @@
                                                 _token: _token
                                             },
                                             success: function(result) {
-                                                if (result == 'unique') {
+                                                if (result.success == false) {
                                                     $('#cek_nominatif').hide();
                                                     $('#submit').attr('disabled', false);
                                                 } else if (No_Nominatif == "") {

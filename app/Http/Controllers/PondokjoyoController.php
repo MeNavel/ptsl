@@ -326,4 +326,6 @@ class PondokjoyoController extends Controller
         $data->save();
         return back()->with('message', "Nominatif " . $No_Nominatif . " Berhasil di update");
     }
+
+    
 }

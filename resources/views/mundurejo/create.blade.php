@@ -48,6 +48,7 @@
                                 <label for="NIB" class="form-label">NIB</label>
                                 <input type="text" name="NIB" class="form-control" id="NIB"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                <span id="cek_nib"></span>
                             </div>
                             <div class="col-2">
                                 <label for="Luas_Ukur" class="form-label">Luas Ukur</label>
@@ -318,7 +319,7 @@
                                                 _token: _token
                                             },
                                             success: function(result) {
-                                                if (result == 'unique') {
+                                                if (result.success == false) {
                                                     $('#cek_nominatif').hide();
                                                     $('#submit').attr('disabled', false);
                                                 } else if (No_Nominatif == "") {
@@ -353,19 +354,20 @@
                                     }
                                 });
 
-                                // $(function() {
-                                //     $('#Tanggal_Lahir').datetimepicker({
-                                //         format: "YYYY-MM-DD"
-                                //     });
-                                //     $('#An_Tanggal_Lahir').datetimepicker({
-                                //         format: "DD-MM-YYYY"
-                                //     });
-                                //     $('#Tgl_Pendataan').datetimepicker({
-                                //         format: "DD-MM-YYYY",
+                                $('#NIB').blur(function() {
+                                    var NIB = $('#NIB').val();
+                                    var filter = /\b\d{5}\b/;
+                                    if (!filter.test(NIB)) {
+                                        $('#cek_nib').show();
+                                        $('#cek_nib').html(
+                                            '<label class="text-danger">Nomor NIB Harus 5 Angka</label>');
+                                        $('#submit').attr('disabled', true);
+                                    } else {
+                                        $('#cek_nib').hide();
+                                        $('#submit').attr('disabled', false);
+                                    }
+                                });
 
-                                //     });
-
-                                // });
                                 $(".Tanggal_Lahir").datepicker({
                                     dateFormat: 'yyyy/mm/dd'
                                 });
