@@ -74,7 +74,3 @@ Route::controller(DataKoordinatorController::class)->group(function () {
     Route::get('/downloadmundurejokoordinator', 'dataKoordinatorMundurejo')->name('downloadDataKoordinatorMundurejo');
     Route::get('/downloadpondokjoyokoordinator', 'dataKoordinatorPondokjoyo')->name('downloadDataKoordinatorPondokjoyo');
 });
-
-Route::get('/up', function(){
-    return Artisan::call('up');
-}); 
