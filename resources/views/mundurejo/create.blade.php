@@ -355,16 +355,34 @@
                                 });
 
                                 $('#NIB').blur(function() {
-                                    var NIB = $('#NIB').val();
+                                    var No_NIB = $('#NIB').val();
+                                    var _token = $('input[name="_token"]').val();
+                                    
                                     var filter = /\b\d{5}\b/;
-                                    if (!filter.test(NIB)) {
+                                    if (!filter.test(No_NIB)) {
                                         $('#cek_nib').show();
                                         $('#cek_nib').html(
                                             '<label class="text-danger">Nomor NIB Harus 5 Angka</label>');
-                                        $('#submit').attr('disabled', true);
                                     } else {
+                                        $.ajax({
+                                            url: "{{ route('cek_nib_mundurejo') }}",
+                                            method: "POST",
+                                            data: {
+                                                NIB: No_NIB,
+                                                _token: _token
+                                            },
+                                            success: function(result) {
+                                                if (result.success == false) {
+                                                    $('#cek_nib').hide();
+                                                } else {
+                                                    $('#cek_nib').show();
+                                                    $('#cek_nib').html(
+                                                        '<label class="text-danger">Nomor NIB Sudah Digunakan</label>'
+                                                    );
+                                                }
+                                            },
+                                        })
                                         $('#cek_nib').hide();
-                                        $('#submit').attr('disabled', false);
                                     }
                                 });
 

@@ -333,4 +333,15 @@ class MundurejoController extends Controller
         $data->save();
         return back()->with('message', "Nominatif " . $No_Nominatif . " Berhasil di update");
     }
+    public function cek_nib(Request $request){
+        if ($request->get('NIB')) {
+            $NIB = $request->get('NIB');
+            $data = Mundurejo::where('NIB', $NIB);
+            if ($data) {
+                return response()->json(array('success' => true, 'data' => $data));
+            } else {
+                return response()->json(array('success' => false));
+            }
+        }
+    }
 }

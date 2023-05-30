@@ -6,6 +6,7 @@ use App\Models\Pondokjoyo;
 use App\Models\Koordinator;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Validator;
 
 class PondokjoyoController extends Controller
 {
@@ -327,5 +328,15 @@ class PondokjoyoController extends Controller
         return back()->with('message', "Nominatif " . $No_Nominatif . " Berhasil di update");
     }
 
-    
+    public function cek_nib(Request $request){
+        if ($request->get('NIB')) {
+            $NIB = $request->get('NIB');
+            $data = Pondokjoyo::where('NIB', $NIB);
+            if ($data) {
+                return response()->json(array('success' => true, 'data' => $data));
+            } else {
+                return response()->json(array('success' => false));
+            }
+        }
+    }
 }
