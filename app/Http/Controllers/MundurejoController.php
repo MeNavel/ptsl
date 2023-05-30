@@ -336,7 +336,7 @@ class MundurejoController extends Controller
     public function cek_nib(Request $request){
         if ($request->get('NIB')) {
             $NIB = $request->get('NIB');
-            $data = Mundurejo::where('NIB', $NIB);
+            $data = Mundurejo::where('NIB', $NIB)->get();
             if ($data) {
                 return response()->json(array('success' => true, 'data' => $data));
             } else {

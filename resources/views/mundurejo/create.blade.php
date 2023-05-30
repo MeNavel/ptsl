@@ -364,24 +364,6 @@
                                         $('#cek_nib').html(
                                             '<label class="text-danger">Nomor NIB Harus 5 Angka</label>');
                                     } else {
-                                        $.ajax({
-                                            url: "{{ route('cek_nib_mundurejo') }}",
-                                            method: "POST",
-                                            data: {
-                                                NIB: No_NIB,
-                                                _token: _token
-                                            },
-                                            success: function(result) {
-                                                if (result.success == false) {
-                                                    $('#cek_nib').hide();
-                                                } else {
-                                                    $('#cek_nib').show();
-                                                    $('#cek_nib').html(
-                                                        '<label class="text-danger">Nomor NIB Sudah Digunakan</label>'
-                                                    );
-                                                }
-                                            },
-                                        })
                                         $('#cek_nib').hide();
                                     }
                                 });

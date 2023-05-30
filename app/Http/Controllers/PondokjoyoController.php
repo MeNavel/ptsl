@@ -331,7 +331,7 @@ class PondokjoyoController extends Controller
     public function cek_nib(Request $request){
         if ($request->get('NIB')) {
             $NIB = $request->get('NIB');
-            $data = Pondokjoyo::where('NIB', $NIB);
+            $data = Pondokjoyo::where('NIB', $NIB)->get();
             if ($data) {
                 return response()->json(array('success' => true, 'data' => $data));
             } else {
