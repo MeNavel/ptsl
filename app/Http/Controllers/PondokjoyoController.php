@@ -71,12 +71,45 @@ class PondokjoyoController extends Controller
         $kecamatan = "SEMBORO";
         $kades = "DIDIK SAENULLA";
 
+        $messages = [
+            'NIB.unique' => "Nomor NIB sudah dipakai"
+        ];
+
+        $rules = [
+            'NIB' => 'unique:mundurejo'
+        ];
         $data = Pondokjoyo::find($request->No_Nominatif);
         if ($data) {
-            $data->delete();
+            $validate =  Validator::make($request->all(), $rules, $messages);
+            if ($validate->fails()) {
+                $luas_ukur = null;
+                $nib = null;
+                $notif = "error";
+                $message = "NIB " . $request->NIB . " telah dipakai";
+
+                $data = Pondokjoyo::find($request->No_Nominatif);
+                if ($data->NIB == $request->NIB) {
+                    $luas_ukur = $request->Luas_Ukur;
+                    $nib = $request->NIB;
+                    $notif = "message";
+                    $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+                    $data->delete();
+                }
+            } else {
+                $luas_ukur = $request->Luas_Ukur;
+                $nib = $request->NIB;
+                $notif = "message";
+                $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+                $data->delete();
+            }
+        } else {
+            $luas_ukur = $request->Luas_Ukur;
+            $nib = $request->NIB;
+            $notif = "message";
+            $message = "No Nominatif " . $request->No_Nominatif . " berhasil dimasukkan";
         }
 
-        $luas_1 = $request->Luas_Ukur;
+        $luas_1 = $luas_ukur;
         $luas_2 = $request->Luas_Permohonan;
         if ($request->Luas_Ukur == "") {
             $luas_1 = 0;
@@ -93,7 +126,7 @@ class PondokjoyoController extends Controller
         $data->No_Berkas = $request->No_Berkas;
         $data->NUB = $request->NUB;
         $data->NIB = $request->NIB;
-        $data->Luas_Ukur = $request->Luas_Ukur;
+        $data->Luas_Ukur = $luas_ukur;
         $data->Beda_Luas = abs($luas_1 - $luas_2);
         $data->Selisih_Luas = $request->Beda_Luas;
 
@@ -235,8 +268,12 @@ class PondokjoyoController extends Controller
                 $data->Alamat_Saksi_2 = $data_saksi_2->alamat;
             }
         }
-        $data->save();
-        return view('pondokjoyo.create');
+        if ($notif == "error") {
+            return back()->with($notif, $message);
+        } else {
+            $data->save();
+            return redirect()->route('create-pondokjoyo')->with($notif, $message);
+        }
     }
 
     /**
@@ -307,13 +344,45 @@ class PondokjoyoController extends Controller
 
     public function updatebpn(Request $request)
     {
-        $luas_1 = $request->Luas_Ukur;
+        $messages = [
+            'NIB.unique' => "Nomor NIB sudah dipakai"
+        ];
+
+        $rules = [
+            'NIB' => 'unique:mundurejo'
+        ];
+        $data = Pondokjoyo::find($request->No_Nominatif);
+        if ($data) {
+            $validate =  Validator::make($request->all(), $rules, $messages);
+            if ($validate->fails()) {
+                $luas_ukur = null;
+                $nib = null;
+                $notif = "error";
+                $message = "NIB " . $request->NIB . " telah dipakai";
+
+                $cek = Pondokjoyo::find($request->No_Nominatif);
+                if ($cek->NIB == $request->NIB) {
+                    $luas_ukur = $request->Luas_Ukur;
+                    $nib = $request->NIB;
+                    $notif = "message";
+                    $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+                }
+            } else {
+                $luas_ukur = $request->Luas_Ukur;
+                $nib = $request->NIB;
+                $notif = "message";
+                $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+            }
+        } else {
+            $notif = "error";
+            $message = "No Nominatif " . $request->No_Nominatif . " tidak ditemukan";
+        }
+
+        $luas_1 = $luas_ukur;
         $luas_2 = $request->Luas_Permohonan;
 
-        $No_Nominatif = $request->get('No_Nominatif');
-        $data = Pondokjoyo::find($No_Nominatif);
-        $data->NIB = $request->NIB;
-        $data->Luas_Ukur = $request->Luas_Ukur;
+        $data->NIB = $nib;
+        $data->Luas_Ukur = $luas_1;
         $data->PBT = $request->PBT;
         $data->Luas_Permohonan = $request->Luas_Permohonan;
         $data->NUB = $request->NUB;
@@ -324,7 +393,12 @@ class PondokjoyoController extends Controller
         $data->No_Berkas = $request->No_Berkas;
         $data->Beda_Luas = abs($luas_1 - $luas_2);
         $data->Selisih_Luas = $request->Beda_Luas;
-        $data->save();
-        return back()->with('message', "Nominatif " . $No_Nominatif . " Berhasil di update");
+
+        if ($notif == "error") {
+            return back()->with($notif, $message);
+        } else {
+            $data->save();
+            return redirect()->route('showupdatebpn_pondokjoyo')->with($notif, $message);
+        }
     }
 }

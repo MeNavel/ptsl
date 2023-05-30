@@ -7,6 +7,7 @@ use App\Models\Mundurejo;
 use App\Models\Koordinator;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
+use Illuminate\Support\Facades\Validator;
 
 class MundurejoController extends Controller
 {
@@ -28,7 +29,7 @@ class MundurejoController extends Controller
             $data = Mundurejo::select('*');
             return Datatables::of($data)
                 ->addIndexColumn()
-                
+
                 ->addColumn('action', function ($row) {
                     return '<div class="btn-group">
                                 <a class="btn btn-info" target="_blank" href="' . route('edit-mundurejo', $row->id) . '" role="button"><i class="bi bi-info-circle"></i></a>
@@ -62,29 +63,55 @@ class MundurejoController extends Controller
      */
     public function store(Request $request)
     {
-        // DB::table('k1')->insert([
-        //     'email' => 'kayla@example.com',
-        //     'votes' => 0
-        // ]);
-
         $desa = "MUNDUREJO";
         $kecamatan = "UMBULSARI";
         $kades = "EDI SANTOSO";
 
+        $messages = [
+            'NIB.unique' => "Nomor NIB sudah dipakai"
+        ];
+
+        $rules = [
+            'NIB' => 'unique:mundurejo'
+        ];
         $data = Mundurejo::find($request->No_Nominatif);
         if ($data) {
-            $data->delete();
+            $validate =  Validator::make($request->all(), $rules, $messages);
+            if ($validate->fails()) {
+                $luas_ukur = null;
+                $nib = null;
+                $notif = "error";
+                $message = "NIB " . $request->NIB . " telah dipakai";
+
+                $data = Mundurejo::find($request->No_Nominatif);
+                if ($data->NIB == $request->NIB) {
+                    $luas_ukur = $request->Luas_Ukur;
+                    $nib = $request->NIB;
+                    $notif = "message";
+                    $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+                    $data->delete();
+                }
+            } else {
+                $luas_ukur = $request->Luas_Ukur;
+                $nib = $request->NIB;
+                $notif = "message";
+                $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+                $data->delete();
+            }
+        } else {
+            $luas_ukur = $request->Luas_Ukur;
+            $nib = $request->NIB;
+            $notif = "message";
+            $message = "No Nominatif " . $request->No_Nominatif . " berhasil dimasukkan";
         }
 
-        $luas_1 = $request->Luas_Ukur;
+        $luas_1 = $luas_ukur;
         $luas_2 = $request->Luas_Permohonan;
         if ($request->Luas_Ukur == "") {
             $luas_1 = 0;
         } else if ($request->Luas_Permohonan == "") {
             $luas_2 = 0;
         }
-
-
 
         $data = new Mundurejo;
 
@@ -95,8 +122,8 @@ class MundurejoController extends Controller
         $data->PBT = $request->PBT;
         $data->No_Berkas = $request->No_Berkas;
         $data->NUB = $request->NUB;
-        $data->NIB = $request->NIB;
-        $data->Luas_Ukur = $request->Luas_Ukur;
+        $data->NIB = $nib;
+        $data->Luas_Ukur = $luas_ukur;
         $data->Beda_Luas = abs($luas_1 - $luas_2);
         $data->Selisih_Luas = $request->Beda_Luas;
 
@@ -178,7 +205,7 @@ class MundurejoController extends Controller
         //Peralihan 3
         $data->Tahun_Perolehan_Terakhir = $request->Tahun_Perolehan_Terakhir;
         $data->Sebab_Peralihan_Terakhir = $request->Sebab_Peralihan_Terakhir;
-        if ($request->Dasar_Peralihan_2 != null && $request->Alas_Hak_Bukti_Perolehan != null){
+        if ($request->Dasar_Peralihan_2 != null && $request->Alas_Hak_Bukti_Perolehan != null) {
             $data->Nama_Perolehan_Terakhir = $data->An_Nama;
         }
 
@@ -211,7 +238,7 @@ class MundurejoController extends Controller
 
         $data->Alas_Hak_Bukti_Perolehan = $request->Alas_Hak_Bukti_Perolehan;
         $data->Nama_Kades = $kades;
-        
+
 
         $data_saksi_1 = Koordinator::where([
             ['jabatan', '=', $request->Koordinator],
@@ -240,8 +267,12 @@ class MundurejoController extends Controller
                 $data->Alamat_Saksi_2 = $data_saksi_2->alamat;
             }
         }
-        $data->save();
-        return view('mundurejo.create');
+        if ($notif == "error") {
+            return back()->with($notif, $message);
+        } else {
+            $data->save();
+            return redirect()->route('create-mundurejo')->with($notif, $message);
+        }
     }
 
     /**
@@ -307,19 +338,52 @@ class MundurejoController extends Controller
         }
     }
 
-    public function showupdatebpn(Request $request){
+    public function showupdatebpn(Request $request)
+    {
         return view('mundurejo.updatebpn');
     }
 
     public function updatebpn(Request $request)
     {
-        $luas_1 = $request->Luas_Ukur;
+        $messages = [
+            'NIB.unique' => "Nomor NIB sudah dipakai"
+        ];
+
+        $rules = [
+            'NIB' => 'unique:mundurejo'
+        ];
+        $data = Mundurejo::find($request->No_Nominatif);
+        if ($data) {
+            $validate =  Validator::make($request->all(), $rules, $messages);
+            if ($validate->fails()) {
+                $luas_ukur = null;
+                $nib = null;
+                $notif = "error";
+                $message = "NIB " . $request->NIB . " telah dipakai";
+
+                $cek = Mundurejo::find($request->No_Nominatif);
+                if ($cek->NIB == $request->NIB) {
+                    $luas_ukur = $request->Luas_Ukur;
+                    $nib = $request->NIB;
+                    $notif = "message";
+                    $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+                }
+            } else {
+                $luas_ukur = $request->Luas_Ukur;
+                $nib = $request->NIB;
+                $notif = "message";
+                $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+            }
+        } else {
+            $notif = "error";
+            $message = "No Nominatif " . $request->No_Nominatif . " tidak ditemukan";
+        }
+
+        $luas_1 = $luas_ukur;
         $luas_2 = $request->Luas_Permohonan;
 
-        $No_Nominatif = $request->get('No_Nominatif');
-        $data = Mundurejo::find($No_Nominatif);
-        $data->NIB = $request->NIB;
-        $data->Luas_Ukur = $request->Luas_Ukur;
+        $data->NIB = $nib;
+        $data->Luas_Ukur = $luas_ukur;
         $data->PBT = $request->PBT;
         $data->Luas_Permohonan = $request->Luas_Permohonan;
         $data->NUB = $request->NUB;
@@ -330,7 +394,12 @@ class MundurejoController extends Controller
         $data->No_Berkas = $request->No_Berkas;
         $data->Beda_Luas = abs($luas_1 - $luas_2);
         $data->Selisih_Luas = $request->Beda_Luas;
-        $data->save();
-        return back()->with('message', "Nominatif " . $No_Nominatif . " Berhasil di update");
+
+        if ($notif == "error") {
+            return back()->with($notif, $message);
+        } else {
+            $data->save();
+            return redirect()->route('showupdatebpn_mundurejo')->with($notif, $message);
+        }
     }
 }
