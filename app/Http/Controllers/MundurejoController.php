@@ -22,10 +22,6 @@ class MundurejoController extends Controller
         $this->middleware('auth');
     }
 
-    public function dashboard(){
-        return view('dashboard');
-    }
-
     public function index(Request $request)
     {
 
@@ -248,7 +244,7 @@ class MundurejoController extends Controller
         } catch (Throwable $e) {
             DB::rollback();
             $notif = "error";
-            $message = "No Nominatif " . $request->No_Nominatif . " gagal disimpan";
+            $message = sprintf('[%s]', json_encode($e->getMessage(), true));
             return redirect()->route('create-mundurejo')->with($notif, $message);
         }
     }
@@ -345,12 +341,12 @@ class MundurejoController extends Controller
             $data->save();
             DB::commit();
             $notif = "message";
-            $message = "No Nominatif " . $request->No_Nominatif . " berhasil diupdate";
+            $message = "No Nominatif " . $request->No_Nominatif . " berhasil disimpan";
             return redirect()->route('showupdatebpn_mundurejo')->with($notif, $message);
         } catch (Throwable $e) {
             DB::rollback();
             $notif = "error";
-            $message = "No Nominatif " . $request->No_Nominatif . " Gagal diupdate";
+            $message = sprintf('[%s]', json_encode($e->getMessage(), true));
             return redirect()->route('showupdatebpn_mundurejo')->with($notif, $message);
         }
     }

@@ -72,7 +72,7 @@
             "onclick": null,
             "showDuration": "100",
             "hideDuration": "500",
-            "timeOut": "3000",
+            "timeOut": "5000",
             "extendedTimeOut": "1000",
             "showEasing": "swing",
             "hideEasing": "linear",
