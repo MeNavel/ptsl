@@ -2,7 +2,6 @@
 
 @section('content')
     <section class="section">
-        <main class="main" id="main">
         <div class="row">
             <div class="col-lg-12">
                 <div class="container-fluid card">
@@ -379,7 +378,6 @@
                 </div>
             </div>
         </div>
-    </main>
     </section>
 
 @endsection
