@@ -1,11 +1,11 @@
 @extends('mainlayout')
 
 @section('content')
-    <br>
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
                 <div class="container-fluid card">
+                    @include('partials.css')
                     <div class="card-body">
                         <h5 class="card-title">Update Data BPN K1 Desa Pondok Joyo</h5>
                         <form action="/pondokjoyo">
@@ -90,7 +90,7 @@
                             $(document).ready(function() {
                                 $('#No_Nominatif').blur(function() {
                                     $('#submit').attr('disabled', true);
-                                    
+
                                     var No_Nominatif = $('#No_Nominatif').val();
                                     var _token = $('input[name="_token"]').val();
 
@@ -138,7 +138,7 @@
                                 $('#NIB').blur(function() {
                                     var No_NIB = $('#NIB').val();
                                     var _token = $('input[name="_token"]').val();
-                                    
+
                                     var filter = /\b\d{5}\b/;
                                     if (!filter.test(No_NIB)) {
                                         $('#cek_nib').show();
@@ -146,7 +146,7 @@
                                             '<label class="text-danger">Nomor NIB Harus 5 Angka</label>');
                                         $('#submit').attr('disabled', true);
                                     } else {
-                                        
+
                                         $('#cek_nib').hide();
                                         $('#submit').attr('disabled', false);
                                     }

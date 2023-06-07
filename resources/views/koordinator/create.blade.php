@@ -1,12 +1,11 @@
 @extends('mainlayout')
 
 @section('content')
-
-    <br>
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
                 <div class="container-fluid card">
+                    @include('partials.css')
                     <div class="card-body">
                         <h5 class="card-title">Formulir Koordinator</h5>
                         <form action="/koordinator">
@@ -41,7 +40,7 @@
                             <div class="col-1">
                                 <label for="Usia" class="form-label">Usia</label>
                                 <input type="text" name="Usia" class="form-control" id="Usia">
-                            </div>                            
+                            </div>
                             <div class="col-3">
                                 <label for="Pekerjaan" class="form-label">Pekerjaan</label>
                                 <input type="text" name="Pekerjaan" class="form-control" id="Pekerjaan">
@@ -118,7 +117,7 @@
                                     <option value="SAKSI 2">SAKSI 2</option>
                                 </select>
                             </div>
-                            
+
                             <div class="text-center">
                                 <button type="submit" class="btn btn-primary">Submit</button>
                                 <button type="reset" class="btn btn-secondary">Reset</button>

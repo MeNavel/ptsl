@@ -2,16 +2,18 @@
 
 <html lang="id">
 
- <head>
+<head>
 
-   @include('partials.head')
+    @include('partials.head')
 
- </head>
+</head>
 
- <body>
-    @include('partials.nav')
+<body>
+    @include('partials.navbar')
+    {{-- @include('partials.sidebar') --}}
+    {{-- @include('partials.nav') --}}
 
-    @include('partials.css')
+    {{-- @include('partials.css') --}}
 
     @yield('content')
 
@@ -19,6 +21,6 @@
 
     @include('partials.footer-scripts')
 
- </body>
+</body>
 
 </html>

@@ -6,8 +6,8 @@
 <meta content="" name="keywords">
 
 <!-- Favicons -->
-<link href="/img/favicon.png" rel="icon">
-<link href="/img/apple-touch-icon.png" rel="apple-touch-icon">
+<link href="https://tataruang.atrbpn.go.id/Content/frontend/image/apple-touch-icon-57x57.png" rel="icon">
+<link href="https://tataruang.atrbpn.go.id/Content/frontend/image/apple-touch-icon-57x57.png" rel="apple-touch-icon">
 
 <!-- Google Fonts -->
 <link href="https://fonts.gstatic.com" rel="preconnect">
@@ -24,15 +24,7 @@
 <link href="/vendor/remixicon/remixicon.css" rel="stylesheet">
 <link href="/vendor/simple-datatables/style.css" rel="stylesheet">
 
-<!-- Template Main CSS File -->
-<link href="/css/style.css" rel="stylesheet">
 
-<!-- =======================================================
-  * Template Name: NiceAdmin - v2.4.0
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css" rel="stylesheet">
@@ -46,5 +38,8 @@
 <script src="https://cdn.datatables.net/1.11.4/js/dataTables.bootstrap5.min.js"></script>
 
 @vite(['resources/sass/app.scss', 'resources/js/app.js'])
+
+<!-- Template Main CSS File -->
+<link href="/css/style.css" rel="stylesheet">
 
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">

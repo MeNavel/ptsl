@@ -1,11 +1,11 @@
 @extends('mainlayout')
 
 @section('content')
-    <br>
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
                 <div class="container-fluid card">
+                    @include('partials.css')
                     <div class="card-body">
                         <h5 class="card-title">Formulir Pendaftaran K1 Desa Pondok Joyo</h5>
                         <form action="/pondokjoyo">
@@ -352,7 +352,7 @@
                                 $('#NIB').blur(function() {
                                     var No_NIB = $('#NIB').val();
                                     var _token = $('input[name="_token"]').val();
-                                    
+
                                     var filter = /\b\d{5}\b/;
                                     if (!filter.test(No_NIB)) {
                                         $('#cek_nib').show();

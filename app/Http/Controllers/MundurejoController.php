@@ -22,6 +22,10 @@ class MundurejoController extends Controller
         $this->middleware('auth');
     }
 
+    public function dashboard(){
+        return view('dashboard');
+    }
+
     public function index(Request $request)
     {
 

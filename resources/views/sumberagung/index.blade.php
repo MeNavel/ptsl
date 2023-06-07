@@ -1,11 +1,11 @@
 @extends('mainlayout')
 
 @section('content')
-    <br>
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
                 <div class="container-fluid card">
+                    @include('partials.css')
                     <div class="card-body">
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Sumberagung</h5>
                         <a href="/sumberagung/create" class="btn btn-primary">Tambah Data</a>

@@ -1,17 +1,17 @@
 @extends('mainlayout')
 
 @section('content')
-    <br>
     <section class="section">
         <div class="row">
-            <div class="col-lg-12">
+            <div class="col-lg-12 mt-60">
                 <div class="container-fluid card">
+                    @include('partials.css')
                     <div class="card-body">
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Mundurejo</h5>
-                        <a href="/mundurejo/create" class="btn btn-primary">Tambah Data</a>
-                        <a href="{{ route('showupdatebpn_mundurejo') }}" class="btn btn-primary">Update Data BPN</a>
-                        <a href="/downloadmundurejo" class="btn btn-primary">Download Excel</a>
-                        <a href="/downloadmundurejokoordinator" class="btn btn-primary">Data Setiap Koordinator</a>
+                        <a class="btn btn-primary" href="/mundurejo/create">Tambah Data</a>
+                        <a class="btn btn-primary" href="{{ route('showupdatebpn_mundurejo') }}">Update Data BPN</a>
+                        <a class="btn btn-primary" href="/downloadmundurejo">Download Excel</a>
+                        <a class="btn btn-primary" href="/downloadmundurejokoordinator">Data Setiap Koordinator</a>
                         <br><br>
                         <!-- Small tables -->
                         <div class="table-responsive">
@@ -33,7 +33,7 @@
                                         <th scope="col">Tahun 3</th>
                                         <th scope="col">Peralihan 3</th>
                                         <th scope="col">Koordinator</th>
-                                        <th width="col">Action</th>
+                                        <th scope="col">Action</th>
                                     </tr>
                                 </thead>
                             </table>
@@ -50,8 +50,7 @@
                                         [0, 'desc']
                                     ],
                                     ajax: "{{ route('mundurejo.index') }}",
-                                    columns: [
-                                        {
+                                    columns: [{
                                             data: 'id',
                                             name: 'id',
                                             width: "5%",
@@ -143,7 +142,7 @@
                                         {
                                             data: 'action',
                                             name: 'action',
-                                            width: "5%",
+                                            width: "10%",
                                             orderable: false,
                                             searchable: false,
                                             className: "dt-head-center dt-body-center"
@@ -197,7 +196,6 @@
 
             </div>
         </div>
-
     </section>
     {{-- </main><!-- End #main --> --}}
 @endsection

@@ -1,11 +1,11 @@
 @extends('mainlayout')
 
 @section('content')
-    <br>
     <section class="section">
         <div class="row">
             <div class="col-lx-12">
                 <div class="container-fluid card">
+                    @include('partials.css')
                     <div class="card-body">
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Pondok Joyo</h5>
                         <a href="/pondokjoyo/create" class="btn btn-primary">Tambah Data</a>
@@ -41,7 +41,7 @@
                         <!-- End small tables -->
                         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-                        
+
 
                         <script type="text/javascript">
                             $(function() {
@@ -153,7 +153,7 @@
                                         },
                                     ],
                                 });
-                                
+
                                 $(document).on('click', '.delete-btn', function() {
                                     Swal.fire({
                                         title: 'Yakin Ingin Menghapus Data?',

@@ -1,338 +1,249 @@
 @extends('mainlayout')
 
-{{-- @extends('layouts.navbar') --}}
+@include('partials.sidebar')
 
 @section('content')
-    <br>
-    <div class="container-fluid">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Navigation</h5>
-                        <div class="text-center">
-                            <a href="/pondokjoyo" class="btn btn-primary">Pondokjoyo</a>
-                            <a href="/mundurejo" class="btn btn-primary">Mundurejo</a>
-                            <a href="/sumberagung" class="btn btn-primary">Sumberagung</a>
-                            <a href="/sidomekar" class="btn btn-primary">Sidomekar</a>
-                            @if (Auth::user()->id == '1')
-                                <a href="/koordinator" class="btn btn-primary">Koordinator</a>
-                                <a class="btn btn-primary" href="{{ route('register') }}">{{ __('Register') }}</a>
-                            @endif
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h5 class="card-title">Sumberagung</h5>
-                                <div id="chart_sumberagung"></div>
-                            </div>
-                            <div class="col-lg-6">
-                                <h5 class="card-title">Mundurejo</h5>
-                                <div id="chart_mundurejo"></div>
-                            </div>
+    <main class="main" id="main">
+        <div class="container-fluid">
+            <div class="row justify-content-center">
+                <section class="section dashboard">
+                    <div class="row">
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h5 class="card-title">Sidomekar</h5>
-                                <div id="chart_sidomekar"></div>
-                            </div>
-                            <div class="col-lg-6">
-                                <h5 class="card-title">Pondok Joyo</h5>
-                                <div id="chart_pondokjoyo"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <h5 class="card-title">Koordinator Pondok Joyo</h5>
-                                <div id="chart_koordinator_pondokjoyo"></div>
-                            </div>
-                            <div class="col-lg-6">
-                                <h5 class="card-title">Koordinator Mundurejo</h5>
-                                <div id="chart_koordinator_mundurejo"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {{-- script sumberagung --}}
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    new ApexCharts(document.querySelector("#chart_sumberagung"), {
-                        series: [
-                            @foreach ($data_dusun_sumberagung as $item)
-                                {{ $item }},
-                            @endforeach
-                        ],
-                        chart: {
-                            height: 350,
+                        <!-- Left side columns -->
+                        <div class="col-lg-12">
+                            <div class="row">
 
-                            type: 'donut',
-                            toolbar: {
-                                show: true
-                            }
-                        },
-                        labels: [
-                            @foreach ($dusun_sumberagung as $item)
-                                '{{ $item }}',
-                            @endforeach
-                        ],
-                        plotOptions: {
-                            pie: {
-                                donut: {
-                                    labels: {
-                                        show: true,
-                                        total: {
-                                            showAlways: true,
-                                            show: true
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        dataLabels: {
-                            formatter: function(val, opts) {
-                                return opts.w.config.series[opts.seriesIndex]
-                            }
-                        },
-                    }).render();
-                });
-            </script>
-            {{-- script pondokjoyo --}}
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    new ApexCharts(document.querySelector("#chart_pondokjoyo"), {
-                        series: [
-                            @foreach ($data_dusun_pondokjoyo as $item)
-                                {{ $item }},
-                            @endforeach
-                        ],
-                        colors: ["#EC6B56", "#47B39C"],
-                        fill: {
-                            colors: ["#EC6B56", "#47B39C"]
-                        },
-                        chart: {
-                            height: 350,
+                                <div class="col">
+                                    <div class="card info-card sales-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Mundurejo <span>| NIB</span></h5>
 
-                            type: 'donut',
-                            toolbar: {
-                                show: true
-                            }
-                        },
-                        labels: [
-                            @foreach ($dusun_pondokjoyo as $item)
-                                '{{ $item }}',
-                            @endforeach
-                        ],
-                        plotOptions: {
-                            pie: {
-                                donut: {
-                                    labels: {
-                                        show: true,
-                                        total: {
-                                            showAlways: true,
-                                            show: true
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        dataLabels: {
-                            formatter: function(val, opts) {
-                                return opts.w.config.series[opts.seriesIndex]
-                            }
-                        },
-                    }).render();
-                });
-            </script>
-            {{-- script mundurejo --}}
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    new ApexCharts(document.querySelector("#chart_mundurejo"), {
-                        series: [
-                            @foreach ($data_dusun_mundurejo as $item)
-                                {{ $item }},
-                            @endforeach
-                        ],
-                        colors: ["#EC6B56", "#FFC154", "#47B39C"],
-                        fill: {
-                            colors: ["#EC6B56", "#FFC154", "#47B39C"]
-                        },
-                        chart: {
-                            height: 350,
-                            type: 'donut',
-                            toolbar: {
-                                show: true
-                            }
-                        },
-                        labels: [
-                            @foreach ($dusun_mundurejo as $item)
-                                '{{ $item }}',
-                            @endforeach
-                        ],
-                        plotOptions: {
-                            pie: {
-                                donut: {
-                                    labels: {
-                                        show: true,
-                                        total: {
-                                            showAlways: true,
-                                            show: true
-                                        }
-                                    }
-                                }
-                            }
-                        },
-                        dataLabels: {
-                            formatter: function(val, opts) {
-                                return opts.w.config.series[opts.seriesIndex]
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-geo-alt"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{{ $nib_mundurejo }}</h6>
+                                                    <span
+                                                        class="text-danger small pt-1 fw-bold">{{ $belum_nib_mundurejo }}</span>
+                                                    <span class="text-muted small pt-2 ps-1">Belum NIB</span>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-file-earmark-word"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{{ $nib_mundurejo + $belum_nib_mundurejo }}</h6>
+                                                    <span class="text-dark small pt-1 fw-bold">Total Pendaftar</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card info-card sales-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Pondok Joyo <span>| NIB</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-geo-alt"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{{ $nib_pondokjoyo }}</h6>
+                                                    <span
+                                                        class="text-danger small pt-1 fw-bold">{{ $belum_nib_pondokjoyo }}</span>
+                                                    <span class="text-muted small pt-2 ps-1">Belum NIB</span>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-file-earmark-word"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{{ $nib_pondokjoyo + $belum_nib_pondokjoyo }}</h6>
+                                                    <span class="text-dark small pt-1 fw-bold">Total Pendaftar</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card info-card sales-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sumberagung <span>| NIB</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-geo-alt"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{{ $nib_sumberagung }}</h6>
+                                                    <span
+                                                        class="text-danger small pt-1 fw-bold">{{ $belum_nib_sumberagung }}</span>
+                                                    <span class="text-muted small pt-2 ps-1">Belum NIB</span>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-file-earmark-word"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{{ $nib_sumberagung + $belum_nib_sumberagung }}</h6>
+                                                    <span class="text-dark small pt-1 fw-bold">Total Pendaftar</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <div class="card info-card sales-card">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sidomekar <span>| NIB</span></h5>
+
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-geo-alt"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{{ $nib_sidomekar }}</h6>
+                                                    <span
+                                                        class="text-danger small pt-1 fw-bold">{{ $belum_nib_sidomekar }}</span>
+                                                    <span class="text-muted small pt-2 ps-1">Belum NIB</span>
+                                                </div>
+                                            </div>
+                                            <br>
+                                            <div class="d-flex align-items-center">
+                                                <div
+                                                    class="card-icon rounded-circle d-flex align-items-center justify-content-center">
+                                                    <i class="bi bi-file-earmark-word"></i>
+                                                </div>
+                                                <div class="ps-3">
+                                                    <h6>{{ $nib_sidomekar + $belum_nib_sidomekar }}</h6>
+                                                    <span class="text-dark small pt-1 fw-bold">Total Pendaftar</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- End Left side columns -->
+                    </div>
+                </section>
+                <div class="col-lg-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-6">
+                                    <h5 class="card-title">Koordinator Pondok Joyo</h5>
+                                    <div id="chart_koordinator_pondokjoyo"></div>
+                                </div>
+                                <div class="col-lg-6">
+                                    <h5 class="card-title">Koordinator Mundurejo</h5>
+                                    <div id="chart_koordinator_mundurejo"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {{-- script koordinator pondokjoyo --}}
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#chart_koordinator_pondokjoyo"), {
+                            series: [{
+                                name: "Jumlah Pendaftar ",
+                                data: [
+                                    @foreach ($data_koordinator_pondokjoyo as $item)
+                                        {{ $item }},
+                                    @endforeach
+                                ]
+                            }],
+                            chart: {
+                                type: 'bar',
+                                height: 800
                             },
-                        },
-                    }).render();
-                });
-            </script>
-            {{-- script sidomekar --}}
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    new ApexCharts(document.querySelector("#chart_sidomekar"), {
-                        series: [
-                            @foreach ($data_dusun_sidomekar as $item)
-                                {{ $item }},
-                            @endforeach
-                        ],
-                        colors: ["#FFC154", "#47B39C", "#EC6B56"],
-                        fill: {
-                            colors: ["#FFC154", "#47B39C", "#EC6B56"]
-                        },
-                        chart: {
-                            height: 350,
-                            type: 'donut',
-                            toolbar: {
-                                show: true
-                            }
-                        },
-                        labels: [
-                            @foreach ($dusun_sidomekar as $item)
-                                'DUSUN {{ $item }}',
-                            @endforeach
-                        ],
-                        plotOptions: {
-                            pie: {
-                                donut: {
-                                    labels: {
-                                        show: true,
-                                        total: {
-                                            showAlways: true,
-                                            show: true
-                                        }
-                                    }
+                            plotOptions: {
+                                bar: {
+                                    borderRadius: 4,
+                                    horizontal: true,
                                 }
-                            }
-                        },
-                        dataLabels: {
-                            formatter: function(val, opts) {
-                                return opts.w.config.series[opts.seriesIndex]
                             },
-                        },
-                    }).render();
-                });
-            </script>
-            {{-- script koordinator pondokjoyo --}}
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    new ApexCharts(document.querySelector("#chart_koordinator_pondokjoyo"), {
-                        series: [{
-                            name: "Jumlah Pendaftar ",
-                            data: [
-                                @foreach ($data_koordinator_pondokjoyo as $item)
-                                    {{ $item }},
-                                @endforeach
-                            ]
-                        }],
-                        chart: {
-                            type: 'bar',
-                            height: 800
-                        },
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 4,
-                                horizontal: true,
-                            }
-                        },
-                        dataLabels: {
-                            enabled: true,
-                            offsetX: -6,
-                            style: {
-                                fontSize: '12px',
-                                colors: ['#fff']
-                            }
-                        },
-                        xaxis: {
-                            categories: [
-                                @foreach ($koordinator_pondokjoyo as $item)
-                                    '{{ $item }}',
-                                @endforeach
-                            ],
-                        },
-                    }).render();
-                });
-            </script>
-            {{-- script koordinator mundurejo --}}
-            <script>
-                document.addEventListener("DOMContentLoaded", () => {
-                    new ApexCharts(document.querySelector("#chart_koordinator_mundurejo"), {
-                        series: [{
-                            name: "Jumlah Pendaftar ",
-                            data: [
-                                @foreach ($data_koordinator_mundurejo as $item)
-                                    {{ $item }},
-                                @endforeach
-                            ]
-                        }],
-                        chart: {
-                            type: 'bar',
-                            height: 800
-                        },
-                        plotOptions: {
-                            bar: {
-                                borderRadius: 4,
-                                horizontal: true,
-                            }
-                        },
-                        dataLabels: {
-                            enabled: true,
-                            offsetX: -6,
-                            style: {
-                                fontSize: '12px',
-                                colors: ['#fff']
-                            }
-                        },
-                        xaxis: {
-                            categories: [
-                                @foreach ($koordinator_mundurejo as $item)
-                                    '{{ $item }}',
-                                @endforeach
-                            ],
-                        },
-                    }).render();
-                });
-            </script>
+                            dataLabels: {
+                                enabled: true,
+                                offsetX: -6,
+                                style: {
+                                    fontSize: '12px',
+                                    colors: ['#fff']
+                                }
+                            },
+                            xaxis: {
+                                categories: [
+                                    @foreach ($koordinator_pondokjoyo as $item)
+                                        '{{ $item }}',
+                                    @endforeach
+                                ],
+                            },
+                        }).render();
+                    });
+                </script>
+                {{-- script koordinator mundurejo --}}
+                <script>
+                    document.addEventListener("DOMContentLoaded", () => {
+                        new ApexCharts(document.querySelector("#chart_koordinator_mundurejo"), {
+                            series: [{
+                                name: "Jumlah Pendaftar ",
+                                data: [
+                                    @foreach ($data_koordinator_mundurejo as $item)
+                                        {{ $item }},
+                                    @endforeach
+                                ]
+                            }],
+                            chart: {
+                                type: 'bar',
+                                height: 800
+                            },
+                            plotOptions: {
+                                bar: {
+                                    borderRadius: 4,
+                                    horizontal: true,
+                                }
+                            },
+                            dataLabels: {
+                                enabled: true,
+                                offsetX: -6,
+                                style: {
+                                    fontSize: '12px',
+                                    colors: ['#fff']
+                                }
+                            },
+                            xaxis: {
+                                categories: [
+                                    @foreach ($koordinator_mundurejo as $item)
+                                        '{{ $item }}',
+                                    @endforeach
+                                ],
+                            },
+                        }).render();
+                    });
+                </script>
+            </div>
         </div>
-    @endsection
+    </main>
+@endsection

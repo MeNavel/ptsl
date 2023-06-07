@@ -49,6 +49,8 @@ class HomeController extends Controller
             $data_dusun_mundurejo[$iter] = Mundurejo::select('*')->where('Dusun_Letak_Tanah', '=', $dusun_mundurejo[$iter])->count();
             $iter++;
         }
+        // $all = $dusun_mundurejo->merge($data_dusun_mundurejo);
+        // dd(array_merge($dusun_mundurejo,$data_dusun_mundurejo));
 
         //Desa Sumberagung
         $dusun_sumberagung = Sumberagung::select('Dusun_Letak_Tanah')->groupBy('Dusun_Letak_Tanah')->get()->pluck('Dusun_Letak_Tanah')->all();
@@ -82,19 +84,40 @@ class HomeController extends Controller
             $iter++;
         }
 
-        return view('home', compact([
-            'dusun_pondokjoyo',
-            'data_dusun_pondokjoyo',
-            'dusun_mundurejo',
-            'data_dusun_mundurejo',
-            'dusun_sumberagung',
-            'data_dusun_sumberagung',
-            'dusun_sidomekar',
-            'data_dusun_sidomekar',
-            'koordinator_pondokjoyo',
-            'data_koordinator_pondokjoyo',
-            'koordinator_mundurejo',
-            'data_koordinator_mundurejo',
-        ]));
+        $nib_mundurejo = Mundurejo::whereNotNull('NIB')->count();
+        $nib_pondokjoyo = Pondokjoyo::whereNotNull('NIB')->count();
+        $nib_sumberagung = Sumberagung::whereNotNull('NIB')->count();
+        $nib_sidomekar = Sidomekar::whereNotNull('NIB')->count();
+
+        $belum_nib_mundurejo = Mundurejo::whereNull('NIB')->count();
+        $belum_nib_pondokjoyo = Pondokjoyo::whereNull('NIB')->count();
+        $belum_nib_sumberagung = Sumberagung::whereNull('NIB')->count();
+        $belum_nib_sidomekar = Sidomekar::whereNull('NIB')->count();
+
+        return view(
+            'home',
+            compact([
+                'dusun_pondokjoyo',
+                'data_dusun_pondokjoyo',
+                'dusun_mundurejo',
+                'data_dusun_mundurejo',
+                'dusun_sumberagung',
+                'data_dusun_sumberagung',
+                'dusun_sidomekar',
+                'data_dusun_sidomekar',
+                'koordinator_pondokjoyo',
+                'data_koordinator_pondokjoyo',
+                'koordinator_mundurejo',
+                'data_koordinator_mundurejo',
+                'nib_mundurejo',
+                'nib_pondokjoyo',
+                'nib_sumberagung',
+                'nib_sidomekar',
+                'belum_nib_mundurejo',
+                'belum_nib_pondokjoyo',
+                'belum_nib_sumberagung',
+                'belum_nib_sidomekar'
+            ])
+        );
     }
 }

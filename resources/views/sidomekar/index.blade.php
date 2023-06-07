@@ -1,23 +1,11 @@
 @extends('mainlayout')
 
 @section('content')
-    {{-- <main id="main" class="main"> --}}
-
-    {{-- <div class="pagetitle">
-            <h1>K1</h1>
-            <nav>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Puldatan</a></li>
-                    <li class="breadcrumb-item">Data</li>
-                    <li class="breadcrumb-item active">K1</li>
-                </ol>
-            </nav>
-        </div><!-- End Page Title --> --}}
-    <br>
     <section class="section">
         <div class="row">
             <div class="col-lg-12">
                 <div class="container-fluid card">
+                    @include('partials.css')
                     <div class="card-body">
                         <h5 class="card-title">Nominatif Pendaftaran Sertifikat Tanah Desa Sidomekar</h5>
                         <a href="/sidomekar/create" class="btn btn-primary">Tambah Data</a>
