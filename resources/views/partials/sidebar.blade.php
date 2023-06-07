@@ -31,21 +31,23 @@
                 <i class="bi bi-journal-text"></i><span>Sidomekar</span>
             </a>
         </li>
+        @if (Auth::user()->id == 1)
+            <li class="nav-heading">Admin Panel</li>
 
-        <li class="nav-heading">Admin Panel</li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('koordinator.index') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Koordinator</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="{{ route('register') }}">
+                    <i class="bi bi-person"></i>
+                    <span>Tambah Akun</span>
+                </a>
+            </li>
+        @endif
 
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('koordinator.index') }}">
-                <i class="bi bi-person"></i>
-                <span>Koordinator</span>
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link collapsed" href="{{ route('register') }}">
-                <i class="bi bi-person"></i>
-                <span>Tambah Akun</span>
-            </a>
-        </li>
     </ul>
 
 </aside><!-- End Sidebar-->
