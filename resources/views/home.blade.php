@@ -3,9 +3,10 @@
 @include('partials.sidebar')
 
 @section('content')
+
     <main class="main" id="main">
         <div class="container-fluid">
-            <div class="row justify-content-center">
+            <div class="row justify-content-left">
                 <section class="section dashboard">
                     <div class="row">
 
@@ -195,7 +196,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <div class="card">
                         <div class="card-body">
                             <div class="row">
