@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataKoordinatorController;
+use App\Http\Controllers\SidorejoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DownloadController;
@@ -13,6 +14,18 @@ use App\Http\Controllers\SumberagungController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::controller(SidorejoController::class)->group(function () {
+    Route::post('/sidorejo/cek', 'cek_nominatif')->name('cek-sidorejo');
+    Route::get('/sidorejo', 'index')->name('sidorejo.index');
+    Route::get('/sidorejo/create', 'create')->name('create-sidorejo');
+    Route::post('/sidorejo/store', 'store');
+    Route::get('/sidorejo/{id}/destroy', 'destroy')->name('destroy-sidorejo');
+    Route::get('/sidorejo/{id}/edit', 'edit')->name('edit-sidorejo');
+    Route::get('/sidorejo/showupdatebpn', 'showupdatebpn')->name('showupdatebpn_sidorejo');
+    Route::post('/sidorejo/updatebpn', 'updatebpn')->name('updatebpn_sidorejo');
+});
+
 Route::controller(PondokjoyoController::class)->group(function () {
     Route::post('/pondokjoyo/cek', 'cek_nominatif')->name('cek-pondokjoyo');
     Route::get('/pondokjoyo', 'index')->name('pondokjoyo.index');
@@ -68,6 +81,8 @@ Route::controller(DownloadController::class)->group(function () {
     Route::get('/downloadmundurejo', 'downloadExcelMundurejo')->name('downloadExcelMundurejo');
     Route::get('/downloadsumberagung', 'downloadExcelSumberagung')->name('downloadExcelSumberagung');
     Route::get('/downloadsidomekar', 'downloadExcelSidomekar')->name('downloadExcelSidomekar');
+    Route::get('/downloadsidorejo', 'downloadExcelsidorejo')->name('downloadExcelsidorejo');
+    Route::get('/sidorejo/{id}/export', 'exportsidorejo')->name('export-sidorejo');
     Route::get('/mundurejo/{id}/export', 'exportMundurejo')->name('export-mundurejo');
     Route::get('/pondokjoyo/{id}/export', 'exportPondokjoyo')->name('export-pondokjoyo');
     Route::get('/sidomekar/{id}/export', 'exportSidomekar')->name('export-sidomekar');
