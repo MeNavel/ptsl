@@ -55,8 +55,6 @@
                                 <select class="form-select" id="Dusun" name="Dusun"
                                     aria-label="State">
                                     <option selected>BETENG</option>
-                                    <option value="KRAJAN">KRAJAN</option>
-                                    <option value="GUMUK KEMBAR">GUMUK KEMBAR</option>
                                     <option value="BABATAN">BABATAN</option>
                                     <option value="BESUKI">BESUKI</option>
                                     <option value="BANJAREJO BARAT">BANJAREJO BARAT</option>
@@ -68,6 +66,8 @@
                                     <option value="BLOGMUNDU">BLOGMUNDU</option>
                                     <option value="SUKOMAKMUR">SUKOMAKMUR</option>
                                     <option value="TEMUREJO">TEMUREJO</option>
+                                    <option value="KRAJAN">KRAJAN</option>
+                                    <option value="GUMUK KEMBAR">GUMUK KEMBAR</option>
                                 </select>
                             </div>
                             <div class="col-2">
@@ -75,10 +75,10 @@
                                 <select class="form-select" id="Desa" name="Desa"
                                     aria-label="State">
                                     <option selected>SIDOMEKAR</option>
-                                    <option value="SIDOREJO">SIDOREJO</option>
                                     <option value="SUMBERAGUNG">SUMBERAGUNG</option>
                                     <option value="PONDOK JOYO">PONDOK JOYO</option>
                                     <option value="MUNDUREJO">MUNDUREJO</option>
+                                    <option value="SIDOREJO">SIDOREJO</option>
                                 </select>
                             </div>
                             <div class="col-1">

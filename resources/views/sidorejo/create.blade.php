@@ -262,30 +262,16 @@
                                 <input type="text" name="Alas_Hak_Bukti_Perolehan" class="form-control"
                                     id="Alas_Hak_Bukti_Perolehan">
                             </div>
+
                             <div class="col-10">
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
-                                    <option selected></option>
-                                    <option value="001">SOFYAN HADI - 01</option>
-                                    <option value="002">ANDRI CAHYONO - 02</option>
-                                    <option value="003">MUHADI - 03</option>
-                                    <option value="004">SUTOPO - 04</option>
-                                    <option value="005">EDI MESDIONO - 05</option>
-                                    <option value="006">DENDI P - 06</option>
-                                    <option value="007">ANDRIYONO - 07</option>
-                                    <option value="008">SURADI - 08</option>
-                                    <option value="009">MUKHOLIL - 09</option>
-                                    <option value="010">DHEHAN - 10</option>
-                                    <option value="011">SANTOSO - 11</option>
-                                    <option value="012">H. BUKHORI - 12</option>
-                                    <option value="013">MUKSIN - 13</option>
-                                    <option value="014">MOH. AMIN - 14</option>
-                                    <option value="015">SUDARIYO - HIPA</option>
-                                    <option value="HIPA">PANTOSO - HIPA</option>
-                                    <option value="016">SUROSO - HIPA</option>
-                                    <option value="REGASEN">ARIEF SABARIMAN - REGASEN</option>
+                                    @foreach($koordinator as $koordinator)
+                                        <option value="{{ $koordinator->jabatan }}">{{ $koordinator->nama }}</option>
+                                    @endforeach
                                 </select>
                             </div>
+
 
                             <div class="col-2">
                                 <label for="Tgl_Pendataan" class="form-label">Tanggal Pendataan</label>

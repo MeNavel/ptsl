@@ -289,7 +289,9 @@
                             <div class="col-10">
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
-                                    <option value="001" @selected($data->Koordinator == "001")>SUDRAJAD HADI SAPUTRA</option>
+                                    @foreach($koordinator as $koordinator)
+                                    <option value="{{ $koordinator->jabatan }}" @selected($data->Koordinator == $koordinator->jabatan)>{{ $koordinator->nama }}</option>
+                                    @endforeach
                                 </select>
                             </div>
 

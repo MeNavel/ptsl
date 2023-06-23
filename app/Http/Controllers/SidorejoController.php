@@ -52,7 +52,12 @@ class SidorejoController extends Controller
      */
     public function create()
     {
-        return view('sidorejo.create');
+        $koordinator = DB::table('koordinator')
+            ->select('jabatan', 'nama')
+            ->where('desa', '=', 'sidorejo')
+            ->where('status', '=', 'SAKSI 1')
+            ->get();
+        return view('sidorejo.create', compact('koordinator'));
     }
 
     /**
@@ -269,7 +274,12 @@ class SidorejoController extends Controller
     public function edit($No_Nominatif)
     {
         $data = Sidorejo::find($No_Nominatif);
-        return view('sidorejo.edit', compact(['data']));
+        $koordinator = DB::table('koordinator')
+            ->select('jabatan', 'nama')
+            ->where('desa', '=', 'sidorejo')
+            ->where('status', '=', 'SAKSI 1')
+            ->get();
+        return view('sidorejo.edit', compact(['data', 'koordinator']));
         // return redirect()->route('edit-sidorejo', ['id' => $No_Nominatif]);
     }
 
