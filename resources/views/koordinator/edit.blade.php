@@ -55,66 +55,65 @@
                             <div class="col-2">
                                 <label for="Dusun" class="form-label">Dusun</label>
                                 <select class="form-select" id="Dusun" name="Dusun" aria-label="State">
-                                    <option selected>{{ $data->dusun }}</option>
-                                    <option value="BETENG">BETENG</option>
-                                    <option value="BABATAN">BABATAN</option>
-                                    <option value="BESUKI">BESUKI</option>
-                                    <option value="SONGON">SONGON</option>
-                                    <option value="PONDOK RAMPAL">PONDOK RAMPAL</option>
-                                    <option value="BLOGMUNDU">BLOGMUNDU</option>
-                                    <option value="SUKOMAKMUR">SUKOMAKMUR</option>
-                                    <option value="TEMUREJO">TEMUREJO</option>
+                                    <option value="BETENG" @selected($data->dusun == 'BETENG')>BETENG</option>
+                                    <option value="BABATAN" @selected($data->dusun == 'BABATAN')>BABATAN</option>
+                                    <option value="BESUKI" @selected($data->dusun == 'BESUKI')>BESUKI</option>
+                                    <option value="SONGON" @selected($data->dusun == 'SONGON')>SONGON</option>
+                                    <option value="PONDOK RAMPAL" @selected($data->dusun == 'PONDOK RAMPAL')>PONDOK RAMPAL</option>
+                                    <option value="BLOGMUNDU" @selected($data->dusun == 'BLOGMUNDU')>BLOGMUNDU</option>
+                                    <option value="SUKOMAKMUR" @selected($data->dusun == 'SUKOMAKMUR')>SUKOMAKMUR</option>
+                                    <option value="TEMUREJO" @selected($data->dusun == 'TEMUREJO')>TEMUREJO</option>
+                                    <option value="KRAJAN" @selected($data->dusun == 'KRAJAN')>KRAJAN</option>
+                                    <option value="GUMUK KEMBAR" @selected($data->dusun == 'GUMUK KEMBAR')>GUMUK KEMBAR</option>
                                 </select>
                             </div>
                             <div class="col-2">
                                 <label for="Desa" class="form-label">Desa</label>
                                 <select class="form-select" id="Desa" name="Desa" aria-label="State">
-                                    <option selected>{{ $data->desa }}</option>
-                                    <option value="SIDOMEKAR">SIDOMEKAR</option>
-                                    <option value="SUMBERAGUNG">SUMBERAGUNG</option>
-                                    <option value="PONDOK JOYO">PONDOK JOYO</option>
-                                    <option value="MUNDUREJO">MUNDUREJO</option>
+                                    <option value="SIDOMEKAR" @selected($data->desa == 'SIDOMEKAR')>SIDOMEKAR</option>
+                                    <option value="SUMBERAGUNG" @selected($data->desa == 'SUMBERAGUNG')>SUMBERAGUNG</option>
+                                    <option value="PONDOK JOYO" @selected($data->desa == 'PONDOK JOYO')>PONDOK JOYO</option>
+                                    <option value="MUNDUREJO" @selected($data->desa == 'MUNDUREJO')>MUNDUREJO</option>
+                                    <option value="SIDOREJO" @selected($data->desa == 'SIDOREJO')>SIDOREJO</option>
                                 </select>
                             </div>
                             <div class="col-1">
                                 <label for="Jabatan" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Jabatan" name="Jabatan"
                                     aria-label="State">
-                                    <option selected>{{ $data->jabatan }}</option>
-                                    <option value="001">001</option>
-                                    <option value="002">002</option>
-                                    <option value="003">003</option>
-                                    <option value="004">004</option>
-                                    <option value="005">005</option>
-                                    <option value="006">006</option>
-                                    <option value="007">007</option>
-                                    <option value="008">008</option>
-                                    <option value="009">009</option>
-                                    <option value="010">010</option>
-                                    <option value="011">011</option>
-                                    <option value="012">012</option>
-                                    <option value="013">013</option>
-                                    <option value="014">014</option>
-                                    <option value="015">015</option>
-                                    <option value="016">016</option>
-                                    <option value="017">017</option>
-                                    <option value="018">018</option>
-                                    <option value="019">019</option>
-                                    <option value="020">020</option>
-                                    <option value="021">021</option>
-                                    <option value="REGASEN">REGASEN</option>
-                                    <option value="HIPA">HIPA</option>
-                                    <option value="KASUN">KASUN</option>
-                                    <option value="SEKERTARIS DESA">SEKERTARIS DESA</option>
+                                    <option value="001" @selected($data->jabatan == "001")>001</option>
+                                    <option value="002" @selected($data->jabatan == "002")>002</option>
+                                    <option value="003" @selected($data->jabatan == "003")>003</option>
+                                    <option value="004" @selected($data->jabatan == "004")>004</option>
+                                    <option value="005" @selected($data->jabatan == "005")>005</option>
+                                    <option value="006" @selected($data->jabatan == "006")>006</option>
+                                    <option value="007" @selected($data->jabatan == "007")>007</option>
+                                    <option value="008" @selected($data->jabatan == "008")>008</option>
+                                    <option value="009" @selected($data->jabatan == "009")>009</option>
+                                    <option value="010" @selected($data->jabatan == "010")>010</option>
+                                    <option value="011" @selected($data->jabatan == "011")>011</option>
+                                    <option value="012" @selected($data->jabatan == "012")>012</option>
+                                    <option value="013" @selected($data->jabatan == "013")>013</option>
+                                    <option value="014" @selected($data->jabatan == "014")>014</option>
+                                    <option value="015" @selected($data->jabatan == "015")>015</option>
+                                    <option value="016" @selected($data->jabatan == "016")>016</option>
+                                    <option value="017" @selected($data->jabatan == "017")>017</option>
+                                    <option value="018" @selected($data->jabatan == "018")>018</option>
+                                    <option value="019" @selected($data->jabatan == "019")>019</option>
+                                    <option value="020" @selected($data->jabatan == "020")>020</option>
+                                    <option value="021" @selected($data->jabatan == "021")>021</option>
+                                    <option value="REGASEN" @selected($data->jabatan == "REGASEN")>REGASEN</option>
+                                    <option value="HIPA" @selected($data->jabatan == "HIPA")>HIPA</option>
+                                    <option value="KASUN" @selected($data->jabatan == "KASUN")>KASUN</option>
+                                    <option value="SEKERTARIS DESA" @selected($data->jabatan == "SEKERTARIS DESA")>SEKERTARIS DESA</option>
                                 </select>
                             </div>
                             <div class="col-2">
                                 <label for="Status" class="form-label">Status</label>
                                 <select class="form-select" id="Status" name="Status"
                                     aria-label="State">
-                                    <option selected>{{ $data->status }}</option>
-                                    <option value="SAKSI 1">SAKSI 1</option>
-                                    <option value="SAKSI 2">SAKSI 2</option>
+                                    <option value="SAKSI 1" @selected($data->status == "SAKSI 1")>SAKSI 1</option>
+                                    <option value="SAKSI 2" @selected($data->status == "SAKSI 2")>SAKSI 2</option>
                                 </select>
                             </div>
                             <div class="text-center">
