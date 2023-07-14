@@ -286,13 +286,18 @@
                                 <input type="text" name="Alas_Hak_Bukti_Perolehan" class="form-control"
                                     value="{{ $data->Alas_Hak_Bukti_Perolehan }}" id="Alas_Hak_Bukti_Perolehan">
                             </div>
-                            <div class="col-10">
+                            <div class="col-8">
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     @foreach($koordinator as $koordinator)
                                     <option value="{{ $koordinator->jabatan }}" @selected($data->Koordinator == $koordinator->jabatan)>{{ $koordinator->nama }}</option>
                                     @endforeach
                                 </select>
+                            </div>
+
+                            <div class="col-2">
+                                <label for="No_HP" class="form-label">Nomor Handphone</label>
+                                <input type="text" name="No_HP" class="form-control" value="{{ $data->No_HP }}" id="No_HP">
                             </div>
 
                             <div class="col-2">

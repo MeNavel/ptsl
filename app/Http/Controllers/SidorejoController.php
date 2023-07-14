@@ -101,6 +101,9 @@ class SidorejoController extends Controller
             $data->Beda_Luas = abs($luas_1 - $luas_2);
             $data->Selisih_Luas = $request->Beda_Luas;
 
+            //No Handphone
+            $data->No_HP = $request->No_HP;
+
             // Data Pemohon Sertifikat
             $data->No_KTP_NIK = $request->No_KTP_NIK;
             $data->Nama = $request->Nama;

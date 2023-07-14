@@ -263,7 +263,7 @@
                                     id="Alas_Hak_Bukti_Perolehan">
                             </div>
 
-                            <div class="col-10">
+                            <div class="col-8">
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     @foreach($koordinator as $koordinator)
@@ -272,6 +272,10 @@
                                 </select>
                             </div>
 
+                            <div class="col-2">
+                                <label for="No_HP" class="form-label">Nomor Handphone</label>
+                                <input type="text" name="No_HP" class="form-control" id="No_HP">
+                            </div>
 
                             <div class="col-2">
                                 <label for="Tgl_Pendataan" class="form-label">Tanggal Pendataan</label>
