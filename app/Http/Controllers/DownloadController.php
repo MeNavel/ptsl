@@ -962,7 +962,7 @@ class DownloadController extends Controller
         }
 
         //handle awal nib
-        $Awal_Nib = "12.34.02.10.";
+        $Awal_Nib = "12.34.02.06.";
 
         if ($data->Tahun_Perolehan_Terakhir == null) {
             if ($data->Tahun_Peralihan_2 == null) {
@@ -980,6 +980,7 @@ class DownloadController extends Controller
 
         $phpWord->setValues([
             'id' => $data->id,
+            'Kode_Desa' => '006',
             'Blok' => $data->Blok,
             'No_SPPT' => $data->No_SPPT,
             'Tgl_Pendataan' => $Tgl_Pendataan,
