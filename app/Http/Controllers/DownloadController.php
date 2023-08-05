@@ -1072,7 +1072,7 @@ class DownloadController extends Controller
     public function exportMundurejo($No_Nominatif)
     {
         $data = Mundurejo::find($No_Nominatif);
-        $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('berkas.docx');
+        $phpWord = new \PhpOffice\PhpWord\TemplateProcessor('mundurejo.docx');
         if ($data->No_KTP_NIK == $data->An_No_KTP_NIK) {
             $bertindak = "untuk diri sendiri";
         } else {
