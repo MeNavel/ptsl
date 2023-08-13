@@ -55,6 +55,8 @@
                             <div class="col-2">
                                 <label for="Dusun" class="form-label">Dusun</label>
                                 <select class="form-select" id="Dusun" name="Dusun" aria-label="State">
+                                    <option value="PUCUAN" @selected($data->dusun == 'PUCUAN')>PUCUAN</option>
+                                    <option value="ROWOTENGU" @selected($data->dusun == 'ROWOTENGU')>ROWOTENGU</option>
                                     <option value="BETENG" @selected($data->dusun == 'BETENG')>BETENG</option>
                                     <option value="BABATAN" @selected($data->dusun == 'BABATAN')>BABATAN</option>
                                     <option value="BESUKI" @selected($data->dusun == 'BESUKI')>BESUKI</option>
@@ -70,6 +72,7 @@
                             <div class="col-2">
                                 <label for="Desa" class="form-label">Desa</label>
                                 <select class="form-select" id="Desa" name="Desa" aria-label="State">
+                                    <option value="SIDOMULYO" @selected($data->desa == 'SIDOMULYO')>SIDOMULYO</option>
                                     <option value="SIDOMEKAR" @selected($data->desa == 'SIDOMEKAR')>SIDOMEKAR</option>
                                     <option value="SUMBERAGUNG" @selected($data->desa == 'SUMBERAGUNG')>SUMBERAGUNG</option>
                                     <option value="PONDOK JOYO" @selected($data->desa == 'PONDOK JOYO')>PONDOK JOYO</option>

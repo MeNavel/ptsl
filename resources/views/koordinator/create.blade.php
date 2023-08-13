@@ -54,18 +54,8 @@
                                 <label for="Dusun" class="form-label">Dusun</label>
                                 <select class="form-select" id="Dusun" name="Dusun"
                                     aria-label="State">
-                                    <option selected>BETENG</option>
-                                    <option value="BABATAN">BABATAN</option>
-                                    <option value="BESUKI">BESUKI</option>
-                                    <option value="BANJAREJO BARAT">BANJAREJO BARAT</option>
-                                    <option value="BANJAREJO TENGAH">BANJAREJO TENGAH</option>
-                                    <option value="BANJAREJO TIMUR">BANJAREJO TIMUR</option>
-                                    <option value="TAMBAKREJO">TAMBAKREJO</option>
-                                    <option value="SONGON">SONGON</option>
-                                    <option value="PONDOK RAMPAL">PONDOK RAMPAL</option>
-                                    <option value="BLOGMUNDU">BLOGMUNDU</option>
-                                    <option value="SUKOMAKMUR">SUKOMAKMUR</option>
-                                    <option value="TEMUREJO">TEMUREJO</option>
+                                    <option selected>PUCUAN</option>
+                                    <option value="ROWOTENGU">ROWOTENGU</option>
                                     <option value="KRAJAN">KRAJAN</option>
                                     <option value="GUMUK KEMBAR">GUMUK KEMBAR</option>
                                 </select>
@@ -74,10 +64,7 @@
                                 <label for="Desa" class="form-label">Desa</label>
                                 <select class="form-select" id="Desa" name="Desa"
                                     aria-label="State">
-                                    <option selected>SIDOMEKAR</option>
-                                    <option value="SUMBERAGUNG">SUMBERAGUNG</option>
-                                    <option value="PONDOK JOYO">PONDOK JOYO</option>
-                                    <option value="MUNDUREJO">MUNDUREJO</option>
+                                    <option selected>SIDOMULYO</option>
                                     <option value="SIDOREJO">SIDOREJO</option>
                                 </select>
                             </div>

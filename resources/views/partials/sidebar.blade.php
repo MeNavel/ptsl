@@ -9,13 +9,20 @@
             </a>
         </li><!-- End Dashboard Nav -->
 
-        <li class="nav-heading">Desa</li>
+        <li class="nav-heading">Desa 2024</li>
 
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('sidomulyo.index') }}">
+                <i class="bi bi-journal-text"></i><span>Sidomulyo</span>
+            </a>
+        </li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('sidorejo.index') }}">
                 <i class="bi bi-journal-text"></i><span>Sidorejo</span>
             </a>
         </li>
+
+        <li class="nav-heading">Desa 2023</li>
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{ route('mundurejo.index') }}">
                 <i class="bi bi-journal-text"></i><span>Mundurejo</span>

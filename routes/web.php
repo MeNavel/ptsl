@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DataKoordinatorController;
+use App\Http\Controllers\SidomulyoController;
 use App\Http\Controllers\SidorejoController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -14,6 +15,17 @@ use App\Http\Controllers\SumberagungController;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::controller(SidomulyoController::class)->group(function () {
+    Route::post('/sidomulyo/cek', 'cek_nominatif')->name('cek-sidomulyo');
+    Route::get('/sidomulyo', 'index')->name('sidomulyo.index');
+    Route::get('/sidomulyo/create', 'create')->name('create-sidomulyo');
+    Route::post('/sidomulyo/store', 'store');
+    Route::get('/sidomulyo/{id}/destroy', 'destroy')->name('destroy-sidomulyo');
+    Route::get('/sidomulyo/{id}/edit', 'edit')->name('edit-sidomulyo');
+    Route::get('/sidomulyo/showupdatebpn', 'showupdatebpn')->name('showupdatebpn_sidomulyo');
+    Route::post('/sidomulyo/updatebpn', 'updatebpn')->name('updatebpn_sidomulyo');
+});
 
 Route::controller(SidorejoController::class)->group(function () {
     Route::post('/sidorejo/cek', 'cek_nominatif')->name('cek-sidorejo');
@@ -82,7 +94,9 @@ Route::controller(DownloadController::class)->group(function () {
     Route::get('/downloadsumberagung', 'downloadExcelSumberagung')->name('downloadExcelSumberagung');
     Route::get('/downloadsidomekar', 'downloadExcelSidomekar')->name('downloadExcelSidomekar');
     Route::get('/downloadsidorejo', 'downloadExcelsidorejo')->name('downloadExcelsidorejo');
+    Route::get('/downloadsidomulyo', 'downloadExcelsidomulyo')->name('downloadExcelsidomulyo');
     Route::get('/sidorejo/{id}/export', 'exportsidorejo')->name('export-sidorejo');
+    Route::get('/sidomulyo/{id}/export', 'exportsidomulyo')->name('export-sidomulyo');
     Route::get('/mundurejo/{id}/export', 'exportMundurejo')->name('export-mundurejo');
     Route::get('/pondokjoyo/{id}/export', 'exportPondokjoyo')->name('export-pondokjoyo');
     Route::get('/sidomekar/{id}/export', 'exportSidomekar')->name('export-sidomekar');
@@ -92,4 +106,6 @@ Route::controller(DownloadController::class)->group(function () {
 Route::controller(DataKoordinatorController::class)->group(function () {
     Route::get('/downloadmundurejokoordinator', 'dataKoordinatorMundurejo')->name('downloadDataKoordinatorMundurejo');
     Route::get('/downloadpondokjoyokoordinator', 'dataKoordinatorPondokjoyo')->name('downloadDataKoordinatorPondokjoyo');
+    Route::get('/downloadsidorejokoordinator', 'dataKoordinatorSidorejo')->name('downloadDataKoordinatorSidorejo');
+    Route::get('/downloadsidomulyokoordinator', 'dataKoordinatorSidomulyo')->name('downloadDataKoordinatorSidomulyo');
 });

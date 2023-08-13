@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Mundurejo;
 use App\Models\Sidomekar;
 use App\Models\Pondokjoyo;
+use App\Models\Sidomulyo;
 use App\Models\Sidorejo;
 use App\Models\Sumberagung;
 use Illuminate\Http\Request;
@@ -39,6 +40,16 @@ class HomeController extends Controller
             $iter++;
         }
 
+        $koordinator_sidomulyo = [];
+        $data_koordinator_sidomulyo=[];
+        //Koordinator sidomulyo
+        $koordinator_sidomulyo = Sidomulyo::select('Nama_Saksi_1')->groupBy('Nama_Saksi_1')->get()->pluck('Nama_Saksi_1')->all();
+        $iter = 0;
+        while ($iter < DB::table('sidomulyo')->select('Nama_Saksi_1')->distinct()->count('Nama_Saksi_1')) {
+            $data_koordinator_sidomulyo[$iter] = Sidomulyo::select('*')->where('Nama_Saksi_1', '=', $koordinator_sidomulyo[$iter])->count();
+            $iter++;
+        }
+
         //Koordinator Pondok Joyo
         $koordinator_pondokjoyo = Pondokjoyo::select('Nama_Saksi_1')->groupBy('Nama_Saksi_1')->get()->pluck('Nama_Saksi_1')->all();
         $iter = 0;
@@ -55,12 +66,14 @@ class HomeController extends Controller
             $iter++;
         }
 
+        $nib_sidomulyo = Sidomulyo::whereNotNull('NIB')->count();
         $nib_sidorejo = Sidorejo::whereNotNull('NIB')->count();
         $nib_mundurejo = Mundurejo::whereNotNull('NIB')->count();
         $nib_pondokjoyo = Pondokjoyo::whereNotNull('NIB')->count();
         $nib_sumberagung = Sumberagung::whereNotNull('NIB')->count();
         $nib_sidomekar = Sidomekar::whereNotNull('NIB')->count();
 
+        $belum_nib_sidomulyo = Sidomulyo::whereNull('NIB')->count();
         $belum_nib_sidorejo = Sidorejo::whereNull('NIB')->count();
         $belum_nib_mundurejo = Mundurejo::whereNull('NIB')->count();
         $belum_nib_pondokjoyo = Pondokjoyo::whereNull('NIB')->count();
@@ -70,17 +83,21 @@ class HomeController extends Controller
         return view(
             'home',
             compact([
+                'koordinator_sidomulyo',
+                'data_koordinator_sidomulyo',
                 'koordinator_sidorejo',
                 'data_koordinator_sidorejo',
                 'koordinator_pondokjoyo',
                 'data_koordinator_pondokjoyo',
                 'koordinator_mundurejo',
                 'data_koordinator_mundurejo',
+                'nib_sidomulyo',
                 'nib_sidorejo',
                 'nib_mundurejo',
                 'nib_pondokjoyo',
                 'nib_sumberagung',
                 'nib_sidomekar',
+                'belum_nib_sidomulyo',
                 'belum_nib_sidorejo',
                 'belum_nib_mundurejo',
                 'belum_nib_pondokjoyo',
