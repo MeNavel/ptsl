@@ -8,12 +8,12 @@
                     @include('partials.css')
                     <div class="card-body">
                         <h5 class="card-title">Formulir Pendaftaran K1 Desa Sidomulyo</h5>
-                        <form action="/sidorejo">
+                        <form action="/sidomulyo">
                             <button type="submit" class="btn btn-primary">Home</button>
                         </form>
                         <br>
                         <!-- Data teknis tanah -->
-                        <form action="/sidorejo/store" method="POST" class="row g-3">
+                        <form action="/sidomulyo/store" method="POST" class="row g-3">
                             @csrf
                             <div class="col-md-3">
                                 <label for="No_Nominatif" class="form-label">Nomor Nominatif</label>
@@ -301,7 +301,7 @@
                                         $('#submit').attr('disabled', 'true');
                                     } else {
                                         $.ajax({
-                                            url: "{{ route('cek-sidorejo') }}",
+                                            url: "{{ route('cek-sidomulyo') }}",
                                             method: "POST",
                                             data: {
                                                 No_Nominatif: No_Nominatif,
