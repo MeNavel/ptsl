@@ -266,8 +266,8 @@
                             <div class="col-8">
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
-                                    @foreach($koordinator as $koordinator)
-                                        <option value="{{ $koordinator->jabatan }}">{{ $koordinator->nama }}</option>
+                                    @foreach($koordinator as $item)
+                                        <option value="{{ $item->jabatan }}">{{ $item->nama }}</option>
                                     @endforeach
                                 </select>
                             </div>
