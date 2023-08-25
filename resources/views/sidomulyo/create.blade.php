@@ -22,8 +22,7 @@
                             </div>
                             <div class="col-md-3">
                                 <label for="Blok" class="form-label">Blok</label>
-                                <input type="text" name="Blok" class="form-control" id="Blok" value="000"
-                                    readonly>
+                                <input type="text" name="Blok" class="form-control" id="Blok">
                             </div>
                             <div class="col-md-3">
                                 <label for="No_SPPT" class="form-label">No SPPT</label>
