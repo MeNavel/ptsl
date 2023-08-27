@@ -7,7 +7,7 @@
                 <div class="container-fluid card">
                     @include('partials.css')
                     <div class="card-body">
-                        <h5 class="card-title">Formulir Pendaftaran K1 Desa Sidomulyo Bos</h5>
+                        <h5 class="card-title">Formulir Pendaftaran K1 Desa Sidomulyo</h5>
                         <form action="/sidomulyo">
                             <button type="submit" class="btn btn-primary">Home</button>
                         </form>
