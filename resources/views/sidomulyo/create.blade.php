@@ -307,10 +307,10 @@
                                                 _token: _token
                                             },
                                             success: function(result) {
-                                                if (result.success == false) {
+                                                if (result.success === false) {
                                                     $('#cek_nominatif').hide();
                                                     $('#submit').attr('disabled', false);
-                                                } else if (No_Nominatif == "") {
+                                                } else if (No_Nominatif === "") {
                                                     $('#cek_nominatif').show();
                                                     $('#cek_nominatif').html(
                                                         '<label class="text-danger">Nomor Nominatif Tidak Boleh Kosong</label>'
@@ -344,7 +344,6 @@
 
                                 $('#NIB').blur(function() {
                                     var No_NIB = $('#NIB').val();
-                                    var _token = $('input[name="_token"]').val();
 
                                     var filter = /\b\d{5}\b/;
                                     if (!filter.test(No_NIB)) {
