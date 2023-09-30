@@ -266,7 +266,7 @@
                                 <label for="Koordinator" class="form-label">Wilayah</label>
                                 <select class="form-select" id="Koordinator" name="Koordinator" aria-label="State">
                                     @foreach($koordinator as $item)
-                                        <option value="{{ $item->jabatan }}">{{ $item->nama }}</option>
+                                        <option value="{{ $item->jabatan }}">{{ $item->nama }} - RW {{ $item->jabatan }}</option>
                                     @endforeach
                                 </select>
                             </div>
