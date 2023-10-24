@@ -11,6 +11,7 @@
                         <form action="{{ route('sidomulyo.index') }}">
                             <button type="submit" class="btn btn-primary">Home</button>
                         </form>
+                        <input type="hidden" id="user_id" name="user_id" value="{{Auth::user()->id}}">
                         <br>
                         <!-- Data teknis tanah -->
                         <form action="{{ route('updatebpn_sidomulyo') }}" method="POST" class="row g-3">
@@ -21,7 +22,7 @@
                             </div>
                             <div class="col-2">
                                 <label for="NIB" class="form-label">NIB</label>
-                                <input type="text" name="NIB" class="form-control" id="NIB"
+                                <input type="text" name="NIB" class="form-control" id="NIB" readonly="readonly"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                                 <span id="cek_nib"></span>
                             </div>
@@ -90,7 +91,7 @@
                             $(document).ready(function() {
                                 $('#No_Nominatif').blur(function() {
                                     $('#submit').attr('disabled', true);
-
+                                    var id = $('#user_id').val();
                                     var No_Nominatif = $('#No_Nominatif').val();
                                     var _token = $('input[name="_token"]').val();
 
@@ -104,6 +105,15 @@
                                         success: function(data) {
                                             if (data.success == true) {
                                                 $('#NIB').val(data.data.NIB);
+                                                    if (data.data.NIB!=null){
+                                                        $('#NIB').attr("readonly","readonly");
+                                                        if(id == 1){
+                                                            $('#NIB').removeAttr("readonly","readonly");
+                                                        }
+                                                    }
+                                                    else {
+                                                        $('#NIB').removeAttr("readonly","readonly");
+                                                    }
                                                 $('#Luas_Ukur').val(data.data.Luas_Ukur);
                                                 $('#PBT').val(data.data.PBT);
                                                 $('#Luas_Permohonan').val(data.data.Luas_Permohonan);

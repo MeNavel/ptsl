@@ -50,12 +50,30 @@
                                     value="{{ $data->NUB }}"
                                     oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
                             </div>
-                            <div class="col-3">
-                                <label for="NIB" class="form-label">NIB</label>
-                                <input type="text" name="NIB" class="form-control" id="NIB"
-                                    value="{{ $data->NIB }}"
-                                    oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
-                            </div>
+                            @if($data->NIB == "")
+                                <div class="col-3">
+                                    <label for="NIB" class="form-label">NIB</label>
+                                    <input type="text" name="NIB" class="form-control" id="NIB"
+                                           value="{{ $data->NIB }}"
+                                           oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                </div>
+                            @else
+                                @if (Auth::user()->id == 1)
+                                    <div class="col-3">
+                                        <label for="NIB" class="form-label">NIB</label>
+                                        <input type="text" name="NIB" class="form-control" id="NIB"
+                                               value="{{ $data->NIB }}"
+                                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                    </div>
+                                @else
+                                    <div class="col-3">
+                                        <label for="NIB" class="form-label">NIB</label>
+                                        <input type="text" name="NIB" class="form-control" id="NIB" readonly
+                                               value="{{ $data->NIB }}"
+                                               oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+                                    </div>
+                                @endif
+                            @endif
                             <div class="col-2">
                                 <label for="Luas_Ukur" class="form-label">Luas Ukur</label>
                                 <input type="number" name="Luas_Ukur" class="form-control" id="Luas_Ukur"
